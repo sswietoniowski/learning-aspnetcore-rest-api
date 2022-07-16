@@ -11,3 +11,7 @@ dotnet new sln -o "." --force
 dotnet sln "." add "."
 dotnet new gitignore --output "." --force
 ```
+
+The following file(-s) was(were) then created/modified:
+
+- .gitattributes - created based on [this article](https://rehansaeed.com/gitattributes-best-practices/).
