@@ -11,9 +11,9 @@ dotnet sln "." add "."
 dotnet new gitignore --output "." --force
 ```
 
-The following files were then modified:
+The following file(-s) was(were) then created/modified:
 
-- global.json
+- global.json,
 
 ```json
 {
@@ -23,3 +23,5 @@ The following files were then modified:
   }
 }
 ```
+
+- .gitattributes - created based on [this article](https://rehansaeed.com/gitattributes-best-practices/).
