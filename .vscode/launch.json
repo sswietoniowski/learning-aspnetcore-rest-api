@@ -4,7 +4,7 @@
     {
       "name": "WebAPI (minimal)",
       "type": "coreclr",
-      "request": "launch-minimal",
+      "request": "launch",
       "preLaunchTask": "build-minimal",
       "program": "${workspaceFolder}/minimal/bin/Debug/net6.0/minimal.dll",
       "args": [],
@@ -24,7 +24,7 @@
     {
       "name": "WebAPI (MVC)",
       "type": "coreclr",
-      "request": "launch-mvc",
+      "request": "launch",
       "preLaunchTask": "build-mvc",
       "program": "${workspaceFolder}/mvc/bin/Debug/net6.0/mvc.dll",
       "args": [],
