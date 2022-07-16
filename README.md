@@ -1,4 +1,4 @@
-# Learning ASP.NET Core (.NET 6) - REST API
+# Learning ASP.NET Core (.NET 5 & .NET 6) - REST API
 
 Based on these courses:
 
