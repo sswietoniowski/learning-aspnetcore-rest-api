@@ -8,3 +8,8 @@ Based on these courses:
 - [Deploy a .NET Core API with Docker (Step-by-Step)](https://youtu.be/f0lMGPB10bM),
 - [Step by step - Run and Connect to SQL Server in Docker](https://youtu.be/SJAl3vOX05M),
 - [Docker Compose with .NET Core & SQL Server (Step by Step)](https://youtu.be/4V7CwC_4oss).
+
+This is (sort of) continuation of these project(-s):
+
+- [MyHotels](https://github.com/sswietoniowski/work-codecool-csharp-webapi-MyHotels),
+- [MyMovies](https://github.com/sswietoniowski/work-codecool-csharp-httpclient-MyMovies).
