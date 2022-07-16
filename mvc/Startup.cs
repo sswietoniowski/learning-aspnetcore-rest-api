@@ -28,8 +28,6 @@ public class Startup
 
         app.UseHttpsRedirection();
 
-        app.UseAuthorization();
-
         app.UseRouting();
 
         app.UseEndpoints(endpoints =>
