@@ -1,4 +1,4 @@
-# Sample MVC REST API
+# Sample MVC REST API (.NET 5)
 
 This solution was created using these commands:
 
