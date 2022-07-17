@@ -1,4 +1,4 @@
-# Sample Minimal REST API
+# Sample Minimal REST API (.NET 6)
 
 This solution was created using these commands:
 
