@@ -40,6 +40,30 @@
       "sourceFileMap": {
         "/Views": "${workspaceFolder}/mvc/Views"
       }
+    },
+    {
+      "name": "Swagger UI (minimal)",
+      "request": "launch",
+      "type": "chrome",
+      "url": "https://localhost:5001/swagger/index.html",
+      "webRoot": "${workspaceFolder}/minimal"
+    },
+    {
+      "name": "Swagger UI (MVC)",
+      "request": "launch",
+      "type": "chrome",
+      "url": "https://localhost:5001/swagger/index.html",
+      "webRoot": "${workspaceFolder}/mvc"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "WebAPI (minimal) & Swagger UI",
+      "configurations": ["WebAPI (minimal)", "Swagger UI (minimal)"]
+    },
+    {
+      "name": "WebAPI (MVC) & Swagger UI",
+      "configurations": ["WebAPI (MVC)", "Swagger UI (MVC)"]
     }
   ]
 }
