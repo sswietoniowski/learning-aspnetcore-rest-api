@@ -8,7 +8,10 @@ Based on these courses:
 - [Secure a .NET Core API with Bearer Authentication](https://youtu.be/3PyUjOmuFic) [:file_folder:](https://github.com/binarythistle/S03E01-Secure-.NET-Core-API),
 - [Deploy a .NET Core API with Docker (Step-by-Step)](https://youtu.be/f0lMGPB10bM),
 - [Step by step - Run and Connect to SQL Server in Docker](https://youtu.be/SJAl3vOX05M),
-- [Docker Compose with .NET Core & SQL Server (Step by Step)](https://youtu.be/4V7CwC_4oss).
+- [Docker Compose with .NET Core & SQL Server (Step by Step)](https://youtu.be/4V7CwC_4oss),
+- [.NET 5 REST API Tutorial - Build From Scratch With C#](https://youtu.be/ZXdFisA_hOY),
+- [Asp.Net Core API from scratch w/ clean architecture and CQRS](https://youtube.com/playlist?list=PL2E-vlKoo_v0VjwlmPFljWJI42kpAdXel),
+- [ASP.NET 6 REST API Following CLEAN ARCHITECTURE & DDD Tutorial](https://youtu.be/fhM0V2N1GpY).
 
 Also used these courses:
 
