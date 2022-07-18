@@ -24,7 +24,7 @@ Also used these courses:
 - [Using OpenAPI/Swagger for Testing and Code Generation in ASP.NET Core 2](https://app.pluralsight.com/library/courses/asp-dot-net-openapi-swagger-testing-code-generation/table-of-contents) [:file_folder:](https://app.pluralsight.com/library/courses/asp-dot-net-openapi-swagger-testing-code-generation/exercise-files),
 - [Building GraphQL APIs with ASP.NET Core 2](https://app.pluralsight.com/library/courses/building-graphql-apis-aspdotnet-core/table-of-contents) [:file_folder:](https://app.pluralsight.com/library/courses/building-graphql-apis-aspdotnet-core/exercise-files).
 
-This is (sort of) continuation of these project(-s):
+This is (sort of) continuation of these projects:
 
 - [MyHotels](https://github.com/sswietoniowski/work-codecool-csharp-webapi-MyHotels),
 - [MyMovies](https://github.com/sswietoniowski/work-codecool-csharp-httpclient-MyMovies),
