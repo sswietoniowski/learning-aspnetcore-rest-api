@@ -11,12 +11,18 @@ Based on these courses:
 - [Docker Compose with .NET Core & SQL Server (Step by Step)](https://youtu.be/4V7CwC_4oss),
 - [.NET 5 REST API Tutorial - Build From Scratch With C#](https://youtu.be/ZXdFisA_hOY),
 - [Asp.Net Core API from scratch w/ clean architecture and CQRS](https://youtube.com/playlist?list=PL2E-vlKoo_v0VjwlmPFljWJI42kpAdXel),
-- [ASP.NET 6 REST API Following CLEAN ARCHITECTURE & DDD Tutorial](https://youtu.be/fhM0V2N1GpY).
+- [ASP.NET 6 REST API Following CLEAN ARCHITECTURE & DDD Tutorial](https://youtu.be/fhM0V2N1GpY),
+- [GraphQL API with .NET 5 and Hot Chocolate](https://youtu.be/HuN94qNwQmM) [:file_folder:](https://github.com/binarythistle/S04E01---.NET-5-GraphQL-API).
 
 Also used these courses:
 
 - [Designing RESTful Web APIs](https://app.pluralsight.com/library/courses/designing-restful-web-apis/table-of-contents) [:file_folder:](https://app.pluralsight.com/library/courses/designing-restful-web-apis/exercise-files).
-- [Building a RESTful API with ASP.NET Core 3](https://app.pluralsight.com/library/courses/asp-dot-net-core-3-restful-api-building/table-of-contents) [:file_folder:](https://app.pluralsight.com/library/courses/asp-dot-net-core-3-restful-api-building/exercise-files) :fire:.
+- [Building a RESTful API with ASP.NET Core 3](https://app.pluralsight.com/library/courses/asp-dot-net-core-3-restful-api-building/table-of-contents) [:file_folder:](https://app.pluralsight.com/library/courses/asp-dot-net-core-3-restful-api-building/exercise-files),
+- [Implementing Advanced RESTful Concerns with ASP.NET Core 3](https://app.pluralsight.com/library/courses/asp-dot-net-core-3-advanced-restful-concerns/table-of-contents) [:file_folder:](https://app.pluralsight.com/library/courses/asp-dot-net-core-3-advanced-restful-concerns/exercise-files),
+- [Documenting an ASP.NET Core 2 API with OpenAPI / Swagger](https://app.pluralsight.com/library/courses/aspdotnet-core-api-openapi-swagger/table-of-contents) [:file_folder:](https://app.pluralsight.com/library/courses/aspdotnet-core-api-openapi-swagger/exercise-files),
+- [Building an Async API with ASP.NET Core 3](https://app.pluralsight.com/library/courses/building-async-api-aspdotnet-core/table-of-contents) [:file_folder:](https://app.pluralsight.com/library/courses/building-async-api-aspdotnet-core/exercise-files),
+- [Using OpenAPI/Swagger for Testing and Code Generation in ASP.NET Core 2](https://app.pluralsight.com/library/courses/asp-dot-net-openapi-swagger-testing-code-generation/table-of-contents) [:file_folder:](https://app.pluralsight.com/library/courses/asp-dot-net-openapi-swagger-testing-code-generation/exercise-files),
+- [Building GraphQL APIs with ASP.NET Core 2](https://app.pluralsight.com/library/courses/building-graphql-apis-aspdotnet-core/table-of-contents) [:file_folder:](https://app.pluralsight.com/library/courses/building-graphql-apis-aspdotnet-core/exercise-files).
 
 This is (sort of) continuation of these project(-s):
 
