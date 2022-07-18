@@ -27,4 +27,5 @@ Also used these courses:
 This is (sort of) continuation of these project(-s):
 
 - [MyHotels](https://github.com/sswietoniowski/work-codecool-csharp-webapi-MyHotels),
-- [MyMovies](https://github.com/sswietoniowski/work-codecool-csharp-httpclient-MyMovies).
+- [MyMovies](https://github.com/sswietoniowski/work-codecool-csharp-httpclient-MyMovies),
+- [Learning ASP.NET Core - SOLID and Clean Architecture](https://github.com/sswietoniowski/learning-aspnetcore-solid-and-clean-architecture).
