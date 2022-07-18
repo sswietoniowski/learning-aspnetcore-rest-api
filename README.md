@@ -9,6 +9,11 @@ Based on these courses:
 - [Step by step - Run and Connect to SQL Server in Docker](https://youtu.be/SJAl3vOX05M),
 - [Docker Compose with .NET Core & SQL Server (Step by Step)](https://youtu.be/4V7CwC_4oss).
 
+Also used these courses:
+
+- [Designing RESTful Web APIs](https://app.pluralsight.com/library/courses/designing-restful-web-apis/table-of-contents) [:file_folder:](https://app.pluralsight.com/library/courses/designing-restful-web-apis/exercise-files).
+- [Building a RESTful API with ASP.NET Core 3](https://app.pluralsight.com/library/courses/asp-dot-net-core-3-restful-api-building/table-of-contents) [:file_folder:](https://app.pluralsight.com/library/courses/asp-dot-net-core-3-restful-api-building/exercise-files).
+
 This is (sort of) continuation of these project(-s):
 
 - [MyHotels](https://github.com/sswietoniowski/work-codecool-csharp-webapi-MyHotels),
