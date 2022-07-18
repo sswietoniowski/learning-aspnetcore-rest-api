@@ -7,6 +7,8 @@ var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
 {
+    app.UseDeveloperExceptionPage();
+    
     app.UseSwagger();
     app.MapSwagger();
     app.UseSwaggerUI();
