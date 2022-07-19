@@ -2,6 +2,16 @@
 
 This is a sample API implementation using .NET.
 
+## Repository Contents
+
+This repository contains the following sub-directories (with different API implementations):
+
+- [mvc](https://github.com/sswietoniowski/learning-aspnetcore-rest-api/tree/master/mvc) the REST API created using MVC controllers,
+- [minimal](https://github.com/sswietoniowski/learning-aspnetcore-rest-api/tree/master/minimal) the REST API created using minimal API endpoints,
+- [clean](https://github.com/sswietoniowski/learning-aspnetcore-rest-api/tree/master/clean) the REST API created using clean architecture approach,
+- [graphql](https://github.com/sswietoniowski/learning-aspnetcore-rest-api/tree/master/graphql) the API created using GraphQL,
+- [grpc](https://github.com/sswietoniowski/learning-aspnetcore-rest-api/tree/master/grpc) the API created using GRPC.
+
 ## Learning Resources
 
 Based on these courses:
