@@ -1,5 +1,9 @@
 # Sample Minimal REST API (.NET 6)
 
+Sample REST API for a Minimal Web Application.
+
+## Setup
+
 This solution was created using these commands:
 
 ```
@@ -17,6 +21,8 @@ dotnet new tool-manifest --output "." --force
 The following file(-s) was(were) then created/modified:
 
 - .gitattributes - created based on [this article](https://rehansaeed.com/gitattributes-best-practices/).
+
+## Helper Commands
 
 To support Entity Framework you should execute these commands:
 

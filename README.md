@@ -1,5 +1,9 @@
 # Learning ASP.NET Core (.NET 5 & .NET 6) - REST API
 
+This is a sample API implementation using .NET.
+
+## Learning Resources
+
 Based on these courses:
 
 - [Step by Step Tutorial - .Net Core MVC REST API](https://youtu.be/mUAZ-EbGBOg) [:file_folder:](https://github.com/binarythistle/S02E01-REST-API-.Net-Core) :fire:,
@@ -29,3 +33,9 @@ This is (sort of) continuation of these projects:
 - [MyHotels](https://github.com/sswietoniowski/work-codecool-csharp-webapi-MyHotels),
 - [MyMovies](https://github.com/sswietoniowski/work-codecool-csharp-httpclient-MyMovies),
 - [Learning ASP.NET Core - SOLID and Clean Architecture](https://github.com/sswietoniowski/learning-aspnetcore-solid-and-clean-architecture).
+
+## Useful Tools
+
+Some useful tools:
+
+- [JSON Editor Online](https://jsoneditoronline.org/).

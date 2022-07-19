@@ -1,5 +1,9 @@
 # Sample MVC REST API (.NET 5)
 
+Sample REST API for a MVC Web Application.
+
+## Setup
+
 This solution was created using these commands:
 
 ```
@@ -27,6 +31,8 @@ The following file(-s) was(were) then created/modified:
 ```
 
 - .gitattributes - created based on [this article](https://rehansaeed.com/gitattributes-best-practices/).
+
+## Helper Commands
 
 To support Entity Framework project file ("mvc.csproj") was modified, to include the following:
 
