@@ -35,13 +35,13 @@ dotnet tool install dotnet-ef --configfile nuget.config
 To add a new migration use:
 
 ```
-dotnet ef migrations add <migrationname>
+dotnet ef migrations add <migrationname> --output-dir "DataAccess/Data/Migrations"
 ```
 
 or from the Package Manager Console use:
 
 ```powershell
-Add-Migration <migrationname>
+Add-Migration <migrationname> -OutputDir "DataAccess/Data/Migrations"
 ```
 
 To apply the migrations to the database use:
@@ -91,3 +91,5 @@ or from the Package Manager Console use:
 ```powershell
 Drop-Database
 ```
+
+More info about how to manage migrations can be found [here](https://docs.microsoft.com/en-us/ef/core/managing-schemas/migrations/managing?tabs=dotnet-core-cli).
