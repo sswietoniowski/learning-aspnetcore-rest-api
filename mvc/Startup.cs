@@ -4,6 +4,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using Microsoft.EntityFrameworkCore;
+using mvc.DataAccess;
 
 namespace mvc
 {
@@ -18,6 +20,10 @@ namespace mvc
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<QuotesDbContext>(options =>
+            {
+                options.UseSqlServer(Configuration.GetConnectionString("QuotesDb"));
+            });
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
