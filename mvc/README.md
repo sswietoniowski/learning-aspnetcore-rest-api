@@ -28,7 +28,7 @@ The following file(-s) was(were) then created/modified:
 
 - .gitattributes - created based on [this article](https://rehansaeed.com/gitattributes-best-practices/).
 
-To support Entity Framework I have to modify project file ("mvc.csproj") to include the following:
+To support Entity Framework project file ("mvc.csproj") was modified, to include the following:
 
 ```xml
 <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.*" Condition="'$(TargetFramework)' == 'net5.0'" />
