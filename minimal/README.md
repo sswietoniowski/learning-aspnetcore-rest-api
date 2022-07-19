@@ -53,7 +53,7 @@ Update-Database
 To remove the last migration use:
 
 ```
-dotnet ef remove <migrationname>
+dotnet ef migrations remove
 ```
 
 or from the Package Manager Console use:
