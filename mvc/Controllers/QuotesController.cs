@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using mvc.Models;
 using mvc.DataAccess;
@@ -19,13 +20,13 @@ namespace mvc.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<Quote>> GetAll()
         {
-            return Ok();
+            return _context.Quotes;
         }
 
         [HttpGet("{id}")]
         public ActionResult<Quote> GetById(int id)
         {
-            return Ok();
+            return _context.Quotes.Find(id);
         }
 
         [HttpPost]
