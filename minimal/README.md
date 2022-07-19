@@ -49,3 +49,15 @@ or from the Package Manager Console use:
 ```powershell
 Update-Database
 ```
+
+To remove the last migration use:
+
+```
+dotnet ef remove <migrationname>
+```
+
+or from the Package Manager Console use:
+
+```powershell
+Remove-Migration
+```
