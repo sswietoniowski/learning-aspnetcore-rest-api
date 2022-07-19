@@ -14,7 +14,7 @@ This repository contains the following sub-directories (with different API imple
 
 ## Learning Resources
 
-Based on these courses:
+Based on these (free) courses:
 
 - [Step by Step Tutorial - .Net Core MVC REST API](https://youtu.be/mUAZ-EbGBOg) [:file_folder:](https://github.com/binarythistle/S02E01-REST-API-.Net-Core) :fire:,
 - [.NET Core 3.1 MVC REST API - Full Course](https://youtu.be/fmvcAzHpsk8) [:file_folder:](https://github.com/binarythistle/S03E02---.NET-Core-3.1-MVC-REST-API),
@@ -29,7 +29,7 @@ Based on these courses:
 - [GraphQL API with .NET 5 and Hot Chocolate](https://youtu.be/HuN94qNwQmM) [:file_folder:](https://github.com/binarythistle/S04E01---.NET-5-GraphQL-API),
 - [Postman Beginner's Course - API Testing](https://youtu.be/VywxIQ2ZXw4) [:file_folder:](https://github.com/vdespa/introduction-to-postman-course).
 
-Also used these courses:
+Also used these (paid) courses:
 
 - [Designing RESTful Web APIs](https://app.pluralsight.com/library/courses/designing-restful-web-apis/table-of-contents) [:file_folder:](https://app.pluralsight.com/library/courses/designing-restful-web-apis/exercise-files).
 - [Building a RESTful API with ASP.NET Core 3](https://app.pluralsight.com/library/courses/asp-dot-net-core-3-restful-api-building/table-of-contents) [:file_folder:](https://app.pluralsight.com/library/courses/asp-dot-net-core-3-restful-api-building/exercise-files),
