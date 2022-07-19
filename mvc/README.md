@@ -47,11 +47,23 @@ dotnet tool install dotnet-ef --version 5.* --configfile nuget.config
 To add a new migration use:
 
 ```
-dotnet ef migrations add <migration-name>
+dotnet ef migrations add <migrationname>
+```
+
+or from the Package Manager Console use:
+
+```powershell
+Add-Migration <migrationname>
 ```
 
 To apply the migrations to the database use:
 
 ```
 dotnet ef database update
+```
+
+or from the Package Manager Console use:
+
+```powershell
+Update-Database
 ```

@@ -25,3 +25,27 @@ dotnet add package Microsoft.EntityFrameworkCore.SqlServer --framework net6.0
 dotnet add package Microsoft.EntityFrameworkCore.Design --framework net6.0
 dotnet tool install dotnet-ef --configfile nuget.config
 ```
+
+To add a new migration use:
+
+```
+dotnet ef migrations add <migrationname>
+```
+
+or from the Package Manager Console use:
+
+```powershell
+Add-Migration <migrationname>
+```
+
+To apply the migrations to the database use:
+
+```
+dotnet ef database update
+```
+
+or from the Package Manager Console use:
+
+```powershell
+Update-Database
+```
