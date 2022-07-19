@@ -50,7 +50,7 @@ namespace mvc.Controllers
 
         // PUT: api/quotes/id
         [HttpPut("{id}")]
-        public ActionResult<Quote> UpdateQuote(int id, [FromBody] Quote quote)
+        public ActionResult<Quote> ReplaceQuote(int id, [FromBody] Quote quote)
         {
             var quoteToUpdate = _context.Quotes.Find(id);
 
