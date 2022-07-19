@@ -48,6 +48,7 @@ namespace mvc.Controllers
             return Ok(quote);
         }
 
+        // PUT: api/quotes/id
         [HttpPut("{id}")]
         public ActionResult<Quote> UpdateQuote(int id, [FromBody] Quote quote)
         {
@@ -67,6 +68,7 @@ namespace mvc.Controllers
             return Ok(quoteToUpdate);
         }
 
+        // DELETE: api/quotes/id
         [HttpDelete("{id}")]
         public ActionResult<Quote> DeleteQuote(int id)
         {
