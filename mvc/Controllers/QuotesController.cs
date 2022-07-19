@@ -21,5 +21,29 @@ namespace mvc.Controllers
         {
             return Ok();
         }
+
+        [HttpGet("{id}")]
+        public ActionResult<Quote> GetById(int id)
+        {
+            return Ok();
+        }
+
+        [HttpPost]
+        public ActionResult<Quote> Create([FromBody] Quote quote)
+        {
+            return Ok();
+        }
+
+        [HttpPut("{id}")]
+        public ActionResult<Quote> Update(int id, [FromBody] Quote quote)
+        {
+            return Ok();
+        }
+
+        [HttpDelete("{id}")]
+        public ActionResult<Quote> Delete(int id)
+        {
+            return Ok();
+        }
     }
 }
