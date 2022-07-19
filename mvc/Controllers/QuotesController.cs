@@ -38,22 +38,50 @@ namespace mvc.Controllers
             return Ok(quote);
         }
 
+        // POST: api/quotes
         [HttpPost]
         public ActionResult<Quote> Create([FromBody] Quote quote)
         {
-            return Ok();
+            _context.Quotes.Add(quote);
+            _context.SaveChanges();
+
+            return Ok(quote);
         }
 
         [HttpPut("{id}")]
         public ActionResult<Quote> Update(int id, [FromBody] Quote quote)
         {
-            return Ok();
+            var quoteToUpdate = _context.Quotes.Find(id);
+
+            if (quoteToUpdate is null)
+            {
+                return NotFound();
+            }
+
+            quoteToUpdate.Text = quote.Text;
+            quoteToUpdate.Author = quote.Author;
+            quoteToUpdate.Language = quote.Language;
+
+            _context.SaveChanges();
+
+            return Ok(quoteToUpdate);
         }
 
         [HttpDelete("{id}")]
         public ActionResult<Quote> Delete(int id)
         {
-            return Ok();
+            var quoteToDelete = _context.Quotes.Find(id);
+
+            if (quoteToDelete is null)
+            {
+                return NotFound();
+            }
+
+            _context.Quotes.Remove(quoteToDelete);
+
+            _context.SaveChanges();
+
+            return Ok(quoteToDelete);
         }
     }
 }
