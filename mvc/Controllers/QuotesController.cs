@@ -17,18 +17,25 @@ namespace mvc.Controllers
             _context = context;
         }
 
-        // GET: api/Quotes
+        // GET: api/quotes
         [HttpGet]
         public ActionResult<IEnumerable<Quote>> GetAll()
         {
-            return _context.Quotes;
+            return Ok(_context.Quotes);
         }
 
-        // GET: api/Quotes/id
+        // GET: api/quotes/id
         [HttpGet("{id}")]
         public ActionResult<Quote> GetById(int id)
         {
-            return _context.Quotes.Find(id);
+            var quote = _context.Quotes.Find(id);
+
+            if (quote is null)
+            {
+                return NotFound();
+            }
+
+            return Ok(quote);
         }
 
         [HttpPost]
