@@ -36,7 +36,7 @@ To support Entity Framework project file ("mvc.csproj") was modified, to include
 <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.*" Condition="'$(TargetFramework)' == 'net5.0'" />
 ```
 
-or execute these commands:
+The same can be achieved by using these commands:
 
 ```
 dotnet add package Microsoft.EntityFrameworkCore.SqlServer --version 5.* --framework net5.0
