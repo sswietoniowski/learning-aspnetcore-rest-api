@@ -40,7 +40,7 @@ namespace mvc.Controllers
 
         // POST: api/quotes
         [HttpPost]
-        public ActionResult<Quote> CreateQuote([FromBody] Quote quote)
+        public IActionResult CreateQuote([FromBody] Quote quote)
         {
             _context.Quotes.Add(quote);
             _context.SaveChanges();
@@ -50,7 +50,7 @@ namespace mvc.Controllers
 
         // PUT: api/quotes/id
         [HttpPut("{id}")]
-        public ActionResult<Quote> ReplaceQuote(int id, [FromBody] Quote quote)
+        public IActionResult ReplaceQuote(int id, [FromBody] Quote quote)
         {
             if (id != quote.Id)
             {
@@ -70,12 +70,12 @@ namespace mvc.Controllers
 
             _context.SaveChanges();
 
-            return Ok(quoteToUpdate);
+            return NoContent();
         }
 
         // DELETE: api/quotes/id
         [HttpDelete("{id}")]
-        public ActionResult<Quote> DeleteQuote(int id)
+        public IActionResult<Quote> DeleteQuote(int id)
         {
             var quoteToDelete = _context.Quotes.Find(id);
 
@@ -88,7 +88,7 @@ namespace mvc.Controllers
 
             _context.SaveChanges();
 
-            return Ok(quoteToDelete);
+            return NoContent();
         }
     }
 }
