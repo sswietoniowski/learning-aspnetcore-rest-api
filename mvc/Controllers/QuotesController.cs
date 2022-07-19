@@ -52,6 +52,11 @@ namespace mvc.Controllers
         [HttpPut("{id}")]
         public ActionResult<Quote> ReplaceQuote(int id, [FromBody] Quote quote)
         {
+            if (id != quote.Id)
+            {
+                return BadRequest();
+            }
+
             var quoteToUpdate = _context.Quotes.Find(id);
 
             if (quoteToUpdate is null)
