@@ -75,7 +75,7 @@ namespace mvc.Controllers
 
         // DELETE: api/quotes/id
         [HttpDelete("{id}")]
-        public IActionResult<Quote> DeleteQuote(int id)
+        public IActionResult DeleteQuote(int id)
         {
             var quoteToDelete = _context.Quotes.Find(id);
 
