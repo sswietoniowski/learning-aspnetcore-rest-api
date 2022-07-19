@@ -19,14 +19,14 @@ namespace mvc.Controllers
 
         // GET: api/quotes
         [HttpGet]
-        public ActionResult<IEnumerable<Quote>> GetAll()
+        public ActionResult<IEnumerable<Quote>> GetQuotes()
         {
             return Ok(_context.Quotes);
         }
 
         // GET: api/quotes/id
         [HttpGet("{id}")]
-        public ActionResult<Quote> GetById(int id)
+        public ActionResult<Quote> GetQuote(int id)
         {
             var quote = _context.Quotes.Find(id);
 
@@ -40,7 +40,7 @@ namespace mvc.Controllers
 
         // POST: api/quotes
         [HttpPost]
-        public ActionResult<Quote> Create([FromBody] Quote quote)
+        public ActionResult<Quote> CreateQuote([FromBody] Quote quote)
         {
             _context.Quotes.Add(quote);
             _context.SaveChanges();
@@ -49,7 +49,7 @@ namespace mvc.Controllers
         }
 
         [HttpPut("{id}")]
-        public ActionResult<Quote> Update(int id, [FromBody] Quote quote)
+        public ActionResult<Quote> UpdateQuote(int id, [FromBody] Quote quote)
         {
             var quoteToUpdate = _context.Quotes.Find(id);
 
@@ -68,7 +68,7 @@ namespace mvc.Controllers
         }
 
         [HttpDelete("{id}")]
-        public ActionResult<Quote> Delete(int id)
+        public ActionResult<Quote> DeleteQuote(int id)
         {
             var quoteToDelete = _context.Quotes.Find(id);
 
