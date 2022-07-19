@@ -17,12 +17,14 @@ namespace mvc.Controllers
             _context = context;
         }
 
+        // GET: api/Quotes
         [HttpGet]
         public ActionResult<IEnumerable<Quote>> GetAll()
         {
             return _context.Quotes;
         }
 
+        // GET: api/Quotes/id
         [HttpGet("{id}")]
         public ActionResult<Quote> GetById(int id)
         {
