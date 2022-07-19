@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using mvc.Configurations.Entities;
 using mvc.Models;
 
-namespace mvc.DataAccess
+namespace mvc.DataAccess.Data
 {
     public class QuotesDbContext : DbContext
     {

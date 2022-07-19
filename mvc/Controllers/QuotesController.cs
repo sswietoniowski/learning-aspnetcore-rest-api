@@ -1,8 +1,8 @@
-using System.Collections.Generic;
-using System.Linq;
 using Microsoft.AspNetCore.Mvc;
+using mvc.DataAccess.Data;
 using mvc.Models;
-using mvc.DataAccess;
+using System.Collections.Generic;
+using mvc.DataAccess.Repository.Interfaces;
 
 namespace mvc.Controllers
 {
@@ -10,25 +10,25 @@ namespace mvc.Controllers
     [Route("api/[controller]")]
     public class QuotesController : ControllerBase
     {
-        private readonly QuotesDbContext _context;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public QuotesController(QuotesDbContext context)
+        public QuotesController(IUnitOfWork unitOfWork)
         {
-            _context = context;
+            _unitOfWork = unitOfWork;
         }
 
         // GET: api/quotes
         [HttpGet]
         public ActionResult<IEnumerable<Quote>> GetQuotes()
         {
-            return Ok(_context.Quotes);
+            return Ok(_unitOfWork.QuoteRepository.GetAll());
         }
 
         // GET: api/quotes/id
         [HttpGet("{id}")]
         public ActionResult<Quote> GetQuote(int id)
         {
-            var quote = _context.Quotes.Find(id);
+            var quote = _unitOfWork.QuoteRepository.Get(id);
 
             if (quote is null)
             {
@@ -40,24 +40,24 @@ namespace mvc.Controllers
 
         // POST: api/quotes
         [HttpPost]
-        public IActionResult CreateQuote([FromBody] Quote quote)
+        public IActionResult PostQuote([FromBody] Quote quote)
         {
-            _context.Quotes.Add(quote);
-            _context.SaveChanges();
+            _unitOfWork.QuoteRepository.Add(quote);
+            _unitOfWork.Save();
 
             return CreatedAtAction(nameof(GetQuote), new Quote { Id = quote.Id }, quote);
         }
 
         // PUT: api/quotes/id
         [HttpPut("{id}")]
-        public IActionResult ReplaceQuote(int id, [FromBody] Quote quote)
+        public IActionResult PutQuote(int id, [FromBody] Quote quote)
         {
             if (id != quote.Id)
             {
                 return BadRequest();
             }
 
-            var quoteToUpdate = _context.Quotes.Find(id);
+            var quoteToUpdate = _unitOfWork.QuoteRepository.Get(id);
 
             if (quoteToUpdate is null)
             {
@@ -68,7 +68,8 @@ namespace mvc.Controllers
             quoteToUpdate.Author = quote.Author;
             quoteToUpdate.Language = quote.Language;
 
-            _context.SaveChanges();
+            _unitOfWork.QuoteRepository.Modify(quoteToUpdate);
+            _unitOfWork.Save();
 
             return NoContent();
         }
@@ -77,16 +78,15 @@ namespace mvc.Controllers
         [HttpDelete("{id}")]
         public IActionResult DeleteQuote(int id)
         {
-            var quoteToDelete = _context.Quotes.Find(id);
+            var quoteToDelete = _unitOfWork.QuoteRepository.Get(id);
 
             if (quoteToDelete is null)
             {
                 return NotFound();
             }
 
-            _context.Quotes.Remove(quoteToDelete);
-
-            _context.SaveChanges();
+            _unitOfWork.QuoteRepository.Remove(quoteToDelete);
+            _unitOfWork.Save();
 
             return NoContent();
         }

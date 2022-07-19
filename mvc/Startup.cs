@@ -1,11 +1,13 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-using Microsoft.EntityFrameworkCore;
-using mvc.DataAccess;
+using mvc.DataAccess.Data;
+using mvc.DataAccess.Repository;
+using mvc.DataAccess.Repository.Interfaces;
 
 namespace mvc
 {
@@ -24,6 +26,8 @@ namespace mvc
             {
                 options.UseSqlServer(Configuration.GetConnectionString("QuotesDb"));
             });
+
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
