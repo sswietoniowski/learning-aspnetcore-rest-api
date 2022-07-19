@@ -28,10 +28,18 @@ The following file(-s) was(were) then created/modified:
 
 - .gitattributes - created based on [this article](https://rehansaeed.com/gitattributes-best-practices/).
 
-To support Entity Framework you should execute these commands:
+To support Entity Framework I have to modify project file ("mvc.csproj") to include the following:
+
+```xml
+<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.*" Condition="'$(TargetFramework)' == 'net5.0'" />
+<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.*" Condition="'$(TargetFramework)' == 'net5.0'" />
+<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.*" Condition="'$(TargetFramework)' == 'net5.0'" />
+```
+
+or execute these commands:
 
 ```
-dotnet add package Microsoft.EntityFrameworkCore.SqlServer --framework net5.0
-dotnet add package Microsoft.EntityFrameworkCore.Design --framework net5.0
-dotnet tool install dotnet-ef --configfile nuget.config
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer --version 5.* --framework net5.0
+dotnet add package Microsoft.EntityFrameworkCore.Design --version 5.* --framework net5.0
+dotnet tool install dotnet-ef --version 5.* --configfile nuget.config
 ```
