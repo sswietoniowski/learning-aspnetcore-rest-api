@@ -26,7 +26,8 @@ Based on these courses:
 - [.NET 5 REST API Tutorial - Build From Scratch With C#](https://youtu.be/ZXdFisA_hOY),
 - [Asp.Net Core API from scratch w/ clean architecture and CQRS](https://youtube.com/playlist?list=PL2E-vlKoo_v0VjwlmPFljWJI42kpAdXel),
 - [ASP.NET 6 REST API Following CLEAN ARCHITECTURE & DDD Tutorial](https://youtu.be/fhM0V2N1GpY),
-- [GraphQL API with .NET 5 and Hot Chocolate](https://youtu.be/HuN94qNwQmM) [:file_folder:](https://github.com/binarythistle/S04E01---.NET-5-GraphQL-API).
+- [GraphQL API with .NET 5 and Hot Chocolate](https://youtu.be/HuN94qNwQmM) [:file_folder:](https://github.com/binarythistle/S04E01---.NET-5-GraphQL-API),
+- [Postman Beginner's Course - API Testing](https://youtu.be/VywxIQ2ZXw4) [:file_folder:](https://github.com/vdespa/introduction-to-postman-course).
 
 Also used these courses:
 
