@@ -16,6 +16,7 @@ namespace mvc.DataAccess
         {
             base.OnModelCreating(builder);
 
+            // alternatively one might use: https://docs.microsoft.com/pl-pl/ef/core/modeling/data-seeding
             builder.ApplyConfiguration(new QuoteConfiguration());
         }
     }

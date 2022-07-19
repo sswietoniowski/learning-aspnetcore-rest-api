@@ -45,7 +45,7 @@ namespace mvc.Controllers
             _context.Quotes.Add(quote);
             _context.SaveChanges();
 
-            return Ok(quote);
+            return CreatedAtAction(nameof(GetQuote), new Quote { Id = quote.Id }, quote);
         }
 
         // PUT: api/quotes/id
