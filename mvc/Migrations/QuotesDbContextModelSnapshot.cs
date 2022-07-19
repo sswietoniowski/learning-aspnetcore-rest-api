@@ -61,9 +61,9 @@ namespace mvc.Migrations
                         new
                         {
                             Id = 3,
-                            Author = "Unknown",
+                            Author = "Military Wisdom",
                             Language = "English",
-                            Text = "Don't ever be the first, don't ever be the last, and don't ever volunteer for anything."
+                            Text = "Never be the first, never be the last, and never ever volunteer to do anything."
                         },
                         new
                         {

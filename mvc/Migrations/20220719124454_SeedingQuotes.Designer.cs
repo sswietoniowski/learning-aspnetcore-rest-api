@@ -9,7 +9,7 @@ using mvc.DataAccess;
 namespace mvc.Migrations
 {
     [DbContext(typeof(QuotesDbContext))]
-    [Migration("20220719092215_SeedingQuotes")]
+    [Migration("20220719124454_SeedingQuotes")]
     partial class SeedingQuotes
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -63,9 +63,9 @@ namespace mvc.Migrations
                         new
                         {
                             Id = 3,
-                            Author = "Unknown",
+                            Author = "Military Wisdom",
                             Language = "English",
-                            Text = "Don't ever be the first, don't ever be the last, and don't ever volunteer for anything."
+                            Text = "Never be the first, never be the last, and never ever volunteer to do anything."
                         },
                         new
                         {

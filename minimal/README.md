@@ -67,3 +67,27 @@ or from the Package Manager Console use:
 ```powershell
 Remove-Migration
 ```
+
+To revert the last database migration use:
+
+```
+dotnet ef database update <lastgoodmigration>
+```
+
+or from the Package Manager Console use:
+
+```powershell
+Update-Database -Migration <lastgoodmigration>
+```
+
+To drop the database use:
+
+```
+dotnet ef database drop
+```
+
+or from the Package Manager Console use:
+
+```powershell
+Drop-Database
+```

@@ -25,8 +25,8 @@ namespace mvc.Configurations.Entities
                 }, new Quote
                 {
                     Id = 3,
-                    Text = "Don't ever be the first, don't ever be the last, and don't ever volunteer for anything.",
-                    Author = "Unknown",
+                    Text = "Never be the first, never be the last, and never ever volunteer to do anything.",
+                    Author = "Military Wisdom",
                     Language = "English"
                 },
                 new Quote
