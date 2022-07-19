@@ -43,3 +43,15 @@ dotnet add package Microsoft.EntityFrameworkCore.SqlServer --version 5.* --frame
 dotnet add package Microsoft.EntityFrameworkCore.Design --version 5.* --framework net5.0
 dotnet tool install dotnet-ef --version 5.* --configfile nuget.config
 ```
+
+To add a new migration use:
+
+```
+dotnet ef migrations add <migration-name>
+```
+
+To apply the migrations to the database use:
+
+```
+dotnet ef database update
+```
