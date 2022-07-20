@@ -27,7 +27,8 @@ Based on these (free) courses:
 - [Asp.Net Core API from scratch w/ clean architecture and CQRS](https://youtube.com/playlist?list=PL2E-vlKoo_v0VjwlmPFljWJI42kpAdXel),
 - [ASP.NET 6 REST API Following CLEAN ARCHITECTURE & DDD Tutorial](https://youtu.be/fhM0V2N1GpY),
 - [GraphQL API with .NET 5 and Hot Chocolate](https://youtu.be/HuN94qNwQmM) [:file_folder:](https://github.com/binarythistle/S04E01---.NET-5-GraphQL-API),
-- [Postman Beginner's Course - API Testing](https://youtu.be/VywxIQ2ZXw4) [:file_folder:](https://github.com/vdespa/introduction-to-postman-course).
+- [Postman Beginner's Course - API Testing](https://youtu.be/VywxIQ2ZXw4) [:file_folder:](https://github.com/vdespa/introduction-to-postman-course),
+- [How to Use Visual Studio Code as REST Client to Test REST APIs](https://youtu.be/8uyTn4cg8Xc).
 
 Also used these (paid) courses:
 
@@ -45,8 +46,12 @@ This is (sort of) continuation of these projects:
 - [MyMovies](https://github.com/sswietoniowski/work-codecool-csharp-httpclient-MyMovies),
 - [Learning ASP.NET Core - SOLID and Clean Architecture](https://github.com/sswietoniowski/learning-aspnetcore-solid-and-clean-architecture).
 
-## Useful Tools
+## Useful Tools & Libraries
 
-Some useful tools:
+Some useful tools & libraries:
 
-- [JSON Editor Online](https://jsoneditoronline.org/).
+- [Postman](https://www.postman.com/),
+- [Insomnia](https://insomnia.rest/),
+- [Visual Studio Code - REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client),
+- [JSON Editor Online](https://jsoneditoronline.org/),
+- [AutoMapper](https://automapper.org/) [:file_folder:](https://github.com/AutoMapper/AutoMapper).
