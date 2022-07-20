@@ -64,6 +64,8 @@ namespace mvc.Controllers
 
             var createdQuoteDto = _mapper.Map<QuoteDto>(quote);
 
+            // useful info about differences between CreatedAtAction vs CreatedAtRoute:
+            // https://ochzhen.com/blog/created-createdataction-createdatroute-methods-explained-aspnet-core
             return CreatedAtRoute(nameof(GetQuote), new { Id = quote.Id }, createdQuoteDto);
         }
 
