@@ -33,7 +33,7 @@ namespace mvc.Controllers
         }
 
         // GET: api/quotes/id
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name = nameof(GetQuote))]
         public ActionResult<QuoteDto> GetQuote(int id)
         {
             var quote = _unitOfWork.QuoteRepository.Get(id);
@@ -64,7 +64,7 @@ namespace mvc.Controllers
 
             var createdQuoteDto = _mapper.Map<QuoteDto>(quote);
 
-            return CreatedAtAction(nameof(GetQuote), new QuoteDto { Id = quote.Id }, createdQuoteDto);
+            return CreatedAtRoute(nameof(GetQuote), new { Id = quote.Id }, createdQuoteDto);
         }
 
         // PUT: api/quotes/id
