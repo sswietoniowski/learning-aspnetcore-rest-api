@@ -1,6 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
-using mvc.DataAccess.Data;
+﻿using mvc.DataAccess.Data;
 using mvc.DataAccess.Repository.Interfaces;
+using System.Threading.Tasks;
 
 namespace mvc.DataAccess.Repository
 {
@@ -21,9 +21,9 @@ namespace mvc.DataAccess.Repository
             _context?.Dispose();
         }
 
-        public void Save()
+        public async Task Save()
         {
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
         }
     }
 }

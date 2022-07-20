@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Threading.Tasks;
 
 namespace mvc.DataAccess.Repository
 {
@@ -18,7 +19,7 @@ namespace mvc.DataAccess.Repository
             _dbSet = _context.Set<T>();
         }
 
-        public IReadOnlyList<T> GetAll(
+        public async Task<IReadOnlyList<T>> GetAll(
             Expression<Func<T, bool>> filter = null,
             Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
             string includeProperties = null)
@@ -42,18 +43,18 @@ namespace mvc.DataAccess.Repository
 
             if (orderBy is not null)
             {
-                return orderBy(query).ToList();
+                query = orderBy(query);
             }
 
-            return query.ToList();
+            return await query.AsNoTracking().ToListAsync();
         }
 
-        public T Get(int id)
+        public async Task<T> Get(int id)
         {
-            return _dbSet.Find(id);
+            return await _dbSet.FindAsync(id);
         }
 
-        public T Get(
+        public async Task<T> Get(
             Expression<Func<T, bool>> filter = null,
             string includeProperties = null)
         {
@@ -74,17 +75,17 @@ namespace mvc.DataAccess.Repository
                 }
             }
 
-            return query.FirstOrDefault();
+            return await query.FirstOrDefaultAsync();
         }
 
-        public void Add(T entity)
+        public async Task Add(T entity)
         {
-            _dbSet.Add(entity);
+            await _dbSet.AddAsync(entity);
         }
 
-        public void AddRange(IEnumerable<T> entities)
+        public async Task AddRange(IEnumerable<T> entities)
         {
-            _dbSet.AddRange(entities);
+            await _dbSet.AddRangeAsync(entities);
         }
 
         public void Modify(T entity)

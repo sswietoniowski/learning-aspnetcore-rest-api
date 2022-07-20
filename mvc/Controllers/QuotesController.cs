@@ -1,12 +1,11 @@
-using Microsoft.AspNetCore.Mvc;
-using mvc.DataAccess.Data;
-using mvc.Models;
-using System.Collections.Generic;
 using AutoMapper;
 using Microsoft.AspNetCore.JsonPatch;
-using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Mvc;
 using mvc.DataAccess.Repository.Interfaces;
 using mvc.DTOs;
+using mvc.Models;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace mvc.Controllers
 {
@@ -25,9 +24,9 @@ namespace mvc.Controllers
 
         // GET: api/quotes
         [HttpGet]
-        public ActionResult<IEnumerable<QuoteDto>> GetQuotes()
+        public async Task<ActionResult<IEnumerable<QuoteDto>>> GetQuotes()
         {
-            var quotes = _unitOfWork.QuoteRepository.GetAll();
+            var quotes = await _unitOfWork.QuoteRepository.GetAll();
             var quotesDto = _mapper.Map<IEnumerable<QuoteDto>>(quotes);
 
             return Ok(quotesDto);
@@ -35,9 +34,9 @@ namespace mvc.Controllers
 
         // GET: api/quotes/id
         [HttpGet("{id}", Name = nameof(GetQuote))]
-        public ActionResult<QuoteDto> GetQuote(int id)
+        public async Task<ActionResult<QuoteDto>> GetQuote(int id)
         {
-            var quote = _unitOfWork.QuoteRepository.Get(id);
+            var quote = await _unitOfWork.QuoteRepository.Get(id);
 
             if (quote is null)
             {
@@ -51,12 +50,12 @@ namespace mvc.Controllers
 
         // POST: api/quotes
         [HttpPost]
-        public ActionResult<QuoteDto> PostQuote([FromBody] CreateQuoteDto quoteDto)
+        public async Task<ActionResult<QuoteDto>> PostQuote([FromBody] CreateQuoteDto quoteDto)
         {
             var quote = _mapper.Map<Quote>(quoteDto);
 
-            _unitOfWork.QuoteRepository.Add(quote);
-            _unitOfWork.Save();
+            await _unitOfWork.QuoteRepository.Add(quote);
+            await _unitOfWork.Save();
 
             var createdQuoteDto = _mapper.Map<QuoteDto>(quote);
 
@@ -67,14 +66,14 @@ namespace mvc.Controllers
 
         // PUT: api/quotes/id
         [HttpPut("{id}")]
-        public IActionResult PutQuote(int id, [FromBody] UpdateQuoteDto quoteDto)
+        public async Task<IActionResult> PutQuote(int id, [FromBody] UpdateQuoteDto quoteDto)
         {
             if (id != quoteDto.Id)
             {
                 return BadRequest();
             }
 
-            var quoteToUpdate = _unitOfWork.QuoteRepository.Get(id);
+            var quoteToUpdate = await _unitOfWork.QuoteRepository.Get(id);
 
             if (quoteToUpdate is null)
             {
@@ -84,19 +83,19 @@ namespace mvc.Controllers
             _mapper.Map(quoteDto, quoteToUpdate);
 
             _unitOfWork.QuoteRepository.Modify(quoteToUpdate);
-            _unitOfWork.Save();
+            await _unitOfWork.Save();
 
             return NoContent();
         }
 
         // PATCH: api/quotes/id
         [HttpPatch("{id}")]
-        public IActionResult PatchQuote(int id, JsonPatchDocument<UpdateQuoteDto> patchDocument)
+        public async Task<IActionResult> PatchQuote(int id, JsonPatchDocument<UpdateQuoteDto> patchDocument)
         {
             // Here you'll find more info about JSON Patch:
             // https://jsonpatch.com/
 
-            var quoteToUpdate = _unitOfWork.QuoteRepository.Get(id);
+            var quoteToUpdate = await _unitOfWork.QuoteRepository.Get(id);
 
             if (quoteToUpdate is null)
             {
@@ -114,16 +113,16 @@ namespace mvc.Controllers
             _mapper.Map(quoteDtoToPatch, quoteToUpdate);
 
             _unitOfWork.QuoteRepository.Modify(quoteToUpdate);
-            _unitOfWork.Save();
+            await _unitOfWork.Save();
 
             return NoContent();
         }
 
         // DELETE: api/quotes/id
         [HttpDelete("{id}")]
-        public IActionResult DeleteQuote(int id)
+        public async Task<IActionResult> DeleteQuote(int id)
         {
-            var quoteToDelete = _unitOfWork.QuoteRepository.Get(id);
+            var quoteToDelete = await _unitOfWork.QuoteRepository.Get(id);
 
             if (quoteToDelete is null)
             {
@@ -131,7 +130,7 @@ namespace mvc.Controllers
             }
 
             _unitOfWork.QuoteRepository.Remove(quoteToDelete);
-            _unitOfWork.Save();
+            await _unitOfWork.Save();
 
             return NoContent();
         }

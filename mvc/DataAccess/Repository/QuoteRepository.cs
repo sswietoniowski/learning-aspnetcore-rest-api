@@ -1,5 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using mvc.DataAccess.Data;
+﻿using mvc.DataAccess.Data;
 using mvc.DataAccess.Repository.Interfaces;
 using mvc.Models;
 
