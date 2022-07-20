@@ -19,6 +19,7 @@ Based on these (free) courses:
 - [Step by Step Tutorial - .Net Core MVC REST API](https://youtu.be/mUAZ-EbGBOg) [:file_folder:](https://github.com/binarythistle/S02E01-REST-API-.Net-Core) :fire:,
 - [.NET Core 3.1 MVC REST API - Full Course](https://youtu.be/fmvcAzHpsk8) [:file_folder:](https://github.com/binarythistle/S03E02---.NET-Core-3.1-MVC-REST-API),
 - [.NET 6 Minimal API Full Build](https://youtu.be/5YB49OEmbbE) [:file_folder:](https://github.com/binarythistle/S05E03---Minimal-APIs),
+- [ASP.NET Core 5 & 3 & 2.2 REST API Tutorial](https://youtube.com/playlist?list=PLUOequmGnXxOgmSDWU7Tl6iQTsOtyjtwU),
 - [Secure a .NET Core API with Bearer Authentication](https://youtu.be/3PyUjOmuFic) [:file_folder:](https://github.com/binarythistle/S03E01-Secure-.NET-Core-API),
 - [Deploy a .NET Core API with Docker (Step-by-Step)](https://youtu.be/f0lMGPB10bM),
 - [Step by step - Run and Connect to SQL Server in Docker](https://youtu.be/SJAl3vOX05M),
