@@ -93,3 +93,14 @@ Drop-Database
 ```
 
 More info about how to manage migrations can be found [here](https://docs.microsoft.com/en-us/ef/core/managing-schemas/migrations/managing?tabs=dotnet-core-cli).
+
+## Known Limitations
+
+Minimal APIs have some well-known limitations:
+
+- don't support model validation,
+- don't support JSON Patch,
+- don't support filters,
+- don't support _custom_ model binding.
+
+More info about that [here](https://docs.microsoft.com/en-us/aspnet/core/tutorials/min-web-api?view=aspnetcore-6.0&tabs=visual-studio).
