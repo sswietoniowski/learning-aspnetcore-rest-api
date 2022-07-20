@@ -1,0 +1,48 @@
+# More examples at: https://plawgo.pl/2021/04/13/visual-studio-code-rest-client/
+
+### Get all quotes
+GET {{baseUrl}}/api/quotes
+
+### Get a single quote
+GET {{baseUrl}}/api/quotes/{{getQuoteId}}
+
+### Create a new quote
+POST {{baseUrl}}/api/quotes
+Content-Type: application/json
+
+{
+    "Text": "Carpe diem.",
+    "Author": "Horace",
+    "Language": "Latin"
+}
+
+### Replace an existing quote
+PUT {{baseUrl}}/api/quotes/{{putQuoteId}}
+Content-Type: application/json
+
+{
+    "Id": "12",
+    "Text": "Seize the day.",
+    "Author": "Horace",
+    "Language": "English"
+}
+
+### Update an existing quote
+PATCH {{baseUrl}}/api/quotes/{{patchQuoteId}}
+Content-Type: application/json
+
+[
+    {
+        "op": "replace",
+        "path": "/Text",
+        "value": "Chwytaj dzień."
+    },
+    {
+        "op": "replace",
+        "path": "/Language",
+        "value": "Polish"
+    }
+]
+
+### Delete an existing quote
+DELETE {{baseUrl}}/api/quotes/{{deleteQuoteId}}
