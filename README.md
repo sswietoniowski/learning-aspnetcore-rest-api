@@ -58,5 +58,6 @@ Some useful tools & libraries:
 - [Postman](https://www.postman.com/),
 - [Insomnia](https://insomnia.rest/),
 - [Visual Studio Code - REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client),
+- [West Wind WebSurge](https://websurge.west-wind.com/download),
 - [JSON Editor Online](https://jsoneditoronline.org/),
 - [AutoMapper](https://automapper.org/) [:file_folder:](https://github.com/AutoMapper/AutoMapper).
