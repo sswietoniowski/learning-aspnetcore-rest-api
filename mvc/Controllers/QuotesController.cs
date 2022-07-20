@@ -2,7 +2,10 @@ using Microsoft.AspNetCore.Mvc;
 using mvc.DataAccess.Data;
 using mvc.Models;
 using System.Collections.Generic;
+using AutoMapper;
+using Microsoft.Extensions.Logging;
 using mvc.DataAccess.Repository.Interfaces;
+using mvc.DTOs;
 
 namespace mvc.Controllers
 {
@@ -11,22 +14,27 @@ namespace mvc.Controllers
     public class QuotesController : ControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IMapper _mapper;
 
-        public QuotesController(IUnitOfWork unitOfWork)
+        public QuotesController(IUnitOfWork unitOfWork, IMapper mapper)
         {
             _unitOfWork = unitOfWork;
+            _mapper = mapper;
         }
 
         // GET: api/quotes
         [HttpGet]
-        public ActionResult<IEnumerable<Quote>> GetQuotes()
+        public ActionResult<IEnumerable<QuoteDto>> GetQuotes()
         {
-            return Ok(_unitOfWork.QuoteRepository.GetAll());
+            var quotes = _unitOfWork.QuoteRepository.GetAll();
+            var quotesDto = _mapper.Map<IEnumerable<QuoteDto>>(quotes);
+
+            return Ok(quotesDto);
         }
 
         // GET: api/quotes/id
         [HttpGet("{id}")]
-        public ActionResult<Quote> GetQuote(int id)
+        public ActionResult<QuoteDto> GetQuote(int id)
         {
             var quote = _unitOfWork.QuoteRepository.Get(id);
 
@@ -35,13 +43,22 @@ namespace mvc.Controllers
                 return NotFound();
             }
 
-            return Ok(quote);
+            var quoteDto = _mapper.Map<QuoteDto>(quote);
+
+            return Ok(quoteDto);
         }
 
         // POST: api/quotes
         [HttpPost]
-        public IActionResult PostQuote([FromBody] Quote quote)
+        public IActionResult PostQuote([FromBody] CreateQuoteDto quoteDto)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var quote = _mapper.Map<Quote>(quoteDto);
+
             _unitOfWork.QuoteRepository.Add(quote);
             _unitOfWork.Save();
 
@@ -50,9 +67,14 @@ namespace mvc.Controllers
 
         // PUT: api/quotes/id
         [HttpPut("{id}")]
-        public IActionResult PutQuote(int id, [FromBody] Quote quote)
+        public IActionResult PutQuote(int id, [FromBody] UpdateQuoteDto quoteDto)
         {
-            if (id != quote.Id)
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            if (id != quoteDto.Id)
             {
                 return BadRequest();
             }
@@ -64,9 +86,7 @@ namespace mvc.Controllers
                 return NotFound();
             }
 
-            quoteToUpdate.Text = quote.Text;
-            quoteToUpdate.Author = quote.Author;
-            quoteToUpdate.Language = quote.Language;
+            _mapper.Map(quoteDto, quoteToUpdate);
 
             _unitOfWork.QuoteRepository.Modify(quoteToUpdate);
             _unitOfWork.Save();

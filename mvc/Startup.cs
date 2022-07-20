@@ -1,3 +1,4 @@
+using System.Reflection;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -28,6 +29,8 @@ namespace mvc
             });
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+            services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
