@@ -50,7 +50,7 @@ namespace mvc.Controllers
 
         // POST: api/quotes
         [HttpPost]
-        public IActionResult PostQuote([FromBody] CreateQuoteDto quoteDto)
+        public ActionResult<QuoteDto> PostQuote([FromBody] CreateQuoteDto quoteDto)
         {
             if (!ModelState.IsValid)
             {
@@ -62,7 +62,9 @@ namespace mvc.Controllers
             _unitOfWork.QuoteRepository.Add(quote);
             _unitOfWork.Save();
 
-            return CreatedAtAction(nameof(GetQuote), new Quote { Id = quote.Id }, quote);
+            var createdQuoteDto = _mapper.Map<QuoteDto>(quote);
+
+            return CreatedAtAction(nameof(GetQuote), new QuoteDto { Id = quote.Id }, createdQuoteDto);
         }
 
         // PUT: api/quotes/id
