@@ -26,7 +26,7 @@ namespace mvc.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<QuoteDto>>> GetQuotes()
         {
-            var quotes = await _unitOfWork.QuoteRepository.GetAll();
+            var quotes = await _unitOfWork.QuoteRepository.GetAllAsync();
             var quotesDto = _mapper.Map<IEnumerable<QuoteDto>>(quotes);
 
             return Ok(quotesDto);
@@ -36,7 +36,7 @@ namespace mvc.Controllers
         [HttpGet("{id}", Name = nameof(GetQuote))]
         public async Task<ActionResult<QuoteDto>> GetQuote(int id)
         {
-            var quote = await _unitOfWork.QuoteRepository.Get(id);
+            var quote = await _unitOfWork.QuoteRepository.GetAsync(id);
 
             if (quote is null)
             {
@@ -54,8 +54,8 @@ namespace mvc.Controllers
         {
             var quote = _mapper.Map<Quote>(quoteDto);
 
-            await _unitOfWork.QuoteRepository.Add(quote);
-            await _unitOfWork.Save();
+            await _unitOfWork.QuoteRepository.AddAsync(quote);
+            await _unitOfWork.SaveAsync();
 
             var createdQuoteDto = _mapper.Map<QuoteDto>(quote);
 
@@ -73,7 +73,7 @@ namespace mvc.Controllers
                 return BadRequest();
             }
 
-            var quoteToUpdate = await _unitOfWork.QuoteRepository.Get(id);
+            var quoteToUpdate = await _unitOfWork.QuoteRepository.GetAsync(id);
 
             if (quoteToUpdate is null)
             {
@@ -83,7 +83,7 @@ namespace mvc.Controllers
             _mapper.Map(quoteDto, quoteToUpdate);
 
             _unitOfWork.QuoteRepository.Modify(quoteToUpdate);
-            await _unitOfWork.Save();
+            await _unitOfWork.SaveAsync();
 
             return NoContent();
         }
@@ -95,7 +95,7 @@ namespace mvc.Controllers
             // Here you'll find more info about JSON Patch:
             // https://jsonpatch.com/
 
-            var quoteToUpdate = await _unitOfWork.QuoteRepository.Get(id);
+            var quoteToUpdate = await _unitOfWork.QuoteRepository.GetAsync(id);
 
             if (quoteToUpdate is null)
             {
@@ -113,7 +113,7 @@ namespace mvc.Controllers
             _mapper.Map(quoteDtoToPatch, quoteToUpdate);
 
             _unitOfWork.QuoteRepository.Modify(quoteToUpdate);
-            await _unitOfWork.Save();
+            await _unitOfWork.SaveAsync();
 
             return NoContent();
         }
@@ -122,7 +122,7 @@ namespace mvc.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteQuote(int id)
         {
-            var quoteToDelete = await _unitOfWork.QuoteRepository.Get(id);
+            var quoteToDelete = await _unitOfWork.QuoteRepository.GetAsync(id);
 
             if (quoteToDelete is null)
             {
@@ -130,7 +130,7 @@ namespace mvc.Controllers
             }
 
             _unitOfWork.QuoteRepository.Remove(quoteToDelete);
-            await _unitOfWork.Save();
+            await _unitOfWork.SaveAsync();
 
             return NoContent();
         }
