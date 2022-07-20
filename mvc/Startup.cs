@@ -1,4 +1,3 @@
-using System.Reflection;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -9,6 +8,8 @@ using Microsoft.OpenApi.Models;
 using mvc.DataAccess.Data;
 using mvc.DataAccess.Repository;
 using mvc.DataAccess.Repository.Interfaces;
+using Newtonsoft.Json.Serialization;
+using System.Reflection;
 
 namespace mvc
 {
@@ -32,10 +33,15 @@ namespace mvc
 
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
-            services.AddControllers();
-            services.AddSwaggerGen(c =>
+            services.AddControllers().AddNewtonsoftJson(setttings =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "mvc", Version = "v1" });
+                setttings.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+                setttings.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+            });
+
+            services.AddSwaggerGen(options =>
+            {
+                options.SwaggerDoc("v1", new OpenApiInfo { Title = "mvc", Version = "v1" });
             });
         }
 
@@ -46,7 +52,7 @@ namespace mvc
                 app.UseDeveloperExceptionPage();
 
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "mvc v1"));
+                app.UseSwaggerUI(options => options.SwaggerEndpoint("/swagger/v1/swagger.json", "mvc v1"));
             }
 
             app.UseHttpsRedirection();

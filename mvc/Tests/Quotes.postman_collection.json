@@ -48,36 +48,6 @@
 			"response": []
 		},
 		{
-			"name": "https://localhost:5001/api/quotes/5",
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"Id\": 12,\r\n    \"Text\": \"Per ardua ad astra\",\r\n    \"Author\": \"Unknown\",\r\n    \"Language\": \"Latin\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "https://localhost:5001/api/quotes/5",
-					"protocol": "https",
-					"host": [
-						"localhost"
-					],
-					"port": "5001",
-					"path": [
-						"api",
-						"quotes",
-						"5"
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "https://localhost:5001/api/quotes",
 			"request": {
 				"method": "POST",
@@ -101,6 +71,66 @@
 					"path": [
 						"api",
 						"quotes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:5001/api/quotes/5",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Id\": 5,\r\n    \"Text\": \"Per ardua ad astra\",\r\n    \"Author\": \"Unknown\",\r\n    \"Language\": \"Latin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/api/quotes/5",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"quotes",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:5001/api/quotes/5",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"op\": \"replace\",\r\n        \"path\": \"Author\",\r\n        \"value\": \"Ancient Wisdom\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:5001/api/quotes/5",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"quotes",
+						"5"
 					]
 				}
 			},
