@@ -19,7 +19,7 @@ namespace mvc.DataAccess.Repository
             _dbSet = _context.Set<T>();
         }
 
-        public async Task<IReadOnlyList<T>> GetAll(
+        public async Task<IReadOnlyList<T>> GetAllAsync(
             Expression<Func<T, bool>> filter = null,
             Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
             string includeProperties = null)
@@ -49,12 +49,12 @@ namespace mvc.DataAccess.Repository
             return await query.AsNoTracking().ToListAsync();
         }
 
-        public async Task<T> Get(int id)
+        public async Task<T> GetAsync(int id)
         {
             return await _dbSet.FindAsync(id);
         }
 
-        public async Task<T> Get(
+        public async Task<T> GetAsync(
             Expression<Func<T, bool>> filter = null,
             string includeProperties = null)
         {
@@ -78,12 +78,12 @@ namespace mvc.DataAccess.Repository
             return await query.FirstOrDefaultAsync();
         }
 
-        public async Task Add(T entity)
+        public async Task AddAsync(T entity)
         {
             await _dbSet.AddAsync(entity);
         }
 
-        public async Task AddRange(IEnumerable<T> entities)
+        public async Task AddRangeAsync(IEnumerable<T> entities)
         {
             await _dbSet.AddRangeAsync(entities);
         }
