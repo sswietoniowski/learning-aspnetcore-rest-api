@@ -92,6 +92,12 @@ or from the Package Manager Console use:
 Drop-Database
 ```
 
+To trust developer certificates use:
+
+```
+dotnet dev-certs https --trust
+```
+
 More info about how to manage migrations can be found [here](https://docs.microsoft.com/en-us/ef/core/managing-schemas/migrations/managing?tabs=dotnet-core-cli).
 
 ## Known Limitations

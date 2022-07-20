@@ -61,4 +61,5 @@ Some useful tools & libraries:
 - [Visual Studio Code - REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client),
 - [West Wind WebSurge](https://websurge.west-wind.com/download),
 - [JSON Editor Online](https://jsoneditoronline.org/),
-- [AutoMapper](https://automapper.org/) [:file_folder:](https://github.com/AutoMapper/AutoMapper).
+- [AutoMapper](https://automapper.org/) [:file_folder:](https://github.com/AutoMapper/AutoMapper),
+- [Microsoft PowerToys](https://docs.microsoft.com/en-us/windows/powertoys/) [:file_folder:](https://docs.microsoft.com/en-us/windows/powertoys/install).
