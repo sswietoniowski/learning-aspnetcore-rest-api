@@ -98,6 +98,13 @@ To trust developer certificates use:
 dotnet dev-certs https --trust
 ```
 
+To add user secrets use:
+
+```
+dotnet user-secrets init
+dotnet user-secrets set <key> <value>
+```
+
 More info about how to manage migrations can be found [here](https://docs.microsoft.com/en-us/ef/core/managing-schemas/migrations/managing?tabs=dotnet-core-cli).
 
 ## Known Limitations
