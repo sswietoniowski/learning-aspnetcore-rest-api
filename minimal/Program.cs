@@ -1,4 +1,16 @@
+using Microsoft.EntityFrameworkCore;
+
+using minimal.DataAccess.Data;
+
 var builder = WebApplication.CreateBuilder(args);
+
+var configuration = builder.Configuration;
+var environment = builder.Environment;
+
+builder.Services.AddDbContext<QuotesDbContext>(options =>
+{
+    options.UseSqlServer(configuration.GetConnectionString("QuotesDb"));
+});
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
