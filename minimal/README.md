@@ -119,3 +119,5 @@ Minimal APIs have some well-known limitations:
 - don't support api versioning.
 
 More info about that [here](https://docs.microsoft.com/en-us/aspnet/core/tutorials/min-web-api?view=aspnetcore-6.0&tabs=visual-studio).
+
+[This video](https://youtu.be/4ORO-KOufeU) explains how to overcome some of the limitations of the minimal APIs.
