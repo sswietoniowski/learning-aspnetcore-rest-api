@@ -8,6 +8,7 @@ using minimal.DataAccess.Data;
 using minimal.DataAccess.Repository;
 using minimal.DataAccess.Repository.Interfaces;
 using minimal.DTOs;
+using minimal.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -69,6 +70,57 @@ app.MapGet("api/quotes/{id}", async (int id, IUnitOfWork unitOfWork, IMapper map
     var quoteDto = mapper.Map<QuoteDto>(quote);
 
     return Results.Ok(quoteDto);
+});
+
+app.MapPost("api/quotes", async (CreateQuoteDto quoteDto, IUnitOfWork unitOfWork, IMapper mapper) =>
+{
+    var quote = mapper.Map<Quote>(quoteDto);
+
+    await unitOfWork.QuoteRepository.AddAsync(quote);
+    await unitOfWork.SaveAsync();
+
+    var createdQuoteDto = mapper.Map<QuoteDto>(quote);
+
+    // useful info about differences between CreatedAtAction vs CreatedAtRoute:
+    // https://ochzhen.com/blog/created-createdataction-createdatroute-methods-explained-aspnet-core
+    return Results.Created($"/api/quotes/{createdQuoteDto.Id}", createdQuoteDto);
+});
+
+app.MapPut("api/quotes/{id}", async (int id, UpdateQuoteDto quoteDto, IUnitOfWork unitOfWork, IMapper mapper) =>
+{
+    if (id != quoteDto.Id)
+    {
+        return Results.BadRequest();
+    }
+
+    var quoteToUpdate = await unitOfWork.QuoteRepository.GetAsync(id);
+
+    if (quoteToUpdate is null)
+    {
+        return Results.NotFound();
+    }
+
+    mapper.Map(quoteDto, quoteToUpdate);
+
+    unitOfWork.QuoteRepository.Modify(quoteToUpdate);
+    await unitOfWork.SaveAsync();
+
+    return Results.NoContent();
+});
+
+app.MapDelete("api/quotes/{id}", async (int id, IUnitOfWork unitOfWork, IMapper mapper) =>
+{
+    var quoteToDelete = await unitOfWork.QuoteRepository.GetAsync(id);
+
+    if (quoteToDelete is null)
+    {
+        return Results.NotFound();
+    }
+
+    unitOfWork.QuoteRepository.Remove(quoteToDelete);
+    await unitOfWork.SaveAsync();
+    
+    return Results.NoContent();
 });
 
 app.Run();
