@@ -1,8 +1,13 @@
+using System.Reflection;
+
+using AutoMapper;
+
 using Microsoft.EntityFrameworkCore;
 
 using minimal.DataAccess.Data;
 using minimal.DataAccess.Repository;
 using minimal.DataAccess.Repository.Interfaces;
+using minimal.DTOs;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,6 +31,8 @@ builder.Services.AddDbContext<QuotesDbContext>(options =>
 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
+builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -41,5 +48,27 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.MapGet("api/quotes", async (IUnitOfWork unitOfWork, IMapper mapper) =>
+{
+    var quotes = await unitOfWork.QuoteRepository.GetAllAsync();
+    var quotesDto = mapper.Map<IEnumerable<QuoteDto>>(quotes);
+
+    return Results.Ok(quotesDto);
+});
+
+app.MapGet("api/quotes/{id}", async (int id, IUnitOfWork unitOfWork, IMapper mapper) =>
+{
+    var quote = await unitOfWork.QuoteRepository.GetAsync(id);
+
+    if (quote is null)
+    {
+        return Results.NotFound();
+    }
+
+    var quoteDto = mapper.Map<QuoteDto>(quote);
+
+    return Results.Ok(quoteDto);
+});
 
 app.Run();

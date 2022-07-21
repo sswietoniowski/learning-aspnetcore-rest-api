@@ -22,6 +22,7 @@ namespace minimal.DTOs
 
     public class QuoteDto
     {
+        public int Id { get; set; }
         public string Text { get; set; } = string.Empty;
         public string? Author { get; set; }
         public string Language { get; set; } = string.Empty;
