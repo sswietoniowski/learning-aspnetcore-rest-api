@@ -20,7 +20,10 @@ namespace minimal.DTOs
         public int Id { get; set; }
     }
 
-    public class QuoteDto : UpdateQuoteDto
+    public class QuoteDto
     {
+        public string Text { get; set; } = string.Empty;
+        public string? Author { get; set; }
+        public string Language { get; set; } = string.Empty;
     }
 }
