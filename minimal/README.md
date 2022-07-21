@@ -92,6 +92,8 @@ or from the Package Manager Console use:
 Drop-Database
 ```
 
+More info about how to manage migrations can be found [here](https://docs.microsoft.com/en-us/ef/core/managing-schemas/migrations/managing?tabs=dotnet-core-cli).
+
 To trust developer certificates use:
 
 ```
@@ -104,8 +106,6 @@ To add user secrets use:
 dotnet user-secrets init
 dotnet user-secrets set <key> <value>
 ```
-
-More info about how to manage migrations can be found [here](https://docs.microsoft.com/en-us/ef/core/managing-schemas/migrations/managing?tabs=dotnet-core-cli).
 
 ## Known Limitations
 
