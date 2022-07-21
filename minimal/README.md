@@ -114,6 +114,8 @@ Minimal APIs have some well-known limitations:
 - don't support model validation,
 - don't support JSON Patch,
 - don't support filters,
-- don't support _custom_ model binding.
+- don't support _custom_ model binding,
+- don't support OData,
+- don't support api versioning.
 
 More info about that [here](https://docs.microsoft.com/en-us/aspnet/core/tutorials/min-web-api?view=aspnetcore-6.0&tabs=visual-studio).
