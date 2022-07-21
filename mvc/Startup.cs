@@ -33,10 +33,10 @@ namespace mvc
 
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
-            services.AddControllers().AddNewtonsoftJson(setttings =>
+            services.AddControllers().AddNewtonsoftJson(settings =>
             {
-                setttings.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
-                setttings.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+                settings.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+                settings.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
             });
 
             services.AddSwaggerGen(options =>
