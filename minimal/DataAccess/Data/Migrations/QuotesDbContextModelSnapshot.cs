@@ -45,7 +45,7 @@ namespace minimal.DataAccess.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Quotes");
+                    b.ToTable("Quotes", (string)null);
 
                     b.HasData(
                         new
