@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace mvc.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/quotes")]
     public class QuotesController : ControllerBase
     {
         private readonly IUnitOfWork _unitOfWork;
