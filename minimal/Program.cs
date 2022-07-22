@@ -81,8 +81,6 @@ app.MapPost("api/quotes", async (CreateQuoteDto quoteDto, IUnitOfWork unitOfWork
 
     var createdQuoteDto = mapper.Map<QuoteDto>(quote);
 
-    // useful info about differences between CreatedAtAction vs CreatedAtRoute:
-    // https://ochzhen.com/blog/created-createdataction-createdatroute-methods-explained-aspnet-core
     return Results.Created($"/api/quotes/{createdQuoteDto.Id}", createdQuoteDto);
 });
 
