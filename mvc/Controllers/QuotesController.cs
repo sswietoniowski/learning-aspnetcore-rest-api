@@ -51,7 +51,7 @@ namespace mvc.Controllers
 
         // POST: api/quotes
         [HttpPost]
-        public async Task<ActionResult<QuoteDto>> PostQuote([FromBody] CreateQuoteDto quoteDto)
+        public async Task<ActionResult<QuoteDto>> CreateQuote([FromBody] QuoteForCreationDto quoteDto)
         {
             var quote = _mapper.Map<Quote>(quoteDto);
 
@@ -67,13 +67,8 @@ namespace mvc.Controllers
 
         // PUT: api/quotes/id
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutQuote(int id, [FromBody] UpdateQuoteDto quoteDto)
+        public async Task<IActionResult> UpdateQuote(int id, [FromBody] QuoteForUpdateDto quoteDto)
         {
-            if (id != quoteDto.Id)
-            {
-                return BadRequest();
-            }
-
             var quoteToUpdate = await _unitOfWork.QuoteRepository.GetAsync(id);
 
             if (quoteToUpdate is null)
@@ -91,7 +86,7 @@ namespace mvc.Controllers
 
         // PATCH: api/quotes/id
         [HttpPatch("{id}")]
-        public async Task<IActionResult> PatchQuote(int id, JsonPatchDocument<UpdateQuoteDto> patchDocument)
+        public async Task<IActionResult> PartiallyUpdateQuote(int id, JsonPatchDocument<QuoteForUpdateDto> patchDocument)
         {
             // Here you'll find more info about JSON Patch:
             // https://jsonpatch.com/
@@ -103,9 +98,14 @@ namespace mvc.Controllers
                 return NotFound();
             }
 
-            var quoteDtoToPatch = _mapper.Map<UpdateQuoteDto>(quoteToUpdate);
+            var quoteDtoToPatch = _mapper.Map<QuoteForUpdateDto>(quoteToUpdate);
             patchDocument.ApplyTo(quoteDtoToPatch, ModelState);
 
+            if (!ModelState.IsValid)
+            {
+                return ValidationProblem(ModelState);
+            }
+            
             if (!TryValidateModel(quoteDtoToPatch))
             {
                 return ValidationProblem(ModelState);

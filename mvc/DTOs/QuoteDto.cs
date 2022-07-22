@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace mvc.DTOs
 {
-    public class CreateQuoteDto
+    public class QuoteForCreationDto
     {
         [Required]
         [MaxLength(128, ErrorMessage = "Quote text must be less than 128 characters!")]
@@ -14,13 +14,15 @@ namespace mvc.DTOs
         public string Language { get; set; }
     }
 
-    public class UpdateQuoteDto : CreateQuoteDto
+    public class QuoteForUpdateDto : QuoteForCreationDto
     {
-        [Required]
-        public int Id { get; set; }
     }
 
-    public class QuoteDto : UpdateQuoteDto
+    public class QuoteDto
     {
+        public int Id { get; set; }
+        public string Text { get; set; }
+        public string Author { get; set; }
+        public string Language { get; set; }
     }
 }

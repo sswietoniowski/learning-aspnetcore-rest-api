@@ -10,8 +10,8 @@ namespace minimal.Configurations.Mapper
         public QuoteProfile()
         {
             CreateMap<Quote, QuoteDto>().ReverseMap();
-            CreateMap<CreateQuoteDto, Quote>().ReverseMap();
-            CreateMap<UpdateQuoteDto, Quote>().ReverseMap();
+            CreateMap<QuoteForCreationDto, Quote>().ReverseMap();
+            CreateMap<QuoteForUpdateDto, Quote>().ReverseMap();
         }
     }
 }

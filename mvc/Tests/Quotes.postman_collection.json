@@ -83,7 +83,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"Id\": 5,\r\n    \"Text\": \"Per ardua ad astra\",\r\n    \"Author\": \"Unknown\",\r\n    \"Language\": \"Latin\"\r\n}",
+					"raw": "{\r\n    \"Text\": \"Per ardua ad astra\",\r\n    \"Author\": \"Unknown\",\r\n    \"Language\": \"Latin\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"

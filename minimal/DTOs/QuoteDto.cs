@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace minimal.DTOs
 {
-    public class CreateQuoteDto
+    public class QuoteForCreationDto
     {
         [Required]
         [MaxLength(128, ErrorMessage = "Quote text must be less than 128 characters!")]
@@ -14,10 +14,8 @@ namespace minimal.DTOs
         public string Language { get; set; } = string.Empty;
     }
 
-    public class UpdateQuoteDto : CreateQuoteDto
+    public class QuoteForUpdateDto : QuoteForCreationDto
     {
-        [Required]
-        public int Id { get; set; }
     }
 
     public class QuoteDto

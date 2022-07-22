@@ -72,7 +72,7 @@ app.MapGet("api/quotes/{id}", async (int id, IUnitOfWork unitOfWork, IMapper map
     return Results.Ok(quoteDto);
 });
 
-app.MapPost("api/quotes", async (CreateQuoteDto quoteDto, IUnitOfWork unitOfWork, IMapper mapper) =>
+app.MapPost("api/quotes", async (QuoteForCreationDto quoteDto, IUnitOfWork unitOfWork, IMapper mapper) =>
 {
     var quote = mapper.Map<Quote>(quoteDto);
 
@@ -84,13 +84,8 @@ app.MapPost("api/quotes", async (CreateQuoteDto quoteDto, IUnitOfWork unitOfWork
     return Results.Created($"/api/quotes/{createdQuoteDto.Id}", createdQuoteDto);
 });
 
-app.MapPut("api/quotes/{id}", async (int id, UpdateQuoteDto quoteDto, IUnitOfWork unitOfWork, IMapper mapper) =>
+app.MapPut("api/quotes/{id}", async (int id, QuoteForUpdateDto quoteDto, IUnitOfWork unitOfWork, IMapper mapper) =>
 {
-    if (id != quoteDto.Id)
-    {
-        return Results.BadRequest();
-    }
-
     var quoteToUpdate = await unitOfWork.QuoteRepository.GetAsync(id);
 
     if (quoteToUpdate is null)
