@@ -67,7 +67,7 @@ Some useful tools & libraries:
 - [FluentValidation](https://docs.fluentvalidation.net/en/latest/) [:file_folder:](https://github.com/FluentValidation/FluentValidation),
 - [XUnit](https://xunit.net/) [:file_folder:](https://github.com/xunit/xunit),
 - [Moq](https://github.com/moq/moq),
-- [Nsubstitute](https://nsubstitute.github.io/) [:file_folder:](https://github.com/nsubstitute/NSubstitute),
+- [NSubstitute](https://nsubstitute.github.io/) [:file_folder:](https://github.com/nsubstitute/NSubstitute),
 - [AutoFixture](https://github.com/AutoFixture/AutoFixture),
 - [Faker](https://github.com/Kuree/Faker.Net),
 - [Bogus](https://github.com/bchavez/Bogus),
