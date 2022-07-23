@@ -71,4 +71,5 @@ Some useful tools & libraries:
 - [AutoFixture](https://github.com/AutoFixture/AutoFixture),
 - [Faker](https://github.com/Kuree/Faker.Net),
 - [Bogus](https://github.com/bchavez/Bogus),
+- [SQLite and SQL Server Compact Toolbox](https://marketplace.visualstudio.com/items?itemName=ErikEJ.SQLServerCompactSQLiteToolbox),
 - [Microsoft PowerToys](https://docs.microsoft.com/en-us/windows/powertoys/) [:file_folder:](https://docs.microsoft.com/en-us/windows/powertoys/install).
