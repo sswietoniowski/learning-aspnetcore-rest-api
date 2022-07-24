@@ -32,7 +32,7 @@ builder.Services.AddDbContext<QuotesDbContext>(options =>
 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
-builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
