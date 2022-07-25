@@ -16,9 +16,9 @@ This repository contains the following sub-directories (with different API imple
 
 Based on these (free) courses:
 
-- [Step by Step Tutorial - .Net Core MVC REST API](https://youtu.be/mUAZ-EbGBOg) [:file_folder:](https://github.com/binarythistle/S02E01-REST-API-.Net-Core) :fire:,
-- [.NET Core 3.1 MVC REST API - Full Course](https://youtu.be/fmvcAzHpsk8) [:file_folder:](https://github.com/binarythistle/S03E02---.NET-Core-3.1-MVC-REST-API),
-- [.NET 6 Minimal API Full Build](https://youtu.be/5YB49OEmbbE) [:file_folder:](https://github.com/binarythistle/S05E03---Minimal-APIs),
+- [Step by Step Tutorial - .Net Core MVC REST API](https://youtu.be/mUAZ-EbGBOg) [:file_folder:](https://github.com/binarythistle/S02E01-REST-API-.Net-Core) :fire: :+1:,
+- [.NET Core 3.1 MVC REST API - Full Course](https://youtu.be/fmvcAzHpsk8) [:file_folder:](https://github.com/binarythistle/S03E02---.NET-Core-3.1-MVC-REST-API) :+1:,
+- [.NET 6 Minimal API Full Build](https://youtu.be/5YB49OEmbbE) [:file_folder:](https://github.com/binarythistle/S05E03---Minimal-APIs) :+1:,
 - [ASP.NET Core 5 & 3 & 2.2 REST API Tutorial](https://youtube.com/playlist?list=PLUOequmGnXxOgmSDWU7Tl6iQTsOtyjtwU),
 - [Secure a .NET Core API with Bearer Authentication](https://youtu.be/3PyUjOmuFic) [:file_folder:](https://github.com/binarythistle/S03E01-Secure-.NET-Core-API),
 - [Deploy a .NET Core API with Docker (Step-by-Step)](https://youtu.be/f0lMGPB10bM),
@@ -30,7 +30,7 @@ Based on these (free) courses:
 - [GraphQL API with .NET 5 and Hot Chocolate](https://youtu.be/HuN94qNwQmM) [:file_folder:](https://github.com/binarythistle/S04E01---.NET-5-GraphQL-API),
 - [Postman Beginner's Course - API Testing](https://youtu.be/VywxIQ2ZXw4) [:file_folder:](https://github.com/vdespa/introduction-to-postman-course),
 - [Insomnia REST Client Tutorial](https://youtu.be/H16GUC9Svyk),
-- [How to Use Visual Studio Code as REST Client to Test REST APIs](https://youtu.be/8uyTn4cg8Xc).
+- [How to Use Visual Studio Code as REST Client to Test REST APIs](https://youtu.be/8uyTn4cg8Xc) :+1:.
 
 Also used these (paid) courses:
 
@@ -44,7 +44,7 @@ Also used these (paid) courses:
 - [Using OpenAPI/Swagger for Testing and Code Generation in ASP.NET Core 2](https://app.pluralsight.com/library/courses/asp-dot-net-openapi-swagger-testing-code-generation/table-of-contents) [:file_folder:](https://app.pluralsight.com/library/courses/asp-dot-net-openapi-swagger-testing-code-generation/exercise-files) :fire:,
 - [Unit Testing an ASP.NET Core 6 Web API](https://app.pluralsight.com/library/courses/asp-dot-net-core-6-web-api-unit-testing/table-of-contents) [:file_folder:](https://app.pluralsight.com/library/courses/asp-dot-net-core-6-web-api-unit-testing/exercise-files),
 - [Building a Consistent RESTful API with OData V4 in ASP.NET Core 5](https://app.pluralsight.com/library/courses/building-consistent-restful-api-odata-v4-asp-dot-net-core/table-of-contents) [:file_folder:](https://app.pluralsight.com/library/courses/building-consistent-restful-api-odata-v4-asp-dot-net-core/exercise-files),
-- [Using HttpClient to Consume APIs in .NET 5](https://app.pluralsight.com/library/courses/using-httpclient-consume-apis-dot-net/table-of-contents) [:file_folder:](https://app.pluralsight.com/library/courses/using-httpclient-consume-apis-dot-net/exercise-files),
+- [Using HttpClient to Consume APIs in .NET 5](https://app.pluralsight.com/library/courses/using-httpclient-consume-apis-dot-net/table-of-contents) [:file_folder:](https://app.pluralsight.com/library/courses/using-httpclient-consume-apis-dot-net/exercise-files) :+1:,
 - [Building GraphQL APIs with ASP.NET Core 2](https://app.pluralsight.com/library/courses/building-graphql-apis-aspdotnet-core/table-of-contents) [:file_folder:](https://app.pluralsight.com/library/courses/building-graphql-apis-aspdotnet-core/exercise-files).
 
 This is (sort of) continuation of these projects:
