@@ -34,8 +34,8 @@ namespace mvc.DataAccess.Repository
             if (!string.IsNullOrWhiteSpace(includeProperties))
             {
                 foreach (var includeProperty in
-                         includeProperties.Split(
-                             new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+                    includeProperties.Split(
+                        new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
                 {
                     query = query.Include(includeProperty);
                 }
