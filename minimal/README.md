@@ -121,3 +121,9 @@ Minimal APIs have some well-known limitations:
 More info about that [here](https://docs.microsoft.com/en-us/aspnet/core/tutorials/min-web-api?view=aspnetcore-6.0&tabs=visual-studio).
 
 [This video](https://youtu.be/4ORO-KOufeU) explains how to overcome some of the limitations of the minimal APIs.
+
+## Learning Resources
+
+Other resources for learning about Minimal APIs:
+
+- [Nick Chapsas - Goodbye controllers, hello Minimal APIs - NDC London 2022](https://youtu.be/hPpvlKLeYYA).
