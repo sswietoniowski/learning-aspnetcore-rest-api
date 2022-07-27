@@ -126,4 +126,7 @@ More info about that [here](https://docs.microsoft.com/en-us/aspnet/core/tutoria
 
 Other resources for learning about Minimal APIs:
 
-- [Nick Chapsas - Goodbye controllers, hello Minimal APIs - NDC London 2022](https://youtu.be/hPpvlKLeYYA).
+- [Real World Minimal APIs](https://youtu.be/UosTUODhSFw),
+- [The .NET Docs Show - .NET 6: Getting started with Minimal APIs](https://youtu.be/HDinmuGYaIA),
+- [Nick Chapsas - Goodbye controllers, hello Minimal APIs - NDC London 2022](https://youtu.be/hPpvlKLeYYA),
+- [Extending .NET Minimal APIs with Swagger, Authentication & Validation](https://youtu.be/XKN0084p7WQ).
