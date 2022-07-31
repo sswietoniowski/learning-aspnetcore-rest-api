@@ -31,7 +31,7 @@ namespace mvc
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
-            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+            services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
             services.AddControllers().AddNewtonsoftJson(settings =>
             {
