@@ -3,3 +3,4 @@ Log exceptions (mvc, minimal).
 Work with configuration options and different environments (mvc, minimal).
 Think how to improve generic repository by using lambdas for include (use polimporphism).
 Use generics inside UoW.
+Switch data storage to MongoDB.
