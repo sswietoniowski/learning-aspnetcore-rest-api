@@ -1,17 +1,19 @@
-+Add logging capabilities (mvc) using Serilog.
-+Log exceptions (mvc).
-+Work with configuration options and different environments (mvc).
-+Add filtering & searching (clean).
-+Add pagination & metadata (clean) + pageSize & pageNumber validation.
-+Custom quotes repository (exists, GetSelectedQuotes).
-+Update requests for Postman, Insomnia and VSC REST Client.
-+FIX: fix insomnia test file (as it is - has no content)
-Switch data storage to MongoDB (test for mvc).
-Use dapper for data storage (test for the minimal API).
-For the advanced users refactor repository to use specification pattern (mvc):
+1)+Add logging capabilities (mvc) using Serilog.
+2)+Log exceptions (mvc).
+3)+Work with configuration options and different environments (mvc).
+
+4)+Add filtering & searching (clean).
+5)+Add pagination & metadata (clean) + pageSize & pageNumber validation.
+6)+Custom quotes repository (exists, GetSelectedQuotes).
+
+7)+Update requests for Postman, Insomnia and VSC REST Client.
+8)+FIX: fix insomnia test file (as it is - has no content)
+9)+For the advanced users refactor repository to use specification pattern (mvc):
 https://thecodeblogger.com/2021/07/01/ef-core-repository-with-specification-pattern-in-net/
 https://codewithmukesh.com/blog/specification-pattern-in-aspnet-core/
 https://docs.microsoft.com/pl-pl/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/infrastructure-persistence-layer-implementation-entity-framework-core
 https://gunnarpeipman.com/ef-core-query-specification/
 +Return error codes that can be returned by the API (mvc).
-Upgrade MVC to .NET 6 (.NET 5 is no longer supported so there is no reason to use it).
+10)+Upgrade MVC to .NET 6 (.NET 5 is no longer supported so there is no reason to use it).
+Switch data storage to MongoDB (test for mvc).
+Use dapper for data storage (test for the minimal API).
