@@ -21,7 +21,6 @@ PUT {{baseUrl}}/api/quotes/{{putQuoteId}} HTTP/1.1
 Content-Type: application/json
 
 {
-    "Id": "12",
     "Text": "Seize the day.",
     "Author": "Horace",
     "Language": "English"
