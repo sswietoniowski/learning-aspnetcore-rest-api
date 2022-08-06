@@ -46,7 +46,9 @@ namespace mvc.DataAccess.Repository
                 query = orderBy(query);
             }
 
-            return await query.AsNoTracking().ToListAsync();
+            var result = await query.AsNoTracking().ToListAsync();
+
+            return result.AsReadOnly();
         }
 
         public async Task<T> GetAsync(int id)
@@ -75,7 +77,7 @@ namespace mvc.DataAccess.Repository
                 }
             }
 
-            return await query.FirstOrDefaultAsync();
+            return await query.AsNoTracking().FirstOrDefaultAsync();
         }
 
         public async Task AddAsync(T entity)
