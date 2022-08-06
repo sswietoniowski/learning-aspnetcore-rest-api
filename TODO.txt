@@ -6,3 +6,5 @@ Think how to improve generic repository by using lambdas for include (use polimp
 Use generics inside UoW?
 Switch data storage to MongoDB.
 Use dapper for data storage.
+Add filtering & searching (clean).
+Add pagination & metadata (clean).
