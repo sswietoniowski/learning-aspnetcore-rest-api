@@ -28,7 +28,7 @@ Based on these (free) courses:
 - [Docker Compose with .NET Core & SQL Server (Step by Step)](https://youtu.be/4V7CwC_4oss),
 - [ASP.NET 6 REST API Following CLEAN ARCHITECTURE & DDD Tutorial](https://youtube.com/playlist?list=PLzYkqgWkHPKBcDIP5gzLfASkQyTdy0t4k),
 - [Asp.Net Core API from scratch w/ clean architecture and CQRS](https://youtube.com/playlist?list=PL2E-vlKoo_v0VjwlmPFljWJI42kpAdXel),
-- [GraphQL API with .NET 5 and Hot Chocolate](https://youtu.be/HuN94qNwQmM) [:file_folder:](https://github.com/binarythistle/S04E01---.NET-5-GraphQL-API),
+- [GraphQL API with .NET 5 and Hot Chocolate](https://youtu.be/HuN94qNwQmM) [:file_folder:](https://github.com/binarythistle/S04E01---.NET-5-GraphQL-API) :arrow_forward:,
 - [Postman Beginner's Course - API Testing](https://youtu.be/VywxIQ2ZXw4) [:file_folder:](https://github.com/vdespa/introduction-to-postman-course),
 - [Insomnia REST Client Tutorial](https://youtu.be/H16GUC9Svyk),
 - [How to Use Visual Studio Code as REST Client to Test REST APIs](https://youtu.be/8uyTn4cg8Xc) :+1:,
@@ -40,7 +40,7 @@ Based on these (free) courses:
 
 Also used these (paid) courses:
 
-- [ASP.NET Core 6 Web API Fundamentals](https://app.pluralsight.com/library/courses/asp-dot-net-core-6-web-api-fundamentals/table-of-contents) [:file_folder:](https://app.pluralsight.com/library/courses/asp-dot-net-core-6-web-api-fundamentals/exercise-files) [:file_folder:](https://github.com/KevinDockx/AspNetCore6WebAPIFundamentals),
+- [ASP.NET Core 6 Web API Fundamentals](https://app.pluralsight.com/library/courses/asp-dot-net-core-6-web-api-fundamentals/table-of-contents) [:file_folder:](https://app.pluralsight.com/library/courses/asp-dot-net-core-6-web-api-fundamentals/exercise-files) [:file_folder:](https://github.com/KevinDockx/AspNetCore6WebAPIFundamentals) :arrow_forward:,
 - [Designing RESTful Web APIs](https://app.pluralsight.com/library/courses/designing-restful-web-apis/table-of-contents) [:file_folder:](https://app.pluralsight.com/library/courses/designing-restful-web-apis/exercise-files).
 - [Building a RESTful API with ASP.NET Core 3](https://app.pluralsight.com/library/courses/asp-dot-net-core-3-restful-api-building/table-of-contents) [:file_folder:](https://app.pluralsight.com/library/courses/asp-dot-net-core-3-restful-api-building/exercise-files),
 - [Implementing Advanced RESTful Concerns with ASP.NET Core 3](https://app.pluralsight.com/library/courses/asp-dot-net-core-3-advanced-restful-concerns/table-of-contents) [:file_folder:](https://app.pluralsight.com/library/courses/asp-dot-net-core-3-advanced-restful-concerns/exercise-files),
@@ -51,7 +51,7 @@ Also used these (paid) courses:
 - [Unit Testing an ASP.NET Core 6 Web API](https://app.pluralsight.com/library/courses/asp-dot-net-core-6-web-api-unit-testing/table-of-contents) [:file_folder:](https://app.pluralsight.com/library/courses/asp-dot-net-core-6-web-api-unit-testing/exercise-files),
 - [Building a Consistent RESTful API with OData V4 in ASP.NET Core 5](https://app.pluralsight.com/library/courses/building-consistent-restful-api-odata-v4-asp-dot-net-core/table-of-contents) [:file_folder:](https://app.pluralsight.com/library/courses/building-consistent-restful-api-odata-v4-asp-dot-net-core/exercise-files),
 - [Using HttpClient to Consume APIs in .NET 5](https://app.pluralsight.com/library/courses/using-httpclient-consume-apis-dot-net/table-of-contents) [:file_folder:](https://app.pluralsight.com/library/courses/using-httpclient-consume-apis-dot-net/exercise-files) :+1:,
-- [Building GraphQL APIs with ASP.NET Core 2](https://app.pluralsight.com/library/courses/building-graphql-apis-aspdotnet-core/table-of-contents) [:file_folder:](https://app.pluralsight.com/library/courses/building-graphql-apis-aspdotnet-core/exercise-files).
+- [Building GraphQL APIs with ASP.NET Core 2](https://app.pluralsight.com/library/courses/building-graphql-apis-aspdotnet-core/table-of-contents) [:file_folder:](https://app.pluralsight.com/library/courses/building-graphql-apis-aspdotnet-core/exercise-files) :arrow_forward:.
 
 This is (sort of) continuation of these projects:
 
