@@ -1,10 +1,12 @@
-FIX: fix insomnia test file (as it is - has no content)
-Add logging capabilities (clean) using Serilog.
-Log exceptions (clean).
-Work with configuration options and different environments (clean).
-Think how to improve generic repository by using lambdas for include (use polimporphism)?
-Use generics inside UoW?
-Switch data storage to MongoDB.
-Use dapper for data storage.
-Add filtering & searching (clean).
-Add pagination & metadata (clean).
++Add logging capabilities (mvc) using Serilog.
++Log exceptions (mvc).
++Work with configuration options and different environments (mvc).
++Add filtering & searching (clean).
++Add pagination & metadata (clean) + pageSize & pageNumber validation.
++Custom quotes repository (exists, GetSelectedQuotes).
++Update requests for Postman, Insomnia and VSC REST Client.
++FIX: fix insomnia test file (as it is - has no content)
+Switch data storage to MongoDB (test for mvc).
+Use dapper for data storage (test for the minimal API).
+
+
