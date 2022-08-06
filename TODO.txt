@@ -8,8 +8,9 @@
 +FIX: fix insomnia test file (as it is - has no content)
 Switch data storage to MongoDB (test for mvc).
 Use dapper for data storage (test for the minimal API).
-For the advanced users refactor repository to use specification pattern:
+For the advanced users refactor repository to use specification pattern (mvc):
 https://thecodeblogger.com/2021/07/01/ef-core-repository-with-specification-pattern-in-net/
 https://codewithmukesh.com/blog/specification-pattern-in-aspnet-core/
 https://docs.microsoft.com/pl-pl/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/infrastructure-persistence-layer-implementation-entity-framework-core
 https://gunnarpeipman.com/ef-core-query-specification/
+Return error codes that can be returned by the API (mvc).
