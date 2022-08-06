@@ -47,7 +47,6 @@ namespace mvc.DataAccess.Repository
             }
 
             var result = await query.AsNoTracking().ToListAsync();
-
             return result.AsReadOnly();
         }
 
