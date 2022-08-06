@@ -1,6 +1,8 @@
-Add logging capabilities (mvc, minimal) using Serilog.
-Log exceptions (mvc, minimal).
-Work with configuration options and different environments (mvc, minimal).
-Think how to improve generic repository by using lambdas for include (use polimporphism).
-Use generics inside UoW.
+FIX: fix insomnia test file (as it is - has no content)
+Add logging capabilities (clean) using Serilog.
+Log exceptions (clean).
+Work with configuration options and different environments (clean).
+Think how to improve generic repository by using lambdas for include (use polimporphism)?
+Use generics inside UoW?
 Switch data storage to MongoDB.
+Use dapper for data storage.
