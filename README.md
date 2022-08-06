@@ -34,7 +34,9 @@ Based on these (free) courses:
 - [How to Use Visual Studio Code as REST Client to Test REST APIs](https://youtu.be/8uyTn4cg8Xc) :+1:,
 - [(Rapid API VS Code Extension) I'm Still Not Using Postman!! I Use This NEW VS Code Extension Instead...](https://youtu.be/VuO-Haub9-I),
 - [Build an API without leaving VSCode! (Then Sell it $$)](https://youtu.be/69G5YKSUVvc),
-- [Make Money from your API Tutorial](https://youtu.be/MbqSMgMAzxU).
+- [Make Money from your API Tutorial](https://youtu.be/MbqSMgMAzxU),
+- [Simple C# Data Access with Dapper and SQL - Minimal API Project Part 1](https://youtu.be/dwMFg6uxQ0I),
+- [Minimal API in .NET 6 Using Dapper and SQL - Minimal API Project Part 2](https://youtu.be/5tYSO5mAjXs).
 
 Also used these (paid) courses:
 
