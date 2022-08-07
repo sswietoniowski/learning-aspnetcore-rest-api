@@ -1,8 +1,10 @@
-# Sample MVC REST API (.NET 5)
+# Sample MVC REST API (~~.NET 5~~.NET 6)
 
 Sample REST API for a MVC Web Application.
 
-## Setup
+This project was originally created using .NET 5 and later upgraded to .NET 6.
+
+## Setup (.NET 5)
 
 This solution was created using these commands:
 

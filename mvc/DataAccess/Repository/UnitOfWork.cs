@@ -1,7 +1,5 @@
-﻿using System;
-using mvc.DataAccess.Data;
+﻿using mvc.DataAccess.Data;
 using mvc.DataAccess.Repository.Interfaces;
-using System.Threading.Tasks;
 
 namespace mvc.DataAccess.Repository
 {

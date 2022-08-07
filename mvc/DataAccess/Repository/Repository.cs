@@ -1,10 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using mvc.DataAccess.Repository.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Threading.Tasks;
 
 namespace mvc.DataAccess.Repository
 {
@@ -20,9 +16,9 @@ namespace mvc.DataAccess.Repository
         }
 
         public async Task<IReadOnlyList<T>> GetAllAsync(
-            Expression<Func<T, bool>> filter = null,
-            Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
-            string includeProperties = null)
+            Expression<Func<T, bool>>? filter = null,
+            Func<IQueryable<T>, IOrderedQueryable<T>>? orderBy = null,
+            string? includeProperties = null)
         {
             IQueryable<T> query = _dbSet;
 
@@ -50,14 +46,14 @@ namespace mvc.DataAccess.Repository
             return result.AsReadOnly();
         }
 
-        public async Task<T> GetAsync(int id)
+        public async Task<T?> GetAsync(int id)
         {
             return await _dbSet.FindAsync(id);
         }
 
-        public async Task<T> GetAsync(
-            Expression<Func<T, bool>> filter = null,
-            string includeProperties = null)
+        public async Task<T?> GetAsync(
+            Expression<Func<T, bool>>? filter = null,
+            string? includeProperties = null)
         {
             IQueryable<T> query = _dbSet;
 
