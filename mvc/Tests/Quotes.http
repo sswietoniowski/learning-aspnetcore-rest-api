@@ -1,7 +1,23 @@
 # More examples at: https://plawgo.pl/2021/04/13/visual-studio-code-rest-client/
 
-### Get all quotes
+### Get quotes (limited by default page number and page size)
 GET {{baseUrl}}/api/quotes HTTP/1.1
+
+### Get quotes filtered
+GET {{baseUrl}}/api/quotes?filter_author=Unknown&filter_language=Polish HTTP/1.1
+
+### Get quotes searched
+GET {{baseUrl}}/api/quotes?search_text=ardua HTTP/1.1
+
+### Get quotes filtered & searched
+GET {{baseUrl}}/api/quotes?filter_author=Unknown&filter_language=Polish&search_text=ardua HTTP/1.1
+
+### Get quotes paged
+GET {{baseUrl}}/api/quotes?pageNumber=2&pageSize=2 HTTP/1.1
+
+### Get quotes in the XML format
+GET {{baseUrl}}/api/quotes HTTP/1.1
+Accept: application/xml
 
 ### Get a single quote
 GET {{baseUrl}}/api/quotes/{{getQuoteId}} HTTP/1.1
