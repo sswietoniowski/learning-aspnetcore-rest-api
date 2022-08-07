@@ -36,7 +36,8 @@ Based on these (free) courses:
 - [Build an API without leaving VSCode! (Then Sell it $$)](https://youtu.be/69G5YKSUVvc),
 - [Make Money from your API Tutorial](https://youtu.be/MbqSMgMAzxU),
 - [Simple C# Data Access with Dapper and SQL - Minimal API Project Part 1](https://youtu.be/dwMFg6uxQ0I),
-- [Minimal API in .NET 6 Using Dapper and SQL - Minimal API Project Part 2](https://youtu.be/5tYSO5mAjXs).
+- [Minimal API in .NET 6 Using Dapper and SQL - Minimal API Project Part 2](https://youtu.be/5tYSO5mAjXs),
+- [Configuring and Using Swagger UI in ASP.NET Core Web API](https://code-maze.com/swagger-ui-asp-net-core-web-api/).
 
 Also used these (paid) courses:
 
