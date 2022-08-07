@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using mvc.DataAccess.Repository.Interfaces;
 using mvc.DTOs;
 using mvc.Models;
+using System.Text.Json;
 
 namespace mvc.Controllers
 {
@@ -11,6 +12,10 @@ namespace mvc.Controllers
     [Route("api/quotes")]
     public class QuotesController : ControllerBase
     {
+        private const int DefaultPageNumber = 1;
+        private const int DefaultPageSize = 10;
+        private const int MaxPageSize = 100;
+
         private readonly ILogger<QuotesController> _logger;
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
@@ -26,14 +31,22 @@ namespace mvc.Controllers
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult<IEnumerable<QuoteDto>>> GetQuotes()
+        public async Task<ActionResult<IEnumerable<QuoteDto>>> GetQuotes(
+            [FromQuery(Name = "filter_author")] string? author,
+            [FromQuery(Name = "filter_language")] string? language,
+            [FromQuery(Name = "search_text")] string? text,
+            [FromQuery] int pageNumber = DefaultPageNumber,
+            [FromQuery] int pageSize = DefaultPageSize)
         {
             try
             {
                 _logger.LogInformation($"Calling: {nameof(GetQuotes)}");
 
-                var quotes = await _unitOfWork.QuoteRepository.GetAsync();
+                var (quotes, paginationMetadata) = await _unitOfWork.QuoteRepository.GetQuotesAsync(
+                    author, language, text, pageNumber, pageSize);
                 var quotesDto = _mapper.Map<IEnumerable<QuoteDto>>(quotes);
+
+                Response.Headers.Add("X-Pagination", JsonSerializer.Serialize(paginationMetadata));
 
                 return Ok(quotesDto);
             }
