@@ -36,10 +36,12 @@ namespace mvc.DataAccess.Repository
         protected override Expression VisitParameter(ParameterExpression node)
         {
             Expression newValue;
+#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
             if (subst.TryGetValue(node, out newValue))
             {
                 return newValue;
             }
+#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
             return node;
         }
     }

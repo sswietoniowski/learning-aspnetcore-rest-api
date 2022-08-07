@@ -12,9 +12,9 @@ namespace mvc.Controllers
     [Route("api/quotes")]
     public class QuotesController : ControllerBase
     {
-        private const int DefaultPageNumber = 1;
-        private const int DefaultPageSize = 10;
-        private const int MaxPageSize = 100;
+        private const int DefaultQuotesPageNumber = 1;
+        private const int DefaultQuotesPageSize = 10;
+        private const int MaxQuotesPageSize = 100;
 
         private readonly ILogger<QuotesController> _logger;
         private readonly IUnitOfWork _unitOfWork;
@@ -35,12 +35,24 @@ namespace mvc.Controllers
             [FromQuery(Name = "filter_author")] string? author,
             [FromQuery(Name = "filter_language")] string? language,
             [FromQuery(Name = "search_text")] string? text,
-            [FromQuery] int pageNumber = DefaultPageNumber,
-            [FromQuery] int pageSize = DefaultPageSize)
+            [FromQuery] int pageNumber = DefaultQuotesPageNumber,
+            [FromQuery] int pageSize = DefaultQuotesPageSize)
         {
             try
             {
                 _logger.LogInformation($"Calling: {nameof(GetQuotes)}");
+
+                if (pageNumber <= 0)
+                {
+                    ModelState.AddModelError(nameof(pageNumber), "Page number should be positive number!");
+                    return BadRequest(ModelState);
+                }
+
+                if (pageSize > MaxQuotesPageSize)
+                {
+                    _logger.LogWarning($"Page size ({pageSize}) was adjusted beacause it was greater than the maximum page size {MaxQuotesPageSize}.");
+                    pageSize = MaxQuotesPageSize;
+                }
 
                 var (quotes, paginationMetadata) = await _unitOfWork.QuoteRepository.GetQuotesAsync(
                     author, language, text, pageNumber, pageSize);
