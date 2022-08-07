@@ -24,6 +24,8 @@ namespace mvc.Controllers
 
         // GET: api/quotes
         [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<ActionResult<IEnumerable<QuoteDto>>> GetQuotes()
         {
             try
@@ -46,6 +48,9 @@ namespace mvc.Controllers
 
         // GET: api/quotes/id
         [HttpGet("{id}", Name = nameof(GetQuote))]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<ActionResult<QuoteDto>> GetQuote(int id)
         {
             try
@@ -74,6 +79,9 @@ namespace mvc.Controllers
 
         // POST: api/quotes
         [HttpPost]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<ActionResult<QuoteDto>> CreateQuote([FromBody] QuoteForCreationDto quoteDto)
         {
             try
@@ -102,6 +110,9 @@ namespace mvc.Controllers
 
         // PUT: api/quotes/id
         [HttpPut("{id}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> UpdateQuote(int id, [FromBody] QuoteForUpdateDto quoteDto)
         {
             try
@@ -133,6 +144,10 @@ namespace mvc.Controllers
 
         // PATCH: api/quotes/id
         [HttpPatch("{id}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> PartiallyUpdateQuote(int id, JsonPatchDocument<QuoteForUpdateDto> patchDocument)
         {
             try
@@ -180,6 +195,9 @@ namespace mvc.Controllers
 
         // DELETE: api/quotes/id
         [HttpDelete("{id}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public async Task<IActionResult> DeleteQuote(int id)
         {
             try
