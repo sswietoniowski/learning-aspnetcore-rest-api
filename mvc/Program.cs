@@ -4,8 +4,17 @@ using mvc.DataAccess.Data;
 using mvc.DataAccess.Repository;
 using mvc.DataAccess.Repository.Interfaces;
 using Newtonsoft.Json.Serialization;
+using Serilog;
+
+Log.Logger = new LoggerConfiguration()
+    .MinimumLevel.Debug()
+    .WriteTo.Console()
+    .WriteTo.File("Logs/mvc-logs.txt", rollingInterval: RollingInterval.Day)
+    .CreateLogger();
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Host.UseSerilog();
 
 builder.Services.AddDbContext<QuotesDbContext>(options =>
 {
