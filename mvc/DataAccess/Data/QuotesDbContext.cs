@@ -6,7 +6,7 @@ namespace mvc.DataAccess.Data
 {
     public class QuotesDbContext : DbContext
     {
-        public DbSet<Quote> Quotes { get; set; }
+        public DbSet<Quote> Quotes => Set<Quote>();
 
         public QuotesDbContext(DbContextOptions<QuotesDbContext> options) : base(options)
         {

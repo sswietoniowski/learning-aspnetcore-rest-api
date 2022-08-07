@@ -1,7 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
-
-namespace mvc.DataAccess.Repository.Interfaces
+﻿namespace mvc.DataAccess.Repository.Interfaces
 {
     public interface IUnitOfWork : IDisposable
     {
