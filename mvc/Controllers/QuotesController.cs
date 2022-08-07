@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using mvc.DataAccess.Repository.Interfaces;
 using mvc.DTOs;
 using mvc.Models;
+using System.Text.Json;
 
 namespace mvc.Controllers
 {
@@ -11,6 +12,10 @@ namespace mvc.Controllers
     [Route("api/quotes")]
     public class QuotesController : ControllerBase
     {
+        private const int DefaultQuotesPageNumber = 1;
+        private const int DefaultQuotesPageSize = 10;
+        private const int MaxQuotesPageSize = 100;
+
         private readonly ILogger<QuotesController> _logger;
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
@@ -26,14 +31,34 @@ namespace mvc.Controllers
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult<IEnumerable<QuoteDto>>> GetQuotes()
+        public async Task<ActionResult<IEnumerable<QuoteDto>>> GetQuotes(
+            [FromQuery(Name = "filter_author")] string? author,
+            [FromQuery(Name = "filter_language")] string? language,
+            [FromQuery(Name = "search_text")] string? text,
+            [FromQuery] int pageNumber = DefaultQuotesPageNumber,
+            [FromQuery] int pageSize = DefaultQuotesPageSize)
         {
             try
             {
                 _logger.LogInformation($"Calling: {nameof(GetQuotes)}");
 
-                var quotes = await _unitOfWork.QuoteRepository.GetAllAsync();
+                if (pageNumber <= 0)
+                {
+                    ModelState.AddModelError(nameof(pageNumber), "Page number should be positive number!");
+                    return BadRequest(ModelState);
+                }
+
+                if (pageSize > MaxQuotesPageSize)
+                {
+                    _logger.LogWarning($"Page size ({pageSize}) was adjusted beacause it was greater than the maximum page size {MaxQuotesPageSize}.");
+                    pageSize = MaxQuotesPageSize;
+                }
+
+                var (quotes, paginationMetadata) = await _unitOfWork.QuoteRepository.GetQuotesAsync(
+                    author, language, text, pageNumber, pageSize);
                 var quotesDto = _mapper.Map<IEnumerable<QuoteDto>>(quotes);
+
+                Response.Headers.Add("X-Pagination", JsonSerializer.Serialize(paginationMetadata));
 
                 return Ok(quotesDto);
             }
@@ -57,7 +82,7 @@ namespace mvc.Controllers
             {
                 _logger.LogInformation($"Calling: {nameof(GetQuote)}");
 
-                var quote = await _unitOfWork.QuoteRepository.GetAsync(id);
+                var quote = await _unitOfWork.QuoteRepository.GetByIdAsync(id);
 
                 if (quote is null)
                 {
@@ -119,7 +144,7 @@ namespace mvc.Controllers
             {
                 _logger.LogInformation($"Calling: {nameof(UpdateQuote)}");
 
-                var quoteToUpdate = await _unitOfWork.QuoteRepository.GetAsync(id);
+                var quoteToUpdate = await _unitOfWork.QuoteRepository.GetByIdAsync(id);
 
                 if (quoteToUpdate is null)
                 {
@@ -157,7 +182,7 @@ namespace mvc.Controllers
                 // Here you'll find more info about JSON Patch:
                 // https://jsonpatch.com/
 
-                var quoteToUpdate = await _unitOfWork.QuoteRepository.GetAsync(id);
+                var quoteToUpdate = await _unitOfWork.QuoteRepository.GetByIdAsync(id);
 
                 if (quoteToUpdate is null)
                 {
@@ -204,7 +229,7 @@ namespace mvc.Controllers
             {
                 _logger.LogInformation($"Calling: {nameof(DeleteQuote)}");
 
-                var quoteToDelete = await _unitOfWork.QuoteRepository.GetAsync(id);
+                var quoteToDelete = await _unitOfWork.QuoteRepository.GetByIdAsync(id);
 
                 if (quoteToDelete is null)
                 {

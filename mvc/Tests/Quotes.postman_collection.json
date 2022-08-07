@@ -7,7 +7,7 @@
 	},
 	"item": [
 		{
-			"name": "https://localhost:5001/api/quotes",
+			"name": "GET Quotes",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -27,7 +27,156 @@
 			"response": []
 		},
 		{
-			"name": "https://localhost:5001/api/quotes/1",
+			"name": "GET Quotes (filtering)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/api/quotes?filter_author=Unknown&filter_language=Polish",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"quotes"
+					],
+					"query": [
+						{
+							"key": "filter_author",
+							"value": "Unknown"
+						},
+						{
+							"key": "filter_language",
+							"value": "Polish"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Quotes (searching)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/api/quotes?search_text=ardua",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"quotes"
+					],
+					"query": [
+						{
+							"key": "search_text",
+							"value": "ardua"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Quotes (filtering+searching)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/api/quotes?filter_author=Unknown&filter_language=Polish&search_text=ardua",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"quotes"
+					],
+					"query": [
+						{
+							"key": "filter_author",
+							"value": "Unknown"
+						},
+						{
+							"key": "filter_language",
+							"value": "Polish"
+						},
+						{
+							"key": "search_text",
+							"value": "ardua"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Quotes (paging)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:5001/api/quotes?pageNumber=2&pageSize=2",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"quotes"
+					],
+					"query": [
+						{
+							"key": "pageNumber",
+							"value": "2"
+						},
+						{
+							"key": "pageSize",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Quotes (XML format)",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/xml",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://localhost:5001/api/quotes",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"quotes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Quote",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -48,7 +197,7 @@
 			"response": []
 		},
 		{
-			"name": "https://localhost:5001/api/quotes",
+			"name": "POST Quote",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -77,7 +226,7 @@
 			"response": []
 		},
 		{
-			"name": "https://localhost:5001/api/quotes/5",
+			"name": "PUT Quote",
 			"request": {
 				"method": "PUT",
 				"header": [],
@@ -107,7 +256,7 @@
 			"response": []
 		},
 		{
-			"name": "https://localhost:5001/api/quotes/5",
+			"name": "PATCH Quote",
 			"request": {
 				"method": "PATCH",
 				"header": [],
@@ -137,7 +286,7 @@
 			"response": []
 		},
 		{
-			"name": "https://localhost:5001/api/quotes/5",
+			"name": "DELETE Quote",
 			"request": {
 				"method": "DELETE",
 				"header": [],

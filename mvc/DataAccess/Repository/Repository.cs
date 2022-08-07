@@ -15,12 +15,13 @@ namespace mvc.DataAccess.Repository
             _dbSet = _context.Set<T>();
         }
 
-        public async Task<IReadOnlyList<T>> GetAllAsync(
+        public async Task<(IReadOnlyList<T>, PaginationMetadata)> GetAsync(
             Expression<Func<T, bool>>? filter = null,
             Func<IQueryable<T>, IOrderedQueryable<T>>? orderBy = null,
-            string? includeProperties = null)
+            string? includeProperties = null,
+            int pageNumber = default, int pageSize = default)
         {
-            IQueryable<T> query = _dbSet;
+            IQueryable<T> query = _dbSet.AsNoTracking();
 
             if (filter is not null)
             {
@@ -37,21 +38,28 @@ namespace mvc.DataAccess.Repository
                 }
             }
 
+            var totalItemCount = await query.CountAsync();
+            var paginationMetadata = new PaginationMetadata(totalItemCount, pageSize, pageNumber);
+
             if (orderBy is not null)
             {
                 query = orderBy(query);
             }
 
-            var result = await query.AsNoTracking().ToListAsync();
-            return result.AsReadOnly();
+            var result = await query
+                .Skip(pageSize * (pageNumber - 1))
+                .Take(pageSize)
+                .ToListAsync();
+            
+            return (result.AsReadOnly(), paginationMetadata);
         }
 
-        public async Task<T?> GetAsync(int id)
+        public async Task<T?> GetByIdAsync(int id)
         {
             return await _dbSet.FindAsync(id);
         }
 
-        public async Task<T?> GetAsync(
+        public async Task<T?> GetFirstOrDefaultAsync(
             Expression<Func<T, bool>>? filter = null,
             string? includeProperties = null)
         {
