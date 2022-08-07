@@ -15,7 +15,7 @@ namespace mvc.DataAccess.Repository
             _dbSet = _context.Set<T>();
         }
 
-        public async Task<IReadOnlyList<T>> GetAllAsync(
+        public async Task<IReadOnlyList<T>> GetAsync(
             Expression<Func<T, bool>>? filter = null,
             Func<IQueryable<T>, IOrderedQueryable<T>>? orderBy = null,
             string? includeProperties = null)
@@ -46,12 +46,12 @@ namespace mvc.DataAccess.Repository
             return result.AsReadOnly();
         }
 
-        public async Task<T?> GetAsync(int id)
+        public async Task<T?> GetByIdAsync(int id)
         {
             return await _dbSet.FindAsync(id);
         }
 
-        public async Task<T?> GetAsync(
+        public async Task<T?> GetFirstOrDefaultAsync(
             Expression<Func<T, bool>>? filter = null,
             string? includeProperties = null)
         {

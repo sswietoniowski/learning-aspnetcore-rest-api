@@ -32,7 +32,7 @@ namespace mvc.Controllers
             {
                 _logger.LogInformation($"Calling: {nameof(GetQuotes)}");
 
-                var quotes = await _unitOfWork.QuoteRepository.GetAllAsync();
+                var quotes = await _unitOfWork.QuoteRepository.GetAsync();
                 var quotesDto = _mapper.Map<IEnumerable<QuoteDto>>(quotes);
 
                 return Ok(quotesDto);
@@ -57,7 +57,7 @@ namespace mvc.Controllers
             {
                 _logger.LogInformation($"Calling: {nameof(GetQuote)}");
 
-                var quote = await _unitOfWork.QuoteRepository.GetAsync(id);
+                var quote = await _unitOfWork.QuoteRepository.GetByIdAsync(id);
 
                 if (quote is null)
                 {
@@ -119,7 +119,7 @@ namespace mvc.Controllers
             {
                 _logger.LogInformation($"Calling: {nameof(UpdateQuote)}");
 
-                var quoteToUpdate = await _unitOfWork.QuoteRepository.GetAsync(id);
+                var quoteToUpdate = await _unitOfWork.QuoteRepository.GetByIdAsync(id);
 
                 if (quoteToUpdate is null)
                 {
@@ -157,7 +157,7 @@ namespace mvc.Controllers
                 // Here you'll find more info about JSON Patch:
                 // https://jsonpatch.com/
 
-                var quoteToUpdate = await _unitOfWork.QuoteRepository.GetAsync(id);
+                var quoteToUpdate = await _unitOfWork.QuoteRepository.GetByIdAsync(id);
 
                 if (quoteToUpdate is null)
                 {
@@ -204,7 +204,7 @@ namespace mvc.Controllers
             {
                 _logger.LogInformation($"Calling: {nameof(DeleteQuote)}");
 
-                var quoteToDelete = await _unitOfWork.QuoteRepository.GetAsync(id);
+                var quoteToDelete = await _unitOfWork.QuoteRepository.GetByIdAsync(id);
 
                 if (quoteToDelete is null)
                 {
