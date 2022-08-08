@@ -7,7 +7,6 @@ namespace mvc.DataAccess.Repository
     {
         public static Expression<Func<T, bool>> And<T>(this Expression<Func<T, bool>> a, Expression<Func<T, bool>> b)
         {
-
             ParameterExpression p = a.Parameters[0];
 
             SubstExpressionVisitor visitor = new SubstExpressionVisitor();
@@ -19,7 +18,6 @@ namespace mvc.DataAccess.Repository
 
         public static Expression<Func<T, bool>> Or<T>(this Expression<Func<T, bool>> a, Expression<Func<T, bool>> b)
         {
-
             ParameterExpression p = a.Parameters[0];
 
             SubstExpressionVisitor visitor = new SubstExpressionVisitor();

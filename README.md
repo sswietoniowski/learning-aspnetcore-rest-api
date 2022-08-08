@@ -10,7 +10,8 @@ This repository contains the following sub-directories (with different API imple
 - [minimal](https://github.com/sswietoniowski/learning-aspnetcore-rest-api/tree/master/minimal) the REST API created using minimal API endpoints,
 - ~~[clean](https://github.com/sswietoniowski/learning-aspnetcore-rest-api/tree/master/clean) the REST API created using clean architecture approach and CQRS design pattern,~~
 - ~~[graphql](https://github.com/sswietoniowski/learning-aspnetcore-rest-api/tree/master/graphql) the API created using GraphQL,~~
-- ~~[grpc](https://github.com/sswietoniowski/learning-aspnetcore-rest-api/tree/master/grpc) the API created using GRPC.~~
+- ~~[grpc](https://github.com/sswietoniowski/learning-aspnetcore-rest-api/tree/master/grpc) the API created using GRPC,~~
+- [client](https://github.com/sswietoniowski/learning-aspnetcore-rest-api/tree/master/client) a React client to consume the API.
 
 ## Learning Resources
 
