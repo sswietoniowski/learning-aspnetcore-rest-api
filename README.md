@@ -38,7 +38,9 @@ Based on these (free) courses:
 - [Make Money from your API Tutorial](https://youtu.be/MbqSMgMAzxU),
 - [Simple C# Data Access with Dapper and SQL - Minimal API Project Part 1](https://youtu.be/dwMFg6uxQ0I),
 - [Minimal API in .NET 6 Using Dapper and SQL - Minimal API Project Part 2](https://youtu.be/5tYSO5mAjXs),
-- [Configuring and Using Swagger UI in ASP.NET Core Web API](https://code-maze.com/swagger-ui-asp-net-core-web-api/).
+- [Configuring and Using Swagger UI in ASP.NET Core Web API](https://code-maze.com/swagger-ui-asp-net-core-web-api/),
+- [Using HttpClient in .NET Core to Connect to APIs in C#](https://youtu.be/cwgck1k0YKU),
+- [Intro to Refit REST API Client for C#](https://youtu.be/HH8drNbai8w).
 
 Also used these (paid) courses:
 
@@ -87,4 +89,5 @@ Some useful tools & libraries:
 - [Faker](https://github.com/Kuree/Faker.Net),
 - [Bogus](https://github.com/bchavez/Bogus),
 - [SQLite and SQL Server Compact Toolbox](https://marketplace.visualstudio.com/items?itemName=ErikEJ.SQLServerCompactSQLiteToolbox),
-- [Microsoft PowerToys](https://docs.microsoft.com/en-us/windows/powertoys/) [:file_folder:](https://docs.microsoft.com/en-us/windows/powertoys/install).
+- [Microsoft PowerToys](https://docs.microsoft.com/en-us/windows/powertoys/) [:file_folder:](https://docs.microsoft.com/en-us/windows/powertoys/install),
+- [Refit](https://github.com/reactiveui/refit).
