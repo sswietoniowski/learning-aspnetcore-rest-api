@@ -90,4 +90,5 @@ Some useful tools & libraries:
 - [Bogus](https://github.com/bchavez/Bogus),
 - [SQLite and SQL Server Compact Toolbox](https://marketplace.visualstudio.com/items?itemName=ErikEJ.SQLServerCompactSQLiteToolbox),
 - [Microsoft PowerToys](https://docs.microsoft.com/en-us/windows/powertoys/) [:file_folder:](https://docs.microsoft.com/en-us/windows/powertoys/install),
+- [HttpClient](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient?view=net-6.0),
 - [Refit](https://github.com/reactiveui/refit).
