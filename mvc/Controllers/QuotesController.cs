@@ -126,7 +126,7 @@ namespace mvc.Controllers
             }
             catch (Exception exception)
             {
-                _logger.LogCritical($"Exception while calling {nameof(GetQuote)}.", exception);
+                _logger.LogCritical($"Exception while calling {nameof(CreateQuote)}.", exception);
 
                 return StatusCode(StatusCodes.Status500InternalServerError,
                     "A problem happened while handling your request.");
@@ -160,7 +160,7 @@ namespace mvc.Controllers
             }
             catch (Exception exception)
             {
-                _logger.LogCritical($"Exception while calling {nameof(GetQuote)}.", exception);
+                _logger.LogCritical($"Exception while calling {nameof(UpdateQuote)}.", exception);
 
                 return StatusCode(StatusCodes.Status500InternalServerError,
                     "A problem happened while handling your request.");
@@ -211,7 +211,7 @@ namespace mvc.Controllers
             }
             catch (Exception exception)
             {
-                _logger.LogCritical($"Exception while calling {nameof(GetQuote)}.", exception);
+                _logger.LogCritical($"Exception while calling {nameof(PartiallyUpdateQuote)}.", exception);
 
                 return StatusCode(StatusCodes.Status500InternalServerError,
                     "A problem happened while handling your request.");
@@ -243,7 +243,7 @@ namespace mvc.Controllers
             }
             catch (Exception exception)
             {
-                _logger.LogCritical($"Exception while calling {nameof(GetQuote)}.", exception);
+                _logger.LogCritical($"Exception while calling {nameof(DeleteQuote)}.", exception);
 
                 return StatusCode(StatusCodes.Status500InternalServerError,
                     "A problem happened while handling your request.");
