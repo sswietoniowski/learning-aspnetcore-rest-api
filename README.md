@@ -67,7 +67,8 @@ This is (sort of) continuation of these projects:
 - [Learning EF Core 6 - (.NET 6) Fundamentals](https://github.com/sswietoniowski/learning-efcore-6-fundamentals),
 - [Learning - React - Summary and Core Feature Walkthrough](https://github.com/sswietoniowski/learning-react-summary-and-core-feature-walkthrough),
 - [Learning ASP.NET Core and React - Frontend](https://github.com/sswietoniowski/learning-aspnetcore-react-frontend-react-app),
-- [Learning ASP.NET Core and React - Backend](https://github.com/sswietoniowski/learning-aspnetcore-react-backend-web-api).
+- [Learning ASP.NET Core and React - Backend](https://github.com/sswietoniowski/learning-aspnetcore-react-backend-web-api),
+- [Learning ASP.NET Core - Security - CORS](https://github.com/sswietoniowski/learning-aspnetcore-security-cors).
 
 ## Useful Tools & Libraries
 
