@@ -57,6 +57,7 @@ Also used these (paid) courses & books:
 - [ASP.NET Core Security](https://learning.oreilly.com/library/view/asp-net-core-security/9781633439986/) [:file_folder:](https://www.manning.com/downloads/2371) ▶️,
 - [ASP.NET Core 5 and React - Second Edition](https://learning.oreilly.com/library/view/asp-net-core-5/9781800206168/) [:file_folder:](https://github.com/PacktPublishing/ASP.NET-Core-5-and-React-Second-Edition) ▶️,
 - [Building a Consistent RESTful API with OData V4 in ASP.NET Core 5](https://app.pluralsight.com/library/courses/building-consistent-restful-api-odata-v4-asp-dot-net-core/table-of-contents) [:file_folder:](https://app.pluralsight.com/library/courses/building-consistent-restful-api-odata-v4-asp-dot-net-core/exercise-files),
+- [ASP.NET Core 6 Web API: Best Practices](https://app.pluralsight.com/library/courses/aspdotnet-core-6-web-api-best-practices/table-of-contents) [:file_folder:](https://app.pluralsight.com/library/courses/aspdotnet-core-6-web-api-best-practices/exercise-files) :arrow_forward:,
 - [Using HttpClient to Consume APIs in .NET 5](https://app.pluralsight.com/library/courses/using-httpclient-consume-apis-dot-net/table-of-contents) [:file_folder:](https://app.pluralsight.com/library/courses/using-httpclient-consume-apis-dot-net/exercise-files) :+1:,
 - [Building GraphQL APIs with ASP.NET Core 2](https://app.pluralsight.com/library/courses/building-graphql-apis-aspdotnet-core/table-of-contents) [:file_folder:](https://app.pluralsight.com/library/courses/building-graphql-apis-aspdotnet-core/exercise-files) :arrow_forward:.
 
