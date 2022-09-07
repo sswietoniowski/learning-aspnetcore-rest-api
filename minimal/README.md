@@ -22,6 +22,12 @@ The following file(-s) was(were) then created/modified:
 
 - .gitattributes - created based on [this article](https://rehansaeed.com/gitattributes-best-practices/).
 
+Also [generated](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-dev-certs) a self-signed certificate to enable HTTPS use in development:
+
+```
+dotnet dev-certs https --trust
+```
+
 ## Helper Commands
 
 To support Entity Framework you should execute these commands:
