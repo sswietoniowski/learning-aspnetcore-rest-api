@@ -11,7 +11,6 @@ using minimal.Models;
 var builder = WebApplication.CreateBuilder(args);
 
 var configuration = builder.Configuration;
-var environment = builder.Environment;
 
 //// One might use this approach to build connection string (and then use sqlConnectionBuilder.ConnectionString)
 //// in case the user id and password is stored inside user secrets (but IMHO I would rather prefer to store 
