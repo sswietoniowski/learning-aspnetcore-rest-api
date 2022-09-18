@@ -12,7 +12,11 @@ public static class WebApplicationQuoteExtensions
     {
         app.MapGet("api/quotes", async (IUnitOfWork unitOfWork, IMapper mapper) =>
         {
-            var (quotes, _) = await unitOfWork.QuoteRepository.GetQuotesAsync();
+            const int DefaultQuotesPageNumber = 1;
+            const int DefaultQuotesPageSize = 10;
+
+            var (quotes, _) = await unitOfWork.QuoteRepository.GetQuotesAsync(
+                pageNumber: DefaultQuotesPageNumber, pageSize: DefaultQuotesPageSize);
             var quotesDto = mapper.Map<IEnumerable<QuoteDto>>(quotes);
 
             return Results.Ok(quotesDto);
