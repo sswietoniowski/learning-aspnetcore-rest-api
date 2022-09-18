@@ -1,12 +1,12 @@
 using Microsoft.EntityFrameworkCore;
 using mvc.Configurations.Entities;
-using mvc.Models;
+using mvc.DataAccess.Entities;
 
 namespace mvc.DataAccess.Data;
 
 public class QuotesDbContext : DbContext
 {
-    public DbSet<Quote> Quotes => Set<Quote>();
+    public DbSet<QuoteEntity> Quotes => Set<QuoteEntity>();
 
     public QuotesDbContext(DbContextOptions<QuotesDbContext> options) : base(options)
     {

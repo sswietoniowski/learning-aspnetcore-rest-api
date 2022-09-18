@@ -1,9 +1,9 @@
 using AutoMapper;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
+using mvc.DataAccess.Entities;
 using mvc.DataAccess.Repository.Interfaces;
 using mvc.DTOs;
-using mvc.Models;
 using System.Text.Json;
 
 namespace mvc.Controllers;
@@ -113,7 +113,7 @@ public class QuotesController : ControllerBase
         {
             _logger.LogInformation($"Calling: {nameof(CreateQuote)}");
 
-            var quote = _mapper.Map<Quote>(quoteDto);
+            var quote = _mapper.Map<QuoteEntity>(quoteDto);
 
             await _unitOfWork.QuoteRepository.AddAsync(quote);
             await _unitOfWork.SaveAsync();

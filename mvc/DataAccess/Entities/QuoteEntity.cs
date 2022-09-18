@@ -1,8 +1,8 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace mvc.Models;
+namespace mvc.DataAccess.Entities;
 
-public class Quote
+public class QuoteEntity
 {
     [Key]
     public int Id { get; set; }

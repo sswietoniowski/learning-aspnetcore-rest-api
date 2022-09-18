@@ -1,24 +1,24 @@
 ﻿using mvc.DataAccess.Data;
+using mvc.DataAccess.Entities;
 using mvc.DataAccess.Repository.Interfaces;
-using mvc.Models;
 using System.Linq.Expressions;
 
 namespace mvc.DataAccess.Repository;
 
-public class QuoteRepository : Repository<Quote>, IQuoteRepository
+public class QuoteRepository : Repository<QuoteEntity>, IQuoteRepository
 {
     public QuoteRepository(QuotesDbContext context) : base(context)
     {
     }
 
-    public async Task<(IReadOnlyList<Quote>, PaginationMetadata)> GetQuotesAsync(
+    public async Task<(IReadOnlyList<QuoteEntity>, PaginationMetadata)> GetQuotesAsync(
         string? author, 
         string? language, 
         string? text, 
         int pageNumber = 0, int pageSize = 0)
     {
-        Expression<Func<Quote, bool>>? filter = null;
-        Func<IQueryable<Quote>, IOrderedQueryable<Quote>>? orderBy = (q) => q.OrderBy(q => q.Id);
+        Expression<Func<QuoteEntity, bool>>? filter = null;
+        Func<IQueryable<QuoteEntity>, IOrderedQueryable<QuoteEntity>>? orderBy = (q) => q.OrderBy(q => q.Id);
 
         if (!string.IsNullOrWhiteSpace(author))
         {

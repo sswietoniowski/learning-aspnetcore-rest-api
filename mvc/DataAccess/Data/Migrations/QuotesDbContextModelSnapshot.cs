@@ -19,7 +19,7 @@ namespace mvc.Migrations
                 .HasAnnotation("ProductVersion", "5.0.17")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("mvc.Models.Quote", b =>
+            modelBuilder.Entity("mvc.Models.QuoteEntity", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
