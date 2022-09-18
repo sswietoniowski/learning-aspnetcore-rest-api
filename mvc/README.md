@@ -40,6 +40,12 @@ Also [generated](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-dev-c
 dotnet dev-certs https --trust
 ```
 
+Then added support for user secrets:
+
+```cmd
+dotnet user-secrets init
+```
+
 ## Helper Commands
 
 Some helper commands used while developing this project.
