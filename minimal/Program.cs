@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 
 using minimal;
 using minimal.DataAccess.Data;
@@ -29,7 +30,10 @@ builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+{
+    options.SwaggerDoc("v1", new OpenApiInfo { Title = "minimal", Version = "v1" });
+});
 
 var allowedOrigins = builder.Configuration.GetValue<string>("Cors:AllowedOrigins")?.Split(",") ?? new string[0];
 builder.Services.AddCors(options =>
@@ -55,6 +59,8 @@ if (app.Environment.IsDevelopment())
     app.MapSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors();
 
 app.MapQuoteEndpoints();
 
