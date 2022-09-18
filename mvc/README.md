@@ -42,7 +42,9 @@ dotnet dev-certs https --trust
 
 ## Helper Commands
 
-Some helper commands used while developing this project. They were originally meant to create .NET 5 project and I kept them intact here as a reference guide. If you need to learn syntax for .NET 6 please look into "minimal" project.
+Some helper commands used while developing this project.
+
+They were meant to create .NET 5 project and I kept them intact here as a reference guide. If you need to learn syntax for .NET 6 please look into "minimal" project.
 
 ### Entity Framework
 
