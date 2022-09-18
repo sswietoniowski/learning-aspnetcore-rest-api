@@ -1,8 +1,7 @@
-﻿namespace mvc.DataAccess.Repository.Interfaces
+﻿namespace mvc.DataAccess.Repository.Interfaces;
+
+public interface IUnitOfWork : IDisposable
 {
-    public interface IUnitOfWork : IDisposable
-    {
-        IQuoteRepository QuoteRepository { get; }
-        Task SaveAsync();
-    }
+    IQuoteRepository QuoteRepository { get; }
+    Task SaveAsync();
 }

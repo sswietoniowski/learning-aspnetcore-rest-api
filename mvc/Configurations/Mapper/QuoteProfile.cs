@@ -2,15 +2,14 @@
 using mvc.DTOs;
 using mvc.Models;
 
-namespace mvc.Configurations.Mapper
+namespace mvc.Configurations.Mapper;
+
+public class QuoteProfile : Profile
 {
-    public class QuoteProfile : Profile
+    public QuoteProfile()
     {
-        public QuoteProfile()
-        {
-            CreateMap<Quote, QuoteDto>().ReverseMap();
-            CreateMap<QuoteForCreationDto, Quote>().ReverseMap();
-            CreateMap<QuoteForUpdateDto, Quote>().ReverseMap();
-        }
+        CreateMap<Quote, QuoteDto>().ReverseMap();
+        CreateMap<QuoteForCreationDto, Quote>().ReverseMap();
+        CreateMap<QuoteForUpdateDto, Quote>().ReverseMap();
     }
 }
