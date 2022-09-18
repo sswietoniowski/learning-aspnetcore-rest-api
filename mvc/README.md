@@ -6,7 +6,7 @@ This project was originally created using .NET 5 and later upgraded to .NET 6.
 
 ## Setup (.NET 5)
 
-This solution was created using these commands:
+This solution was (originally) created using these commands:
 
 ```
 cd mvc
@@ -41,6 +41,10 @@ dotnet dev-certs https --trust
 ```
 
 ## Helper Commands
+
+Some helper commands used while developing this project. They were originally meant to create .NET 5 project and I kept them intact here as a reference guide. If you need to learn syntax for .NET 6 please look into "minimal" project.
+
+### Entity Framework
 
 To support Entity Framework project file ("mvc.csproj") was modified, to include the following:
 
