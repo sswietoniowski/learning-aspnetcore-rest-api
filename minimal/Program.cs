@@ -1,13 +1,9 @@
-using AutoMapper;
-
 using Microsoft.EntityFrameworkCore;
 
 using minimal;
 using minimal.DataAccess.Data;
-using minimal.DataAccess.Entities;
 using minimal.DataAccess.Repository;
 using minimal.DataAccess.Repository.Interfaces;
-using minimal.DTOs;
 
 var builder = WebApplication.CreateBuilder(args);
 

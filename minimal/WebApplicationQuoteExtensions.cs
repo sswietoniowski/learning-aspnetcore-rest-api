@@ -75,6 +75,5 @@ public static class WebApplicationQuoteExtensions
 
             return Results.NoContent();
         });
-
     }
 }
