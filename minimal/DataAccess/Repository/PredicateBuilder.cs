@@ -1,6 +1,6 @@
 ﻿using System.Linq.Expressions;
 
-namespace mvc.DataAccess.Repository;
+namespace minimal.DataAccess.Repository;
 
 // Based on: https://stackoverflow.com/questions/457316/combining-two-expressions-expressionfunct-bool
 public static class PredicateBuilder

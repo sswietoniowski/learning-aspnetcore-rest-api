@@ -1,0 +1,17 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[csharp]": {
+    "editor.defaultFormatter": "ms-dotnettools.csharp"
+  },
+  "rest-client.environmentVariables": {
+    "$shared": {
+      "baseUrl": "https://localhost:5001"
+    },
+    "Development": {
+      "getQuoteId": "1",
+      "putQuoteId": "5",
+      "patchQuoteId": "5",
+      "deleteQuoteId": "5"
+    }
+  }
+}

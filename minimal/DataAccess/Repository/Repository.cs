@@ -1,100 +1,110 @@
-using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
-
 using minimal.DataAccess.Repository.Interfaces;
+using System.Linq.Expressions;
 
-namespace minimal.DataAccess.Repository
+namespace minimal.DataAccess.Repository;
+
+public abstract class Repository<T> : IRepository<T> where T : class
 {
-    public abstract class Repository<T> : IRepository<T> where T : class
+    protected readonly DbContext _context;
+    protected readonly DbSet<T> _dbSet;
+
+    public Repository(DbContext context)
     {
-        protected readonly DbContext _context;
-        protected readonly DbSet<T> _dbSet;
+        _context = context;
+        _dbSet = _context.Set<T>();
+    }
 
-        public Repository(DbContext context)
+    public async Task<(IReadOnlyList<T>, PaginationMetadata)> GetAsync(
+        Expression<Func<T, bool>>? filter = null,
+        Func<IQueryable<T>, IOrderedQueryable<T>>? orderBy = null,
+        string? includeProperties = null,
+        int pageNumber = default, int pageSize = default)
+    {
+        IQueryable<T> query = _dbSet.AsNoTracking();
+
+        if (filter is not null)
         {
-            _context = context;
-            _dbSet = _context.Set<T>();
+            query = query.Where(filter);
         }
 
-        public async Task<IReadOnlyList<T>> GetAllAsync(
-            Expression<Func<T, bool>>? filter = null,
-            Func<IQueryable<T>, IOrderedQueryable<T>>? orderBy = null,
-            string? includeProperties = null)
+        if (!string.IsNullOrWhiteSpace(includeProperties))
         {
-            IQueryable<T> query = _dbSet;
-
-            if (filter is not null)
+            foreach (var includeProperty in
+                     includeProperties.Split(
+                         new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
             {
-                query = query.Where(filter);
+                query = query.Include(includeProperty);
             }
+        }
 
-            if (!string.IsNullOrWhiteSpace(includeProperties))
+        var totalItemCount = await query.CountAsync();
+        var paginationMetadata = new PaginationMetadata(totalItemCount, pageSize, pageNumber);
+
+        if (orderBy is not null)
+        {
+            query = orderBy(query);
+        }
+
+        var result = await query
+            .Skip(pageSize * (pageNumber - 1))
+            .Take(pageSize)
+            .ToListAsync();
+            
+        return (result.AsReadOnly(), paginationMetadata);
+    }
+
+    public async Task<T?> GetByIdAsync(int id)
+    {
+        return await _dbSet.FindAsync(id);
+    }
+
+    public async Task<T?> GetFirstOrDefaultAsync(
+        Expression<Func<T, bool>>? filter = null,
+        string? includeProperties = null)
+    {
+        IQueryable<T> query = _dbSet;
+
+        if (filter is not null)
+        {
+            query = query.Where(filter);
+        }
+
+        if (!string.IsNullOrWhiteSpace(includeProperties))
+        {
+            foreach (var includeProperty in
+                     includeProperties.Split(
+                         new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
             {
-                query = includeProperties
-                    .Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
-                    .Aggregate(query, (current, includeProperty) =>
-                        current.Include(includeProperty));
+                query = query.Include(includeProperty);
             }
-
-            if (orderBy is not null)
-            {
-                query = orderBy(query);
-            }
-
-            var result = await query.AsNoTracking().ToListAsync();
-            return result.AsReadOnly();
         }
 
-        public async Task<T?> GetAsync(int id)
-        {
-            return await _dbSet.FindAsync(id);
-        }
+        return await query.AsNoTracking().FirstOrDefaultAsync();
+    }
 
-        public async Task<T?> GetAsync(
-            Expression<Func<T, bool>>? filter = null,
-            string? includeProperties = null)
-        {
-            IQueryable<T> query = _dbSet;
+    public async Task AddAsync(T entity)
+    {
+        await _dbSet.AddAsync(entity);
+    }
 
-            if (filter is not null)
-            {
-                query = query.Where(filter);
-            }
+    public async Task AddRangeAsync(IEnumerable<T> entities)
+    {
+        await _dbSet.AddRangeAsync(entities);
+    }
 
-            if (!string.IsNullOrWhiteSpace(includeProperties))
-            {
-                query = includeProperties
-                    .Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
-                    .Aggregate(query, (current, includeProperty) =>
-                        current.Include(includeProperty));
-            }
+    public void Modify(T entity)
+    {
+        _context.Entry(entity).State = EntityState.Modified;
+    }
 
-            return await query.AsNoTracking().FirstOrDefaultAsync();
-        }
+    public void Remove(T entity)
+    {
+        _dbSet.Remove(entity);
+    }
 
-        public async Task AddAsync(T entity)
-        {
-            await _dbSet.AddAsync(entity);
-        }
-
-        public async Task AddRangeAsync(IEnumerable<T> entities)
-        {
-            await _dbSet.AddRangeAsync(entities);
-        }
-
-        public void Modify(T entity)
-        {
-            _context.Entry(entity).State = EntityState.Modified;
-        }
-
-        public void Remove(T entity)
-        {
-            _dbSet.Remove(entity);
-        }
-
-        public void RemoveRange(IEnumerable<T> entities)
-        {
-            _dbSet.RemoveRange(entities);
-        }
+    public void RemoveRange(IEnumerable<T> entities)
+    {
+        _dbSet.RemoveRange(entities);
     }
 }

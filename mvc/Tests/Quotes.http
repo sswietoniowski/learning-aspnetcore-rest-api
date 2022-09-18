@@ -4,13 +4,13 @@
 GET {{baseUrl}}/api/quotes HTTP/1.1
 
 ### Get quotes filtered
-GET {{baseUrl}}/api/quotes?filter_author=Unknown&filter_language=Polish HTTP/1.1
+GET {{baseUrl}}/api/quotes?filter_author=Unknown&filter_language=Latin HTTP/1.1
 
 ### Get quotes searched
-GET {{baseUrl}}/api/quotes?search_text=ardua HTTP/1.1
+GET {{baseUrl}}/api/quotes?search_text=first HTTP/1.1
 
 ### Get quotes filtered & searched
-GET {{baseUrl}}/api/quotes?filter_author=Unknown&filter_language=Polish&search_text=ardua HTTP/1.1
+GET {{baseUrl}}/api/quotes?filter_author=Unknown&filter_language=Latin&search_text=astra HTTP/1.1
 
 ### Get quotes paged
 GET {{baseUrl}}/api/quotes?pageNumber=2&pageSize=2 HTTP/1.1

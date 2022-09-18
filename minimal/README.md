@@ -6,7 +6,7 @@ Sample REST API for a Minimal Web Application.
 
 This solution was created using these commands:
 
-```
+```cmd
 cd minimal
 dotnet new globaljson --sdk-version 6.0.0 --roll-forward latestMinor --output "." --force
 dotnet new editorconfig --output "." --force
@@ -24,15 +24,25 @@ The following file(-s) was(were) then created/modified:
 
 Also [generated](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-dev-certs) a self-signed certificate to enable HTTPS use in development:
 
-```
+```cmd
 dotnet dev-certs https --trust
+```
+
+Then added support for user secrets:
+
+```cmd
+dotnet user-secrets init
 ```
 
 ## Helper Commands
 
+Some helper commands used while developing this project.
+
+### Entity Framework
+
 To support Entity Framework you should execute these commands:
 
-```
+```cmd
 dotnet add package Microsoft.EntityFrameworkCore.SqlServer --framework net6.0
 dotnet add package Microsoft.EntityFrameworkCore.Design --framework net6.0
 dotnet tool install dotnet-ef --configfile nuget.config
@@ -40,7 +50,7 @@ dotnet tool install dotnet-ef --configfile nuget.config
 
 To add a new migration use:
 
-```
+```cmd
 dotnet ef migrations add <migrationname> --output-dir "DataAccess/Data/Migrations"
 ```
 
@@ -52,7 +62,7 @@ Add-Migration <migrationname> -OutputDir "DataAccess/Data/Migrations"
 
 To apply the migrations to the database use:
 
-```
+```cmd
 dotnet ef database update
 ```
 
@@ -64,7 +74,7 @@ Update-Database
 
 To remove the last migration use:
 
-```
+```cmd
 dotnet ef migrations remove
 ```
 
@@ -76,7 +86,7 @@ Remove-Migration
 
 To revert the last database migration use:
 
-```
+```cmd
 dotnet ef database update <lastgoodmigration>
 ```
 
@@ -88,7 +98,7 @@ Update-Database -Migration <lastgoodmigration>
 
 To drop the database use:
 
-```
+```cmd
 dotnet ef database drop
 ```
 
@@ -100,15 +110,17 @@ Drop-Database
 
 More info about how to manage migrations can be found [here](https://docs.microsoft.com/en-us/ef/core/managing-schemas/migrations/managing?tabs=dotnet-core-cli).
 
+### Other Commands
+
 To trust developer certificates use:
 
-```
+```cmd
 dotnet dev-certs https --trust
 ```
 
 To add user secrets use:
 
-```
+```cmd
 dotnet user-secrets init
 dotnet user-secrets set <key> <value>
 ```
