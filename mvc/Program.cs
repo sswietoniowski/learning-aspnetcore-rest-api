@@ -52,8 +52,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI(options => options.SwaggerEndpoint("/swagger/v1/swagger.json", "mvc v1"));
 }
 
-app.UseHttpsRedirection();
-
 app.UseRouting();
 
 app.UseAuthorization();
