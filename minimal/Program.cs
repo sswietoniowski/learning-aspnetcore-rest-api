@@ -37,13 +37,14 @@ builder.Services.AddSwaggerGen();
 var allowedOrigins = builder.Configuration.GetValue<string>("Cors:AllowedOrigins")?.Split(",") ?? new string[0];
 builder.Services.AddCors(options =>
 {
-    options.AddDefaultPolicy(builder =>
+    options.AddDefaultPolicy(policyBuilder =>
     {
-        builder
+        policyBuilder
             .WithOrigins(allowedOrigins)
             .AllowAnyMethod()
             .AllowAnyHeader()
-            .AllowCredentials();
+            .AllowCredentials()
+            .WithExposedHeaders("X-Pagination");
     });
 });
 
@@ -109,7 +110,7 @@ app.MapPut("api/quotes/{id}", async (int id, QuoteForUpdateDto quoteDto, IUnitOf
     return Results.NoContent();
 });
 
-app.MapDelete("api/quotes/{id}", async (int id, IUnitOfWork unitOfWork, IMapper mapper) =>
+app.MapDelete("api/quotes/{id}", async (int id, IUnitOfWork unitOfWork) =>
 {
     var quoteToDelete = await unitOfWork.QuoteRepository.GetByIdAsync(id);
 
