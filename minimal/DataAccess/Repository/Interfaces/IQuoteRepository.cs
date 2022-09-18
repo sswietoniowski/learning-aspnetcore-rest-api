@@ -1,8 +1,7 @@
 ﻿using minimal.Models;
 
-namespace minimal.DataAccess.Repository.Interfaces
+namespace minimal.DataAccess.Repository.Interfaces;
+
+public interface IQuoteRepository : IRepository<Quote>
 {
-    public interface IQuoteRepository : IRepository<Quote>
-    {
-    }
 }
