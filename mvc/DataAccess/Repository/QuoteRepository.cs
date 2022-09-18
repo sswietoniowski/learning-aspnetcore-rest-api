@@ -18,7 +18,7 @@ public class QuoteRepository : Repository<Quote>, IQuoteRepository
         int pageNumber = 0, int pageSize = 0)
     {
         Expression<Func<Quote, bool>>? filter = null;
-        Func<IQueryable<Quote>, IOrderedQueryable<Quote>>? orderBy = null;
+        Func<IQueryable<Quote>, IOrderedQueryable<Quote>>? orderBy = (q) => q.OrderBy(q => q.Id);
 
         if (!string.IsNullOrWhiteSpace(author))
         {
