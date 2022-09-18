@@ -1,15 +1,13 @@
 ﻿using minimal.DataAccess.Data;
 using minimal.DataAccess.Entities;
 using minimal.DataAccess.Repository.Interfaces;
+
 using System.Linq.Expressions;
 
 namespace minimal.DataAccess.Repository;
 
 public class QuoteRepository : Repository<QuoteEntity>, IQuoteRepository
 {
-    private const int DefaultQuotesPageNumber = 1;
-    private const int DefaultQuotesPageSize = 10;
-    
     public QuoteRepository(QuotesDbContext context) : base(context)
     {
     }
@@ -18,7 +16,8 @@ public class QuoteRepository : Repository<QuoteEntity>, IQuoteRepository
         string? author = null,
         string? language = null,
         string? text = null,
-        int pageNumber = DefaultQuotesPageNumber, int pageSize = DefaultQuotesPageSize)
+        int pageNumber = IQuoteRepository.DefaultQuotesPageNumber, 
+        int pageSize = IQuoteRepository.DefaultQuotesPageSize)
     {
         Expression<Func<QuoteEntity, bool>>? filter = null;
         Func<IQueryable<QuoteEntity>, IOrderedQueryable<QuoteEntity>>? orderBy = (q) => q.OrderBy(q => q.Id);
@@ -41,11 +40,11 @@ public class QuoteRepository : Repository<QuoteEntity>, IQuoteRepository
         orderBy = q => q.OrderBy(q => q.Id);
 
         return await GetAsync(
-            filter: filter, 
+            filter: filter,
             orderBy: orderBy,
-            pageNumber: pageNumber, 
+            pageNumber: pageNumber,
             pageSize: pageSize);
     }
 
-    public async Task<bool> QuoteExists(int id) => await GetByIdAsync(id) is not null;        
+    public async Task<bool> QuoteExists(int id) => await GetByIdAsync(id) is not null;
 }

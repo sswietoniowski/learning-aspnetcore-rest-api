@@ -18,7 +18,8 @@ public class QuoteRepository : Repository<QuoteEntity>, IQuoteRepository
         string? author = null, 
         string? language = null, 
         string? text = null, 
-        int pageNumber = DefaultQuotesPageNumber, int pageSize = DefaultQuotesPageSize)
+        int pageNumber = IQuoteRepository.DefaultQuotesPageNumber, 
+        int pageSize = IQuoteRepository.DefaultQuotesPageSize)
     {
         Expression<Func<QuoteEntity, bool>>? filter = null;
         Func<IQueryable<QuoteEntity>, IOrderedQueryable<QuoteEntity>>? orderBy = (q) => q.OrderBy(q => q.Id);
