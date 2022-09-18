@@ -4,12 +4,13 @@ namespace minimal.DataAccess.Repository.Interfaces;
 
 public interface IRepository<T> where T : class
 {
-    Task<IReadOnlyList<T>> GetAllAsync(
+    Task<(IReadOnlyList<T>, PaginationMetadata)> GetAsync(
         Expression<Func<T, bool>>? filter = null,
         Func<IQueryable<T>, IOrderedQueryable<T>>? orderBy = null,
-        string? includeProperties = null);
-    Task<T?> GetAsync(int id);
-    Task<T?> GetAsync(
+        string? includeProperties = null,
+        int pageNumber = default, int pageSize = default);
+    Task<T?> GetByIdAsync(int id);
+    Task<T?> GetFirstOrDefaultAsync(
         Expression<Func<T, bool>>? filter = null,
         string? includeProperties = null);
     Task AddAsync(T entity);

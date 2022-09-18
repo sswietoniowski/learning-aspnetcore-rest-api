@@ -7,15 +7,18 @@ namespace mvc.DataAccess.Repository;
 
 public class QuoteRepository : Repository<QuoteEntity>, IQuoteRepository
 {
+    private const int DefaultQuotesPageNumber = 1;
+    private const int DefaultQuotesPageSize = 10;
+
     public QuoteRepository(QuotesDbContext context) : base(context)
     {
     }
 
     public async Task<(IReadOnlyList<QuoteEntity>, PaginationMetadata)> GetQuotesAsync(
-        string? author, 
-        string? language, 
-        string? text, 
-        int pageNumber = 0, int pageSize = 0)
+        string? author = null, 
+        string? language = null, 
+        string? text = null, 
+        int pageNumber = DefaultQuotesPageNumber, int pageSize = DefaultQuotesPageSize)
     {
         Expression<Func<QuoteEntity, bool>>? filter = null;
         Func<IQueryable<QuoteEntity>, IOrderedQueryable<QuoteEntity>>? orderBy = (q) => q.OrderBy(q => q.Id);

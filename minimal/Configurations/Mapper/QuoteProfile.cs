@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 
+using minimal.DataAccess.Entities;
 using minimal.DTOs;
-using minimal.Models;
 
 namespace minimal.Configurations.Mapper;
 
@@ -9,8 +9,8 @@ public class QuoteProfile : Profile
 {
     public QuoteProfile()
     {
-        CreateMap<Quote, QuoteDto>().ReverseMap();
-        CreateMap<QuoteForCreationDto, Quote>().ReverseMap();
-        CreateMap<QuoteForUpdateDto, Quote>().ReverseMap();
+        CreateMap<QuoteEntity, QuoteDto>().ReverseMap();
+        CreateMap<QuoteForCreationDto, QuoteEntity>().ReverseMap();
+        CreateMap<QuoteForUpdateDto, QuoteEntity>().ReverseMap();
     }
 }

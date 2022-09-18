@@ -3,10 +3,10 @@ using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 
 using minimal.DataAccess.Data;
+using minimal.DataAccess.Entities;
 using minimal.DataAccess.Repository;
 using minimal.DataAccess.Repository.Interfaces;
 using minimal.DTOs;
-using minimal.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -47,7 +47,7 @@ if (app.Environment.IsDevelopment())
 
 app.MapGet("api/quotes", async (IUnitOfWork unitOfWork, IMapper mapper) =>
 {
-    var quotes = await unitOfWork.QuoteRepository.GetAllAsync();
+    var (quotes, _) = await unitOfWork.QuoteRepository.GetQuotesAsync();
     var quotesDto = mapper.Map<IEnumerable<QuoteDto>>(quotes);
 
     return Results.Ok(quotesDto);
@@ -55,7 +55,7 @@ app.MapGet("api/quotes", async (IUnitOfWork unitOfWork, IMapper mapper) =>
 
 app.MapGet("api/quotes/{id}", async (int id, IUnitOfWork unitOfWork, IMapper mapper) =>
 {
-    var quote = await unitOfWork.QuoteRepository.GetAsync(id);
+    var quote = await unitOfWork.QuoteRepository.GetByIdAsync(id);
 
     if (quote is null)
     {
@@ -69,7 +69,7 @@ app.MapGet("api/quotes/{id}", async (int id, IUnitOfWork unitOfWork, IMapper map
 
 app.MapPost("api/quotes", async (QuoteForCreationDto quoteDto, IUnitOfWork unitOfWork, IMapper mapper) =>
 {
-    var quote = mapper.Map<Quote>(quoteDto);
+    var quote = mapper.Map<QuoteEntity>(quoteDto);
 
     await unitOfWork.QuoteRepository.AddAsync(quote);
     await unitOfWork.SaveAsync();
@@ -81,7 +81,7 @@ app.MapPost("api/quotes", async (QuoteForCreationDto quoteDto, IUnitOfWork unitO
 
 app.MapPut("api/quotes/{id}", async (int id, QuoteForUpdateDto quoteDto, IUnitOfWork unitOfWork, IMapper mapper) =>
 {
-    var quoteToUpdate = await unitOfWork.QuoteRepository.GetAsync(id);
+    var quoteToUpdate = await unitOfWork.QuoteRepository.GetByIdAsync(id);
 
     if (quoteToUpdate is null)
     {
@@ -98,7 +98,7 @@ app.MapPut("api/quotes/{id}", async (int id, QuoteForUpdateDto quoteDto, IUnitOf
 
 app.MapDelete("api/quotes/{id}", async (int id, IUnitOfWork unitOfWork, IMapper mapper) =>
 {
-    var quoteToDelete = await unitOfWork.QuoteRepository.GetAsync(id);
+    var quoteToDelete = await unitOfWork.QuoteRepository.GetByIdAsync(id);
 
     if (quoteToDelete is null)
     {

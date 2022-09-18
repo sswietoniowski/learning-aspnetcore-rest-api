@@ -1,13 +1,13 @@
 using Microsoft.EntityFrameworkCore;
 
 using minimal.Configurations.Entities;
-using minimal.Models;
+using minimal.DataAccess.Entities;
 
 namespace minimal.DataAccess.Data;
 
 public class QuotesDbContext : DbContext
 {
-    public DbSet<Quote> Quotes => Set<Quote>();
+    public DbSet<QuoteEntity> Quotes => Set<QuoteEntity>();
 
     public QuotesDbContext(DbContextOptions<QuotesDbContext> options) : base(options)
     {

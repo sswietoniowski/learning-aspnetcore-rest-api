@@ -1,7 +1,6 @@
-using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
-
 using minimal.DataAccess.Repository.Interfaces;
+using System.Linq.Expressions;
 
 namespace minimal.DataAccess.Repository;
 
@@ -16,12 +15,13 @@ public abstract class Repository<T> : IRepository<T> where T : class
         _dbSet = _context.Set<T>();
     }
 
-    public async Task<IReadOnlyList<T>> GetAllAsync(
+    public async Task<(IReadOnlyList<T>, PaginationMetadata)> GetAsync(
         Expression<Func<T, bool>>? filter = null,
         Func<IQueryable<T>, IOrderedQueryable<T>>? orderBy = null,
-        string? includeProperties = null)
+        string? includeProperties = null,
+        int pageNumber = default, int pageSize = default)
     {
-        IQueryable<T> query = _dbSet;
+        IQueryable<T> query = _dbSet.AsNoTracking();
 
         if (filter is not null)
         {
@@ -30,27 +30,36 @@ public abstract class Repository<T> : IRepository<T> where T : class
 
         if (!string.IsNullOrWhiteSpace(includeProperties))
         {
-            query = includeProperties
-                .Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
-                .Aggregate(query, (current, includeProperty) =>
-                    current.Include(includeProperty));
+            foreach (var includeProperty in
+                     includeProperties.Split(
+                         new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+            {
+                query = query.Include(includeProperty);
+            }
         }
+
+        var totalItemCount = await query.CountAsync();
+        var paginationMetadata = new PaginationMetadata(totalItemCount, pageSize, pageNumber);
 
         if (orderBy is not null)
         {
             query = orderBy(query);
         }
 
-        var result = await query.AsNoTracking().ToListAsync();
-        return result.AsReadOnly();
+        var result = await query
+            .Skip(pageSize * (pageNumber - 1))
+            .Take(pageSize)
+            .ToListAsync();
+            
+        return (result.AsReadOnly(), paginationMetadata);
     }
 
-    public async Task<T?> GetAsync(int id)
+    public async Task<T?> GetByIdAsync(int id)
     {
         return await _dbSet.FindAsync(id);
     }
 
-    public async Task<T?> GetAsync(
+    public async Task<T?> GetFirstOrDefaultAsync(
         Expression<Func<T, bool>>? filter = null,
         string? includeProperties = null)
     {
@@ -63,10 +72,12 @@ public abstract class Repository<T> : IRepository<T> where T : class
 
         if (!string.IsNullOrWhiteSpace(includeProperties))
         {
-            query = includeProperties
-                .Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
-                .Aggregate(query, (current, includeProperty) =>
-                    current.Include(includeProperty));
+            foreach (var includeProperty in
+                     includeProperties.Split(
+                         new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+            {
+                query = query.Include(includeProperty);
+            }
         }
 
         return await query.AsNoTracking().FirstOrDefaultAsync();
