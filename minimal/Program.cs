@@ -45,8 +45,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
-
 app.MapGet("api/quotes", async (IUnitOfWork unitOfWork, IMapper mapper) =>
 {
     var quotes = await unitOfWork.QuoteRepository.GetAllAsync();
