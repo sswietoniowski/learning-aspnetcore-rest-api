@@ -8,7 +8,7 @@ This project was originally created using .NET 5 and later upgraded to .NET 6.
 
 This solution was (originally) created using these commands:
 
-```
+```cmd
 cd mvc
 dotnet new globaljson --sdk-version 5.0.0 --output "." --force
 dotnet new webapi --framework net5.0 --language C# --no-https false --auth None --output "." --force
@@ -36,7 +36,7 @@ The following file(-s) was(were) then created/modified:
 
 Also [generated](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-dev-certs) a self-signed certificate to enable HTTPS use in development:
 
-```
+```cmd
 dotnet dev-certs https --trust
 ```
 
@@ -58,7 +58,7 @@ To support Entity Framework project file ("mvc.csproj") was modified, to include
 
 The same can be achieved by using these commands:
 
-```
+```cmd
 dotnet add package Microsoft.EntityFrameworkCore.SqlServer --version 5.* --framework net5.0
 dotnet add package Microsoft.EntityFrameworkCore.Design --version 5.* --framework net5.0
 dotnet tool install dotnet-ef --version 5.* --configfile nuget.config
@@ -66,7 +66,7 @@ dotnet tool install dotnet-ef --version 5.* --configfile nuget.config
 
 To add a new migration use:
 
-```
+```cmd
 dotnet ef migrations add <migrationname> --output-dir "DataAccess/Data/Migrations"
 ```
 
@@ -78,7 +78,7 @@ Add-Migration <migrationname> -OutputDir "DataAccess/Data/Migrations"
 
 To apply the migrations to the database use:
 
-```
+```cmd
 dotnet ef database update
 ```
 
@@ -90,7 +90,7 @@ Update-Database
 
 To remove the last migration use:
 
-```
+```cmd
 dotnet ef migrations remove
 ```
 
@@ -102,7 +102,7 @@ Remove-Migration
 
 To revert the last database migration use:
 
-```
+```cmd
 dotnet ef database update <lastgoodmigration>
 ```
 
@@ -114,7 +114,7 @@ Update-Database -Migration <lastgoodmigration>
 
 To drop the database use:
 
-```
+```cmd
 dotnet ef database drop
 ```
 
