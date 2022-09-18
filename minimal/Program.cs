@@ -1,5 +1,3 @@
-using System.Reflection;
-
 using AutoMapper;
 
 using Microsoft.EntityFrameworkCore;
@@ -112,7 +110,7 @@ app.MapDelete("api/quotes/{id}", async (int id, IUnitOfWork unitOfWork, IMapper 
 
     unitOfWork.QuoteRepository.Remove(quoteToDelete);
     await unitOfWork.SaveAsync();
-    
+
     return Results.NoContent();
 });
 
