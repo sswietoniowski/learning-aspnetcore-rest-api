@@ -52,7 +52,7 @@ public static class WebApplicationQuoteExtensions
         })
             .WithName("CreateQuote")
             .Produces<QuoteDto>(StatusCodes.Status201Created)
-            .ProducesProblem(StatusCodes.Status400BadRequest) // Validation errors, not yet implemented
+            .ProducesValidationProblem() // Validation errors, not yet implemented
             .ProducesProblem(StatusCodes.Status500InternalServerError);
 
         app.MapPut("api/quotes/{id}", async (int id, QuoteForUpdateDto quoteDto, IUnitOfWork unitOfWork, IMapper mapper) =>
@@ -73,7 +73,7 @@ public static class WebApplicationQuoteExtensions
         })
             .WithName("UpdateQuote")
             .Produces(StatusCodes.Status204NoContent)
-            .ProducesProblem(StatusCodes.Status400BadRequest) // Validation errors, not yet implemented
+            .ProducesValidationProblem() // Validation errors, not yet implemented
             .ProducesProblem(StatusCodes.Status404NotFound)
             .ProducesProblem(StatusCodes.Status500InternalServerError);
 
