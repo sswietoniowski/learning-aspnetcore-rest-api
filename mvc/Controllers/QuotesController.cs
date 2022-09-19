@@ -72,7 +72,7 @@ public class QuotesController : ControllerBase
     }
 
     // GET: api/quotes/id
-    [HttpGet("{id}", Name = nameof(GetQuote))]
+    [HttpGet("{id:int}", Name = nameof(GetQuote))]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -134,7 +134,7 @@ public class QuotesController : ControllerBase
     }
 
     // PUT: api/quotes/id
-    [HttpPut("{id}")]
+    [HttpPut("{id:int}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -168,7 +168,7 @@ public class QuotesController : ControllerBase
     }
 
     // PATCH: api/quotes/id
-    [HttpPatch("{id}")]
+    [HttpPatch("{id:int}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -219,7 +219,7 @@ public class QuotesController : ControllerBase
     }
 
     // DELETE: api/quotes/id
-    [HttpDelete("{id}")]
+    [HttpDelete("{id:int}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
