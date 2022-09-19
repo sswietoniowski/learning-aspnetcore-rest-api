@@ -18,7 +18,7 @@ public static class WebApplicationQuoteExtensions
             return Results.Ok(quotesDto);
         })
             .WithName("GetQuotes")
-            .Produces<IEnumerable<QuoteDto>>(StatusCodes.Status200OK)
+            .Produces<IEnumerable<QuoteDto>>()
             .ProducesProblem(StatusCodes.Status500InternalServerError);
 
         app.MapGet("api/quotes/{id:int}", async (int id, IUnitOfWork unitOfWork, IMapper mapper) =>
@@ -35,7 +35,7 @@ public static class WebApplicationQuoteExtensions
             return Results.Ok(quoteDto);
         })
             .WithName("GetQuote")
-            .Produces<QuoteDto>(StatusCodes.Status200OK)
+            .Produces<QuoteDto>()
             .ProducesProblem(StatusCodes.Status404NotFound)
             .ProducesProblem(StatusCodes.Status500InternalServerError);
 
