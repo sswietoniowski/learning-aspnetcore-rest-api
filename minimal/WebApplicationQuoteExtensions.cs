@@ -48,7 +48,7 @@ public static class WebApplicationQuoteExtensions
 
             var createdQuoteDto = mapper.Map<QuoteDto>(quote);
 
-            return Results.Created($"/api/quotes/{createdQuoteDto.Id}", createdQuoteDto);
+            return Results.CreatedAtRoute("GetQuote", new { id = createdQuoteDto.Id }, createdQuoteDto);
         })
             .WithName("CreateQuote")
             .Produces<QuoteDto>(StatusCodes.Status201Created)
