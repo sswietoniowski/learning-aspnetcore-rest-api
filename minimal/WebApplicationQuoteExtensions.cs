@@ -21,7 +21,7 @@ public static class WebApplicationQuoteExtensions
             .Produces<IEnumerable<QuoteDto>>(StatusCodes.Status200OK)
             .ProducesProblem(StatusCodes.Status500InternalServerError);
 
-        app.MapGet("api/quotes/{id}", async (int id, IUnitOfWork unitOfWork, IMapper mapper) =>
+        app.MapGet("api/quotes/{id:int}", async (int id, IUnitOfWork unitOfWork, IMapper mapper) =>
         {
             var quote = await unitOfWork.QuoteRepository.GetByIdAsync(id);
 
@@ -55,7 +55,7 @@ public static class WebApplicationQuoteExtensions
             .ProducesValidationProblem() // Validation errors, not yet implemented
             .ProducesProblem(StatusCodes.Status500InternalServerError);
 
-        app.MapPut("api/quotes/{id}", async (int id, QuoteForUpdateDto quoteDto, IUnitOfWork unitOfWork, IMapper mapper) =>
+        app.MapPut("api/quotes/{id:int}", async (int id, QuoteForUpdateDto quoteDto, IUnitOfWork unitOfWork, IMapper mapper) =>
         {
             var quoteToUpdate = await unitOfWork.QuoteRepository.GetByIdAsync(id);
 
@@ -77,7 +77,7 @@ public static class WebApplicationQuoteExtensions
             .ProducesProblem(StatusCodes.Status404NotFound)
             .ProducesProblem(StatusCodes.Status500InternalServerError);
 
-        app.MapDelete("api/quotes/{id}", async (int id, IUnitOfWork unitOfWork) =>
+        app.MapDelete("api/quotes/{id:int}", async (int id, IUnitOfWork unitOfWork) =>
         {
             var quoteToDelete = await unitOfWork.QuoteRepository.GetByIdAsync(id);
 
