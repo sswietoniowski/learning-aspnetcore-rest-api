@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 
 namespace mvc.DataAccess.Repository;
 
-public class QuoteRepository : Repository<QuoteEntity>, IQuoteRepository
+public class QuoteRepository : Repository<Quote>, IQuoteRepository
 {
     private const int DefaultQuotesPageNumber = 1;
     private const int DefaultQuotesPageSize = 10;
@@ -14,15 +14,15 @@ public class QuoteRepository : Repository<QuoteEntity>, IQuoteRepository
     {
     }
 
-    public async Task<(IReadOnlyList<QuoteEntity>, PaginationMetadata)> GetQuotesAsync(
+    public async Task<(IReadOnlyList<Quote>, PaginationMetadata)> GetQuotesAsync(
         string? author = null, 
         string? language = null, 
         string? text = null, 
         int pageNumber = IQuoteRepository.DefaultQuotesPageNumber, 
         int pageSize = IQuoteRepository.DefaultQuotesPageSize)
     {
-        Expression<Func<QuoteEntity, bool>>? filter = null;
-        Func<IQueryable<QuoteEntity>, IOrderedQueryable<QuoteEntity>>? orderBy = (q) => q.OrderBy(q => q.Id);
+        Expression<Func<Quote, bool>>? filter = null;
+        Func<IQueryable<Quote>, IOrderedQueryable<Quote>>? orderBy = (q) => q.OrderBy(q => q.Id);
 
         if (!string.IsNullOrWhiteSpace(author))
         {

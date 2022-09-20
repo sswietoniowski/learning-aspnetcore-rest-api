@@ -113,7 +113,7 @@ public class QuotesController : ControllerBase
         {
             _logger.LogInformation($"Calling: {nameof(CreateQuote)}");
 
-            var quote = _mapper.Map<QuoteEntity>(quoteDto);
+            var quote = _mapper.Map<Quote>(quoteDto);
 
             await _unitOfWork.QuoteRepository.AddAsync(quote);
             await _unitOfWork.SaveAsync();

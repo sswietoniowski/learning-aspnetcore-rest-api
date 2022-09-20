@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace mvc.DataAccess.Entities;
 
-public class QuoteEntity
+public class Quote
 {
     [Key]
     public int Id { get; set; }
