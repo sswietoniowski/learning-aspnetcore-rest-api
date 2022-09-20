@@ -7,7 +7,7 @@ namespace minimal.DataAccess.Data;
 
 public class QuotesDbContext : DbContext
 {
-    public DbSet<QuoteEntity> Quotes => Set<QuoteEntity>();
+    public DbSet<Quote> Quotes => Set<Quote>();
 
     public QuotesDbContext(DbContextOptions<QuotesDbContext> options) : base(options)
     {

@@ -5,32 +5,32 @@ using minimal.DataAccess.Entities;
 
 namespace minimal.Configurations.Entities;
 
-public class QuoteConfiguration : IEntityTypeConfiguration<QuoteEntity>
+public class QuoteConfiguration : IEntityTypeConfiguration<Quote>
 {
-    public void Configure(EntityTypeBuilder<QuoteEntity> builder)
+    public void Configure(EntityTypeBuilder<Quote> builder)
     {
         builder.HasData(
-            new QuoteEntity
+            new Quote
             {
                 Id = 1,
                 Text = "Per aspera ad astra.",
                 Author = "Unknown",
                 Language = "Latin"
             },
-            new QuoteEntity
+            new Quote
             {
                 Id = 2,
                 Text = "Jestem życiem, które pragnie żyć, pośród życia, które pragnie żyć.",
                 Author = "Albert Shweitzer",
                 Language = "Polish"
-            }, new QuoteEntity
+            }, new Quote
             {
                 Id = 3,
                 Text = "Never be the first, never be the last, and never ever volunteer to do anything.",
                 Author = "Military Wisdom",
                 Language = "English"
             },
-            new QuoteEntity
+            new Quote
             {
                 Id = 4,
                 Text = "Niczego się nie wyrzekać, do niczego się nie przywiązywać.",

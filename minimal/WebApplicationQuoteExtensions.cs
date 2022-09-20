@@ -41,7 +41,7 @@ public static class WebApplicationQuoteExtensions
 
         app.MapPost("api/quotes", async (QuoteForCreationDto quoteDto, IUnitOfWork unitOfWork, IMapper mapper) =>
         {
-            var quote = mapper.Map<QuoteEntity>(quoteDto);
+            var quote = mapper.Map<Quote>(quoteDto);
 
             await unitOfWork.QuoteRepository.AddAsync(quote);
             await unitOfWork.SaveAsync();
