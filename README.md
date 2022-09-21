@@ -7,7 +7,7 @@ This is a sample API implementation using .NET.
 This repository contains the following sub-directories (with different API implementations):
 
 - **[mvc](mvc)** the REST API created using MVC controllers,
-- **[minimal]**(minimal) the REST API created using minimal API endpoints,
+- **[minimal](minimal)** the REST API created using minimal API endpoints,
 - ~~[clean](clean) the REST API created using clean architecture approach and CQRS design pattern,~~
 - ~~[graphql](graphql) the API created using GraphQL,~~
 - ~~[grpc](grpc) the API created using GRPC,~~
