@@ -6,8 +6,8 @@ This is a sample API implementation using .NET.
 
 This repository contains the following sub-directories (with different API implementations):
 
-- [mvc](mvc) the REST API created using MVC controllers,
-- [minimal](minimal) the REST API created using minimal API endpoints,
+- **[mvc](mvc)** the REST API created using MVC controllers,
+- **[minimal]**(minimal) the REST API created using minimal API endpoints,
 - ~~[clean](clean) the REST API created using clean architecture approach and CQRS design pattern,~~
 - ~~[graphql](graphql) the API created using GraphQL,~~
 - ~~[grpc](grpc) the API created using GRPC,~~
@@ -18,8 +18,8 @@ This repository contains the following sub-directories (with different API imple
 Based on these (free) courses:
 
 - ~~[Step by Step Tutorial - .Net Core MVC REST API](https://youtu.be/mUAZ-EbGBOg) [:file_folder:](https://github.com/binarythistle/S02E01-REST-API-.Net-Core) :fire: :+1:,~~
-- [.NET Core 3.1 MVC REST API - Full Course](https://youtu.be/fmvcAzHpsk8) [:file_folder:](https://github.com/binarythistle/S03E02---.NET-Core-3.1-MVC-REST-API) :+1:,
-- [.NET 6 Minimal API Full Build](https://youtu.be/5YB49OEmbbE) [:file_folder:](https://github.com/binarythistle/S05E03---Minimal-APIs) :+1:,
+- **[.NET Core 3.1 MVC REST API - Full Course](https://youtu.be/fmvcAzHpsk8)** [:file_folder:](https://github.com/binarythistle/S03E02---.NET-Core-3.1-MVC-REST-API) :+1:,
+- **[.NET 6 Minimal API Full Build](https://youtu.be/5YB49OEmbbE)** [:file_folder:](https://github.com/binarythistle/S05E03---Minimal-APIs) :+1:,
 - [ASP.NET Core 5 & 3 & 2.2 REST API Tutorial](https://youtube.com/playlist?list=PLUOequmGnXxOgmSDWU7Tl6iQTsOtyjtwU),
 - [.NET 5 REST API Tutorial - Build From Scratch With C#](https://youtu.be/ZXdFisA_hOY),
 - [Industry Level REST API using .NET 6 – Tutorial for Beginners](https://youtu.be/PmDJIooZjBE),
@@ -35,7 +35,7 @@ Based on these (free) courses:
 - [GraphQL API with .NET 5 and Hot Chocolate](https://youtu.be/HuN94qNwQmM) [:file_folder:](https://github.com/binarythistle/S04E01---.NET-5-GraphQL-API) :arrow_forward:,
 - [Postman Beginner's Course - API Testing](https://youtu.be/VywxIQ2ZXw4) [:file_folder:](https://github.com/vdespa/introduction-to-postman-course),
 - [Insomnia REST Client Tutorial](https://youtu.be/H16GUC9Svyk),
-- [How to Use Visual Studio Code as REST Client to Test REST APIs](https://youtu.be/8uyTn4cg8Xc) :+1:,
+- **[How to Use Visual Studio Code as REST Client to Test REST APIs](https://youtu.be/8uyTn4cg8Xc)** :+1:,
 - [(Rapid API VS Code Extension) I'm Still Not Using Postman!! I Use This NEW VS Code Extension Instead...](https://youtu.be/VuO-Haub9-I),
 - [Build an API without leaving VSCode! (Then Sell it $$)](https://youtu.be/69G5YKSUVvc),
 - [Make Money from your API Tutorial](https://youtu.be/MbqSMgMAzxU),
@@ -47,8 +47,8 @@ Based on these (free) courses:
 
 Also used these (paid) courses & books:
 
-- [ASP.NET Core 6 Web API Fundamentals](https://app.pluralsight.com/library/courses/asp-dot-net-core-6-web-api-fundamentals/table-of-contents) [:file_folder:](https://app.pluralsight.com/library/courses/asp-dot-net-core-6-web-api-fundamentals/exercise-files) [:file_folder:](https://github.com/KevinDockx/AspNetCore6WebAPIFundamentals) :+1:,
-- [Designing RESTful Web APIs](https://app.pluralsight.com/library/courses/designing-restful-web-apis/table-of-contents) [:file_folder:](https://app.pluralsight.com/library/courses/designing-restful-web-apis/exercise-files) :+1:,
+- **[ASP.NET Core 6 Web API Fundamentals](https://app.pluralsight.com/library/courses/asp-dot-net-core-6-web-api-fundamentals/table-of-contents)** [:file_folder:](https://app.pluralsight.com/library/courses/asp-dot-net-core-6-web-api-fundamentals/exercise-files) [:file_folder:](https://github.com/KevinDockx/AspNetCore6WebAPIFundamentals) :+1:,
+- **[Designing RESTful Web APIs](https://app.pluralsight.com/library/courses/designing-restful-web-apis/table-of-contents)** [:file_folder:](https://app.pluralsight.com/library/courses/designing-restful-web-apis/exercise-files) :+1:,
 - ~~[Building a RESTful API with ASP.NET Core 3](https://app.pluralsight.com/library/courses/asp-dot-net-core-3-restful-api-building/table-of-contents) [:file_folder:](https://app.pluralsight.com/library/courses/asp-dot-net-core-3-restful-api-building/exercise-files),~~
 - ~~[Implementing Advanced RESTful Concerns with ASP.NET Core 3](https://app.pluralsight.com/library/courses/asp-dot-net-core-3-advanced-restful-concerns/table-of-contents) [:file_folder:](https://app.pluralsight.com/library/courses/asp-dot-net-core-3-advanced-restful-concerns/exercise-files),~~
 - ~~[Documenting an ASP.NET Core 2 API with OpenAPI / Swagger](https://app.pluralsight.com/library/courses/aspdotnet-core-api-openapi-swagger/table-of-contents) [:file_folder:](https://app.pluralsight.com/library/courses/aspdotnet-core-api-openapi-swagger/exercise-files),~~
@@ -58,12 +58,12 @@ Also used these (paid) courses & books:
 - [Unit Testing an ASP.NET Core 6 Web API](https://app.pluralsight.com/library/courses/asp-dot-net-core-6-web-api-unit-testing/table-of-contents) [:file_folder:](https://app.pluralsight.com/library/courses/asp-dot-net-core-6-web-api-unit-testing/exercise-files),
 - ~~[Securing ASP.NET Core 3 with OAuth2 and OpenID Connect](https://app.pluralsight.com/library/courses/securing-aspnet-core-3-oauth2-openid-connect/table-of-contents) [:file_folder:](https://app.pluralsight.com/library/courses/securing-aspnet-core-3-oauth2-openid-connect/exercise-files),~~
 - [ASP.NET Core Security](https://learning.oreilly.com/library/view/asp-net-core-security/9781633439986/) [:file_folder:](https://www.manning.com/downloads/2371) ▶️,
-- [ASP.NET Core 5 and React - Second Edition](https://learning.oreilly.com/library/view/asp-net-core-5/9781800206168/) [:file_folder:](https://github.com/PacktPublishing/ASP.NET-Core-5-and-React-Second-Edition) :+1:,
+- **[ASP.NET Core 5 and React - Second Edition](https://learning.oreilly.com/library/view/asp-net-core-5/9781800206168/)** [:file_folder:](https://github.com/PacktPublishing/ASP.NET-Core-5-and-React-Second-Edition) :+1:,
 - [Building a Consistent RESTful API with OData V4 in ASP.NET Core 5](https://app.pluralsight.com/library/courses/building-consistent-restful-api-odata-v4-asp-dot-net-core/table-of-contents) [:file_folder:](https://app.pluralsight.com/library/courses/building-consistent-restful-api-odata-v4-asp-dot-net-core/exercise-files),
 - [ASP.NET Core 6 Web API: Best Practices](https://app.pluralsight.com/library/courses/aspdotnet-core-6-web-api-best-practices/table-of-contents) [:file_folder:](https://app.pluralsight.com/library/courses/aspdotnet-core-6-web-api-best-practices/exercise-files) :arrow_forward:,
 - [Deploying ASP.NET Core 6 Web API to Azure API Management](https://app.pluralsight.com/library/courses/asp-dot-net-core-6-deploying-web-api-azure-management/table-of-contents) [:file_folder:](https://app.pluralsight.com/library/courses/asp-dot-net-core-6-deploying-web-api-azure-management/exercise-files),
 - [Building an End-to-end SPA Using ASP.NET Core 6 Web API and React](https://app.pluralsight.com/library/courses/asp-dot-net-core-6-web-api-react-building-end-to-end-spa/table-of-contents) [:file_folder:](https://app.pluralsight.com/library/courses/asp-dot-net-core-6-web-api-react-building-end-to-end-spa/exercise-files) [:file_folder:](https://github.com/RolandGuijt/ps-globomantics-webapi-react) :+1:,
-- [Using HttpClient to Consume APIs in .NET 5](https://app.pluralsight.com/library/courses/using-httpclient-consume-apis-dot-net/table-of-contents) [:file_folder:](https://app.pluralsight.com/library/courses/using-httpclient-consume-apis-dot-net/exercise-files) :+1:,
+- **[Using HttpClient to Consume APIs in .NET 5](https://app.pluralsight.com/library/courses/using-httpclient-consume-apis-dot-net/table-of-contents)** [:file_folder:](https://app.pluralsight.com/library/courses/using-httpclient-consume-apis-dot-net/exercise-files) :+1:,
 - [Building GraphQL APIs with ASP.NET Core 2](https://app.pluralsight.com/library/courses/building-graphql-apis-aspdotnet-core/table-of-contents) [:file_folder:](https://app.pluralsight.com/library/courses/building-graphql-apis-aspdotnet-core/exercise-files) :arrow_forward:.
 
 This is (sort of) continuation of these projects:
