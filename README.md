@@ -35,6 +35,7 @@ Based on these (free) courses:
 - [Moving Existing API From REST To GraphQL](https://youtu.be/broQmxQAMjM),
 - [GraphQL API with .NET 5 and Hot Chocolate](https://youtu.be/HuN94qNwQmM) [:file_folder:](https://github.com/binarythistle/S04E01---.NET-5-GraphQL-API) :arrow_forward:,
 - [Building GraphQL APIs in C# - Brandon Minnick - NDC Oslo 2021](https://youtu.be/9Nn0OkLQ9lM),
+- [Getting started with GraphQL in .NET - Michael Staib - NDC Copenhagen 2022](https://youtu.be/qrh97hToWpM),
 - [Postman Beginner's Course - API Testing](https://youtu.be/VywxIQ2ZXw4) [:file_folder:](https://github.com/vdespa/introduction-to-postman-course),
 - [Insomnia REST Client Tutorial](https://youtu.be/H16GUC9Svyk),
 - **[How to Use Visual Studio Code as REST Client to Test REST APIs](https://youtu.be/8uyTn4cg8Xc)** :+1:,
