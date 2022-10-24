@@ -46,7 +46,8 @@ Based on these (free) courses:
 - [Minimal API in .NET 6 Using Dapper and SQL - Minimal API Project Part 2](https://youtu.be/5tYSO5mAjXs),
 - [Configuring and Using Swagger UI in ASP.NET Core Web API](https://code-maze.com/swagger-ui-asp-net-core-web-api/),
 - [Using HttpClient in .NET Core to Connect to APIs in C#](https://youtu.be/cwgck1k0YKU) :arrow_forward:,
-- [Intro to Refit REST API Client for C#](https://youtu.be/HH8drNbai8w) :arrow_forward:.
+- [Intro to Refit REST API Client for C#](https://youtu.be/HH8drNbai8w) :arrow_forward:,
+- [Elegant Global Error Handling Using Middleware In ASP.NET Core](https://youtu.be/H3EbflpXVmo) :arrow_forward:.
 
 Also used these (paid) courses & books:
 
