@@ -32,7 +32,7 @@ Based on these (free) courses:
 - [Docker Compose with .NET Core & SQL Server (Step by Step)](https://youtu.be/4V7CwC_4oss),
 - [ASP.NET 6 REST API Following CLEAN ARCHITECTURE & DDD Tutorial](https://youtube.com/playlist?list=PLzYkqgWkHPKBcDIP5gzLfASkQyTdy0t4k),
 - [Asp.Net Core API from scratch w/ clean architecture and CQRS](https://youtube.com/playlist?list=PL2E-vlKoo_v0VjwlmPFljWJI42kpAdXel),
-- [Moving Existing API From REST To GraphQL](https://youtu.be/broQmxQAMjM),
+- [Moving Existing API From REST To GraphQL](https://youtu.be/broQmxQAMjM) :arrow_forward:,
 - [GraphQL API with .NET 5 and Hot Chocolate](https://youtu.be/HuN94qNwQmM) [:file_folder:](https://github.com/binarythistle/S04E01---.NET-5-GraphQL-API) :arrow_forward:,
 - [Building GraphQL APIs in C# - Brandon Minnick - NDC Oslo 2021](https://youtu.be/9Nn0OkLQ9lM) :arrow_forward:,
 - [Getting started with GraphQL in .NET - Michael Staib - NDC Copenhagen 2022](https://youtu.be/qrh97hToWpM),
