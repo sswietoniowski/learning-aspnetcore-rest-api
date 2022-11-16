@@ -23,6 +23,7 @@ Based on these (free) courses:
 - [ASP.NET Core 5 & 3 & 2.2 REST API Tutorial](https://youtube.com/playlist?list=PLUOequmGnXxOgmSDWU7Tl6iQTsOtyjtwU),
 - [.NET 5 REST API Tutorial - Build From Scratch With C#](https://youtu.be/ZXdFisA_hOY),
 - [Industry Level REST API using .NET 6 – Tutorial for Beginners](https://youtu.be/PmDJIooZjBE),
+- [.NET 7 Web API & Entity Framework 🚀 Full Course (CRUD, Repository Pattern, DI, SQL Server & more)](https://youtu.be/8pH5Lv4d5-g),
 - [Intro to Web API in .NET 6 - Including Minimal APIs, Swagger, and more](https://youtu.be/87oOF9Ve-KA),
 - [Cleaning Up The Program.cs File In .NET 6 Now That Startup.cs is Gone](https://youtu.be/rhydGmLxfjQ),
 - [Secure a .NET Core API with Bearer Authentication](https://youtu.be/3PyUjOmuFic) [:file_folder:](https://github.com/binarythistle/S03E01-Secure-.NET-Core-API),
