@@ -12,9 +12,9 @@ namespace mvc.Controllers;
 [Route("api/quotes")]
 public class QuotesController : ControllerBase
 {
-    private const int DefaultQuotesPageNumber = 1;
-    private const int DefaultQuotesPageSize = 10;
-    private const int MaxQuotesPageSize = 100;
+    private const int DEFAULT_QUOTES_PAGE_NUMBER = 1;
+    private const int DEFAULT_QUOTES_PAGE_SIZE = 10;
+    private const int MAX_QUOTES_PAGE_SIZE = 100;
 
     private readonly ILogger<QuotesController> _logger;
     private readonly IUnitOfWork _unitOfWork;
@@ -35,8 +35,8 @@ public class QuotesController : ControllerBase
         [FromQuery(Name = "filter_author")] string? author,
         [FromQuery(Name = "filter_language")] string? language,
         [FromQuery(Name = "search_text")] string? text,
-        [FromQuery] int pageNumber = DefaultQuotesPageNumber,
-        [FromQuery] int pageSize = DefaultQuotesPageSize)
+        [FromQuery] int pageNumber = DEFAULT_QUOTES_PAGE_NUMBER,
+        [FromQuery] int pageSize = DEFAULT_QUOTES_PAGE_SIZE)
     {
         try
         {
@@ -48,10 +48,10 @@ public class QuotesController : ControllerBase
                 return BadRequest(ModelState);
             }
 
-            if (pageSize > MaxQuotesPageSize)
+            if (pageSize > MAX_QUOTES_PAGE_SIZE)
             {
-                _logger.LogWarning($"Page size ({pageSize}) was adjusted beacause it was greater than the maximum page size {MaxQuotesPageSize}.");
-                pageSize = MaxQuotesPageSize;
+                _logger.LogWarning($"Page size ({pageSize}) was adjusted beacause it was greater than the maximum page size {MAX_QUOTES_PAGE_SIZE}.");
+                pageSize = MAX_QUOTES_PAGE_SIZE;
             }
 
             var (quotes, paginationMetadata) = await _unitOfWork.QuoteRepository.GetQuotesAsync(
