@@ -15,7 +15,7 @@ This repository contains the following sub-directories (with different API imple
 
 ## Learning Resources
 
-Based on these (free) courses:
+Based on these (free) courses/materials:
 
 - ~~[Step by Step Tutorial - .Net Core MVC REST API](https://youtu.be/mUAZ-EbGBOg) [:file_folder:](https://github.com/binarythistle/S02E01-REST-API-.Net-Core) :fire: :+1:,~~
 - **[.NET Core 3.1 MVC REST API - Full Course](https://youtu.be/fmvcAzHpsk8)** [:file_folder:](https://github.com/binarythistle/S03E02---.NET-Core-3.1-MVC-REST-API) :+1:,
@@ -48,7 +48,7 @@ Based on these (free) courses:
 - [Configuring and Using Swagger UI in ASP.NET Core Web API](https://code-maze.com/swagger-ui-asp-net-core-web-api/),
 - [Using HttpClient in .NET Core to Connect to APIs in C#](https://youtu.be/cwgck1k0YKU) :arrow_forward:,
 - [Intro to Refit REST API Client for C#](https://youtu.be/HH8drNbai8w) :arrow_forward:,
-- **[Resources about error handling](./docs/error_handling.md)** :+1:,
+- **[Error handling](./docs/error_handling.md)** :+1:,
 - [.NET 6 - Web API Logging](https://youtu.be/LO-QKMHK5ps) :arrow_forward:.
 - [.NET 6 - AutoMapper & Data Transfer Objects (DTOs)](https://youtu.be/Wm7hN0S-AdU),
 - [.NET 6 - Web API Correlation Id](https://youtu.be/y0CQmwRllvQ),
