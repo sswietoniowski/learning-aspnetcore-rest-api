@@ -1,4 +1,4 @@
-﻿namespace mvc.Exceptions;
+﻿namespace mvc.Configurations.Exceptions;
 
 public class NotFoundException : Exception
 {

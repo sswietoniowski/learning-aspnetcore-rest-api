@@ -1,4 +1,4 @@
-﻿namespace mvc.Exceptions;
+﻿namespace minimal.Configurations.Exceptions;
 
 public class UnauthorizedAccessException : Exception
 {

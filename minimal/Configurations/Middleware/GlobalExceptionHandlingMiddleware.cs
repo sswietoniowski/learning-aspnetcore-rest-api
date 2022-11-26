@@ -1,12 +1,15 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using mvc.Configurations.Exceptions;
-using System.Net;
+﻿using System.Net;
 using System.Text.Json;
-using KeyNotFoundException = mvc.Configurations.Exceptions.KeyNotFoundException;
-using NotImplementedException = mvc.Configurations.Exceptions.NotImplementedException;
-using UnauthorizedAccessException = mvc.Configurations.Exceptions.UnauthorizedAccessException;
 
-namespace mvc.Configurations.Middleware;
+using Microsoft.AspNetCore.Mvc;
+
+using minimal.Configurations.Exceptions;
+
+using KeyNotFoundException = minimal.Configurations.Exceptions.KeyNotFoundException;
+using NotImplementedException = minimal.Configurations.Exceptions.NotImplementedException;
+using UnauthorizedAccessException = minimal.Configurations.Exceptions.UnauthorizedAccessException;
+
+namespace minimal.Configurations.Middleware;
 
 public class GlobalExceptionHandlingMiddleware : IMiddleware
 {

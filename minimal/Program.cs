@@ -2,6 +2,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 
 using minimal;
+using minimal.Configurations.Extensions;
+using minimal.Configurations.Middleware;
 using minimal.DataAccess.Data;
 using minimal.DataAccess.Repository;
 using minimal.DataAccess.Repository.Interfaces;
@@ -35,7 +37,7 @@ builder.Services.AddSwaggerGen(options =>
     options.SwaggerDoc("v1", new OpenApiInfo { Title = "minimal", Version = "v1" });
 });
 
-var allowedOrigins = builder.Configuration.GetValue<string>("Cors:AllowedOrigins")?.Split(",") ?? new string[0];
+var allowedOrigins = builder.Configuration.GetValue<string>("Cors:AllowedOrigins")?.Split(",") ?? Array.Empty<string>();
 builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(policyBuilder =>
@@ -49,12 +51,14 @@ builder.Services.AddCors(options =>
     });
 });
 
+builder.Services.AddTransient<GlobalExceptionHandlingMiddleware>();
+
 var app = builder.Build();
+
+app.UseGlobalErrorHandler();
 
 if (app.Environment.IsDevelopment())
 {
-    app.UseDeveloperExceptionPage();
-
     app.UseSwagger();
     app.MapSwagger();
     app.UseSwaggerUI();
