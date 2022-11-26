@@ -16,13 +16,13 @@ public class GlobalErrorHandlingOptions
 
 public static class WebApplicationUseGlobalErrorHandlerExtension
 {
-    public static void UseGlobalErrorHandler(this WebApplication app)
+    public static WebApplication UseGlobalErrorHandler(this WebApplication app)
     {
         var options = app.Services.GetService<IOptions<GlobalErrorHandlingOptions>>();
 
         if (options?.Value?.ExceptionHandlingType is null)
         {
-            return;
+            return app;
         }
 
         switch (options.Value.ExceptionHandlingType)
@@ -31,8 +31,11 @@ public static class WebApplicationUseGlobalErrorHandlerExtension
                 app.UseMiddleware<GlobalExceptionHandlingMiddleware>();
                 break;
             case ExceptionHandlingType.ErrorController:
-                app.UseExceptionHandler(app.Environment.IsDevelopment() ? "/error-development" : "/error");
+                var isDevelopment = app.Environment.IsDevelopment();
+                app.UseExceptionHandler(isDevelopment ? "/error-development" : "/error");
                 break;
         }
+
+        return app;
     }
 }

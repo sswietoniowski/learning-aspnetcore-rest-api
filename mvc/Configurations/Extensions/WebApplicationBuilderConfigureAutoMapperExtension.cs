@@ -2,8 +2,10 @@
 
 public static class WebApplicationBuilderConfigureAutoMapperExtension
 {
-    public static void ConfigureAutoMapper(this WebApplicationBuilder builder)
+    public static WebApplicationBuilder ConfigureAutoMapper(this WebApplicationBuilder builder)
     {
         builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+        return builder;
     }
 }

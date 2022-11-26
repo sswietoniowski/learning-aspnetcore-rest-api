@@ -7,7 +7,7 @@ namespace mvc.Configurations.Extensions;
 
 public static class WebApplicationBuilderConfigurePersistenceExtension
 {
-    public static void ConfigurePersistence(this WebApplicationBuilder builder)
+    public static WebApplicationBuilder ConfigurePersistence(this WebApplicationBuilder builder)
     {
         builder.Services.AddDbContext<QuotesDbContext>(options =>
         {
@@ -15,5 +15,7 @@ public static class WebApplicationBuilderConfigurePersistenceExtension
         });
 
         builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+        return builder;
     }
 }

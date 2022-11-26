@@ -2,11 +2,13 @@
 
 public static class WebApplicationUseEndpointsExtension
 {
-    public static void UseEndpoints(this WebApplication app)
+    public static WebApplication UseEndpoints(this WebApplication app)
     {
         app.UseEndpoints(endpoints =>
         {
             endpoints.MapControllers();
         });
+
+        return app;
     }
 }
