@@ -38,27 +38,43 @@ public class QuotesController : ControllerBase
         [FromQuery] int pageNumber = DEFAULT_QUOTES_PAGE_NUMBER,
         [FromQuery] int pageSize = DEFAULT_QUOTES_PAGE_SIZE)
     {
-        _logger.LogInformation($"Calling: {nameof(GetQuotes)}");
+        // handling errors with try-catch is the oldest and the easiest way to do it,
+        // I'm using it only for this endpoint to show how to do that, for the rest of the endpoints
+        // I will use a middleware to handle exceptions globally, depending on the configuration
+        // setting it's a custom middleware or the one provided by the framework
 
-        if (pageNumber <= 0)
+        try
         {
-            ModelState.AddModelError(nameof(pageNumber), "Page number should be positive number!");
-            return BadRequest(ModelState);
-        }
 
-        if (pageSize > MAX_QUOTES_PAGE_SIZE)
+            _logger.LogInformation($"Calling: {nameof(GetQuotes)}");
+
+            if (pageNumber <= 0)
+            {
+                ModelState.AddModelError(nameof(pageNumber), "Page number should be positive number!");
+                return BadRequest(ModelState);
+            }
+
+            if (pageSize > MAX_QUOTES_PAGE_SIZE)
+            {
+                _logger.LogWarning($"Page size ({pageSize}) was adjusted beacause it was greater than the maximum page size {MAX_QUOTES_PAGE_SIZE}.");
+                pageSize = MAX_QUOTES_PAGE_SIZE;
+            }
+
+            var (quotes, paginationMetadata) = await _unitOfWork.QuoteRepository.GetQuotesAsync(
+                author, language, text, pageNumber, pageSize);
+            var quotesDto = _mapper.Map<IEnumerable<QuoteDto>>(quotes);
+
+            Response.Headers.Add("X-Pagination", JsonSerializer.Serialize(paginationMetadata));
+
+            return Ok(quotesDto);
+        }
+        catch (Exception exception)
         {
-            _logger.LogWarning($"Page size ({pageSize}) was adjusted beacause it was greater than the maximum page size {MAX_QUOTES_PAGE_SIZE}.");
-            pageSize = MAX_QUOTES_PAGE_SIZE;
+            _logger.LogError($"An error occurred: {exception}");
+
+            return StatusCode(StatusCodes.Status500InternalServerError,
+                "A problem happened while handling your request.");
         }
-
-        var (quotes, paginationMetadata) = await _unitOfWork.QuoteRepository.GetQuotesAsync(
-            author, language, text, pageNumber, pageSize);
-        var quotesDto = _mapper.Map<IEnumerable<QuoteDto>>(quotes);
-
-        Response.Headers.Add("X-Pagination", JsonSerializer.Serialize(paginationMetadata));
-
-        return Ok(quotesDto);
     }
 
     // GET: api/quotes/id
