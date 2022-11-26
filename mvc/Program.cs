@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using mvc.Configurations.Extensions;
+using mvc.Configurations.Middleware;
 using mvc.DataAccess.Data;
 using mvc.DataAccess.Repository;
 using mvc.DataAccess.Repository.Interfaces;
@@ -56,12 +58,16 @@ builder.Services.AddCors(options =>
     });
 });
 
+builder.Services.Configure<GlobalErrorHandlingOptions>(
+    builder.Configuration.GetSection("GlobalErrorHandlingOptions"));
+builder.Services.AddTransient<GlobalExceptionHandlingMiddleware>();
+
 var app = builder.Build();
+
+app.UseGlobalErrorHandler();
 
 if (app.Environment.IsDevelopment())
 {
-    app.UseDeveloperExceptionPage();
-
     app.UseSwagger();
     app.UseSwaggerUI(options => options.SwaggerEndpoint("/swagger/v1/swagger.json", "mvc v1"));
 }
