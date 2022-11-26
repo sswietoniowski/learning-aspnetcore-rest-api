@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using mvc.Configurations.Extensions;
 using mvc.DataAccess.Data;
 using mvc.DataAccess.Repository;
 using mvc.DataAccess.Repository.Interfaces;
@@ -74,5 +75,7 @@ app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllers();
 });
+
+app.UseGlobalErrorHandler();
 
 app.Run();
