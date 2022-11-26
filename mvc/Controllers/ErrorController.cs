@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using System;
 
 namespace mvc.Controllers
 {
@@ -45,9 +44,9 @@ namespace mvc.Controllers
         {
             var exceptionHandlerFeature =
                 HttpContext.Features.Get<IExceptionHandlerFeature>()!;
-            
+
             _logger.LogError($"An exception occurred: {exceptionHandlerFeature.Error}");
-            
+
             return Problem();
         }
     }
