@@ -59,8 +59,6 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
-app.UseGlobalErrorHandler();
-
 if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
@@ -77,5 +75,7 @@ app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllers();
 });
+
+app.UseGlobalErrorHandler();
 
 app.Run();
