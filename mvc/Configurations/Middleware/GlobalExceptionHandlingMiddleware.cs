@@ -68,7 +68,7 @@ public class GlobalExceptionHandlingMiddleware
                 break;
         }
 
-        _logger.LogError($"An exception occurred: {exception}");
+        _logger.LogError($"An error occurred: {exception}");
 
         var exceptionResult = JsonSerializer.Serialize(new { Error = message, StackTrace = stackTrace });
 

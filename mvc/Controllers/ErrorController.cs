@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace mvc.Controllers
 {
@@ -9,6 +10,13 @@ namespace mvc.Controllers
     {
         // this implementation is based on the following article: 
         // https://learn.microsoft.com/en-us/aspnet/core/web-api/handle-errors?view=aspnetcore-7.0
+
+        private readonly ILogger<ErrorController> _logger;
+
+        public ErrorController(ILogger<ErrorController> logger)
+        {
+            _logger = logger;
+        }
 
         [Route("/error-development")]
         [ApiExplorerSettings(IgnoreApi = true)]
@@ -23,6 +31,8 @@ namespace mvc.Controllers
             var exceptionHandlerFeature =
                 HttpContext.Features.Get<IExceptionHandlerFeature>()!;
 
+            _logger.LogError($"An exception occurred: {exceptionHandlerFeature.Error}");
+
             return Problem(
                 detail: exceptionHandlerFeature.Error.StackTrace,
                 title: exceptionHandlerFeature.Error.Message);
@@ -31,6 +41,14 @@ namespace mvc.Controllers
         [Route("/error")]
         [ApiExplorerSettings(IgnoreApi = true)]
         [AllowAnonymous]
-        public IActionResult HandleError() => Problem();
+        public IActionResult HandleError()
+        {
+            var exceptionHandlerFeature =
+                HttpContext.Features.Get<IExceptionHandlerFeature>()!;
+            
+            _logger.LogError($"An exception occurred: {exceptionHandlerFeature.Error}");
+            
+            return Problem();
+        }
     }
 }
