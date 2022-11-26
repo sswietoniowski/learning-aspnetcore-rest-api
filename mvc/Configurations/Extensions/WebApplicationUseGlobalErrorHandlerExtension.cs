@@ -14,11 +14,11 @@ public class GlobalErrorHandlingOptions
     public ExceptionHandlingType? ExceptionHandlingType { get; set; }
 }
 
-public static class ApplicationBuilderUseGlobalErrorHandlerExtension
+public static class WebApplicationUseGlobalErrorHandlerExtension
 {
-    public static void UseGlobalErrorHandler(this IApplicationBuilder app)
+    public static void UseGlobalErrorHandler(this WebApplication app)
     {
-        var options = app.ApplicationServices.GetService<IOptions<GlobalErrorHandlingOptions>>();
+        var options = app.Services.GetService<IOptions<GlobalErrorHandlingOptions>>();
 
         if (options?.Value?.ExceptionHandlingType is null)
         {
@@ -31,10 +31,7 @@ public static class ApplicationBuilderUseGlobalErrorHandlerExtension
                 app.UseMiddleware<GlobalExceptionHandlingMiddleware>();
                 break;
             case ExceptionHandlingType.ErrorController:
-                app.UseExceptionHandler(
-                    app.ApplicationServices.GetService<IHostEnvironment>()?.IsDevelopment() == true
-                        ? "/error-development"
-                        : "/error");
+                app.UseExceptionHandler(app.Environment.IsDevelopment() ? "/error-development" : "/error");
                 break;
         }
     }

@@ -1,11 +1,4 @@
-using Microsoft.EntityFrameworkCore;
-using Microsoft.OpenApi.Models;
 using mvc.Configurations.Extensions;
-using mvc.Configurations.Middleware;
-using mvc.DataAccess.Data;
-using mvc.DataAccess.Repository;
-using mvc.DataAccess.Repository.Interfaces;
-using Newtonsoft.Json.Serialization;
 using Serilog;
 
 Log.Logger = new LoggerConfiguration()
@@ -18,67 +11,28 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Host.UseSerilog();
 
-builder.Services.AddDbContext<QuotesDbContext>(options =>
-{
-    options.UseSqlServer(builder.Configuration.GetConnectionString("QuotesDb"));
-});
+builder.ConfigurePersistence();
 
-builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.ConfigureAutoMapper();
 
-builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+builder.ConfigureControllers();
 
-builder.Services.AddControllers(options =>
-{
-    options.ReturnHttpNotAcceptable = true;
-})
-    .AddNewtonsoftJson(settings =>
-    {
-        settings.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
-        settings.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
-    })
-    .AddXmlDataContractSerializerFormatters();
+builder.ConfigureSwagger();
 
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(options =>
-{
-    options.SwaggerDoc("v1", new OpenApiInfo { Title = "mvc", Version = "v1" });
-});
+builder.ConfigureCors();
 
-var allowedOrigins = builder.Configuration.GetValue<string>("Cors:AllowedOrigins")?.Split(",") ?? Array.Empty<string>();
-builder.Services.AddCors(options =>
-{
-    options.AddDefaultPolicy(policyBuilder =>
-    {
-        policyBuilder
-            .WithOrigins(allowedOrigins)
-            .AllowAnyMethod()
-            .AllowAnyHeader()
-            .AllowCredentials()
-            .WithExposedHeaders("X-Pagination");
-    });
-});
-
-builder.Services.Configure<GlobalErrorHandlingOptions>(
-    builder.Configuration.GetSection("GlobalErrorHandlingOptions"));
-builder.Services.AddTransient<GlobalExceptionHandlingMiddleware>();
+builder.ConfigureGlobalErrorHandler();
 
 var app = builder.Build();
 
 app.UseGlobalErrorHandler();
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI(options => options.SwaggerEndpoint("/swagger/v1/swagger.json", "mvc v1"));
-}
+app.UseSwagger();
 
 app.UseRouting();
 
 app.UseCors();
 
-app.UseEndpoints(endpoints =>
-{
-    endpoints.MapControllers();
-});
+app.UseEndpoints();
 
 app.Run();

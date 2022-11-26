@@ -3,57 +3,56 @@ using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace mvc.Controllers
+namespace mvc.Controllers;
+
+[ApiController]
+public class ErrorController : ControllerBase
 {
-    [ApiController]
-    public class ErrorController : ControllerBase
+    // this implementation is based on the following article: 
+    // https://learn.microsoft.com/en-us/aspnet/core/web-api/handle-errors?view=aspnetcore-7.0
+
+    private readonly ILogger<ErrorController> _logger;
+
+    public ErrorController(ILogger<ErrorController> logger)
     {
-        // this implementation is based on the following article: 
-        // https://learn.microsoft.com/en-us/aspnet/core/web-api/handle-errors?view=aspnetcore-7.0
+        _logger = logger;
+    }
 
-        private readonly ILogger<ErrorController> _logger;
-
-        public ErrorController(ILogger<ErrorController> logger)
+    [Route("/error-development")]
+    [ApiExplorerSettings(IgnoreApi = true)]
+    [AllowAnonymous]
+    public IActionResult HandleErrorInDevelopment([FromServices] IHostEnvironment hostEnvironment)
+    {
+        if (!hostEnvironment.IsDevelopment())
         {
-            _logger = logger;
+            return NotFound();
         }
 
-        [Route("/error-development")]
-        [ApiExplorerSettings(IgnoreApi = true)]
-        [AllowAnonymous]
-        public IActionResult HandleErrorInDevelopment([FromServices] IHostEnvironment hostEnvironment)
+        var exception = HttpContext.Features.Get<IExceptionHandlerFeature>()?.Error;
+
+        if (exception is not null)
         {
-            if (!hostEnvironment.IsDevelopment())
-            {
-                return NotFound();
-            }
+            _logger.LogError(exception, $"An error occurred: {exception.Message}");
+        }
+        return Problem(
+            statusCode: StatusCodes.Status500InternalServerError,
+            type: "Server Error",
+            detail: exception?.StackTrace,
+            title: exception?.Message);
+    }
 
-            var exception = HttpContext.Features.Get<IExceptionHandlerFeature>()?.Error;
+    [Route("/error")]
+    [ApiExplorerSettings(IgnoreApi = true)]
+    [AllowAnonymous]
+    public IActionResult HandleErrorInProduction()
+    {
+        var exception = HttpContext.Features.Get<IExceptionHandlerFeature>()?.Error;
 
-            if (exception is not null)
-            {
-                _logger.LogError(exception, $"An error occurred: {exception.Message}");
-            }
-            return Problem(
-                statusCode: StatusCodes.Status500InternalServerError,
-                type: "Server Error",
-                detail: exception?.StackTrace,
-                title: exception?.Message);
+        if (exception is not null)
+        {
+            _logger.LogError(exception, $"An error occurred: {exception.Message}");
         }
 
-        [Route("/error")]
-        [ApiExplorerSettings(IgnoreApi = true)]
-        [AllowAnonymous]
-        public IActionResult HandleErrorInProduction()
-        {
-            var exception = HttpContext.Features.Get<IExceptionHandlerFeature>()?.Error;
-
-            if (exception is not null)
-            {
-                _logger.LogError(exception, $"An error occurred: {exception.Message}");
-            }
-
-            return Problem();
-        }
+        return Problem();
     }
 }
