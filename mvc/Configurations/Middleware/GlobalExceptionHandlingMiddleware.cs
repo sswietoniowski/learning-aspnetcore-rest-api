@@ -17,7 +17,7 @@ public class GlobalExceptionHandlingMiddleware
         _next = next;
         _logger = logger;
     }
-
+    
     public async Task InvokeAsync(HttpContext context)
     {
         try
@@ -32,8 +32,9 @@ public class GlobalExceptionHandlingMiddleware
 
     private async Task HandleExceptionAsync(HttpContext context, Exception exception)
     {
-        _logger.LogCritical($"An exception occurred: {exception}");
-
+        context.Response.ContentType = "application/json";
+        var response = context.Response;
+        
         HttpStatusCode statusCode = HttpStatusCode.InternalServerError; // 500 if unexpected
 
         // You might want to change this to hide/show an information for security reasons or
@@ -67,11 +68,12 @@ public class GlobalExceptionHandlingMiddleware
                 break;
         }
 
+        _logger.LogError($"An exception occurred: {exception}");
+
         var exceptionResult = JsonSerializer.Serialize(new { Error = message, StackTrace = stackTrace });
 
-        context.Response.ContentType = "application/json";
-        context.Response.StatusCode = (int)statusCode;
+        //response.StatusCode = (int)statusCode;
 
-        await context.Response.WriteAsync(exceptionResult);
+        await response.WriteAsync(exceptionResult);
     }
 }
