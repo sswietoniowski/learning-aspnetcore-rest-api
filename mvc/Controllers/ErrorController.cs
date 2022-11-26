@@ -30,11 +30,11 @@ namespace mvc.Controllers
             var exceptionHandlerFeature =
                 HttpContext.Features.Get<IExceptionHandlerFeature>()!;
 
-            _logger.LogError($"An exception occurred: {exceptionHandlerFeature.Error}");
+            _logger.LogError($"An exception occurred: {exceptionHandlerFeature?.Error}");
 
             return Problem(
-                detail: exceptionHandlerFeature.Error.StackTrace,
-                title: exceptionHandlerFeature.Error.Message);
+                detail: exceptionHandlerFeature?.Error?.StackTrace,
+                title: exceptionHandlerFeature?.Error?.Message);
         }
 
         [Route("/error")]
@@ -45,7 +45,7 @@ namespace mvc.Controllers
             var exceptionHandlerFeature =
                 HttpContext.Features.Get<IExceptionHandlerFeature>()!;
 
-            _logger.LogError($"An exception occurred: {exceptionHandlerFeature.Error}");
+            _logger.LogError($"An exception occurred: {exceptionHandlerFeature?.Error}");
 
             return Problem();
         }
