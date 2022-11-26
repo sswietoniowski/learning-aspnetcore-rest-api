@@ -1,4 +1,5 @@
-﻿using mvc.Exceptions;
+﻿using Microsoft.AspNetCore.Mvc;
+using mvc.Exceptions;
 using System.Net;
 using System.Text.Json;
 using KeyNotFoundException = mvc.Exceptions.KeyNotFoundException;
@@ -27,9 +28,6 @@ public class GlobalExceptionHandlingMiddleware : IMiddleware
 
     private async Task HandleExceptionAsync(HttpContext context, Exception exception)
     {
-        context.Response.ContentType = "application/json";
-        var response = context.Response;
-        
         HttpStatusCode statusCode = HttpStatusCode.InternalServerError; // 500 if unexpected
 
         // You might want to change this to hide/show an information for security reasons or
@@ -63,12 +61,24 @@ public class GlobalExceptionHandlingMiddleware : IMiddleware
                 break;
         }
 
-        _logger.LogError($"An error occurred: {exception}");
+        _logger.LogError(exception, $"An error occurred: {exception.Message}");
 
-        var exceptionResult = JsonSerializer.Serialize(new { Error = message, StackTrace = stackTrace });
+        ProblemDetails problemDetails = new()
+        {
+            Status = (int)statusCode,
+            Type = "Error",
+            Title = message,
+            Detail = stackTrace,
+        };
+
+        var result = JsonSerializer.Serialize(problemDetails);
+
+        var response = context.Response;
 
         response.StatusCode = (int)statusCode;
 
-        await response.WriteAsync(exceptionResult);
+        response.ContentType = "application/json";
+
+        await response.WriteAsync(result);
     }
 }

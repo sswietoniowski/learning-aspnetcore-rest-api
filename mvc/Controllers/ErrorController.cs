@@ -20,7 +20,7 @@ namespace mvc.Controllers
         [Route("/error-development")]
         [ApiExplorerSettings(IgnoreApi = true)]
         [AllowAnonymous]
-        public IActionResult HandleErrorDevelopment([FromServices] IHostEnvironment hostEnvironment)
+        public IActionResult HandleErrorInDevelopment([FromServices] IHostEnvironment hostEnvironment)
         {
             if (!hostEnvironment.IsDevelopment())
             {
@@ -31,10 +31,12 @@ namespace mvc.Controllers
 
             if (exception is not null)
             {
-                _logger.LogError($"An error occurred: {exception}");
+                _logger.LogError(exception, $"An error occurred: {exception.Message}");
             }
 
             return Problem(
+                statusCode: 500,
+                type: "Server Error",
                 detail: exception?.StackTrace,
                 title: exception?.Message);
         }
@@ -42,13 +44,13 @@ namespace mvc.Controllers
         [Route("/error")]
         [ApiExplorerSettings(IgnoreApi = true)]
         [AllowAnonymous]
-        public IActionResult HandleError()
+        public IActionResult HandleErrorInProduction()
         {
             var exception = HttpContext.Features.Get<IExceptionHandlerFeature>()?.Error;
 
             if (exception is not null)
             {
-                _logger.LogError($"An error occurred: {exception}");
+                _logger.LogError(exception, $"An error occurred: {exception.Message}");
             }
 
             return Problem();

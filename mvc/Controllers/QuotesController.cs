@@ -69,10 +69,13 @@ public class QuotesController : ControllerBase
         }
         catch (Exception exception)
         {
-            _logger.LogError($"An error occurred: {exception}");
+            _logger.LogError(exception, $"An error occurred in: {nameof(GetQuotes)}");
 
-            return StatusCode(StatusCodes.Status500InternalServerError,
-                "A problem happened while handling your request.");
+            return Problem(
+                statusCode: 500,
+                type: "Server Error",
+                detail: exception.StackTrace,
+                title: exception.Message);
         }
     }
 
