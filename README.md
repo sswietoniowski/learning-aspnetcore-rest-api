@@ -49,7 +49,8 @@ Based on these (free) courses:
 - [Using HttpClient in .NET Core to Connect to APIs in C#](https://youtu.be/cwgck1k0YKU) :arrow_forward:,
 - [Intro to Refit REST API Client for C#](https://youtu.be/HH8drNbai8w) :arrow_forward:,
 - [.NET 6 - Web API Global Exceptions Handling](https://youtu.be/fBXOgrZ3ZC4) :arrow_forward:,
-- [Elegant Global Error Handling Using Middleware In ASP.NET Core](https://youtu.be/H3EbflpXVmo) :arrow_forward:.
+- [Elegant Global Error Handling Using Middleware In ASP.NET Core](https://youtu.be/H3EbflpXVmo) :arrow_forward:,
+- [.NET 6 - Web API Caching with Redis](https://youtu.be/6HZVu3kGOrg).
 
 Also used these (paid) courses & books:
 
