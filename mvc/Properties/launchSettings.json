@@ -1,5 +1,4 @@
 {
-  "$schema": "http://json.schemastore.org/launchsettings.json",
   "profiles": {
     "mvc": {
       "commandName": "Project",
@@ -10,5 +9,6 @@
       "applicationUrl": "https://localhost:5001",
       "dotnetRunMessages": "true"
     }
-  }
+  },
+  "$schema": "http://json.schemastore.org/launchsettings.json"
 }

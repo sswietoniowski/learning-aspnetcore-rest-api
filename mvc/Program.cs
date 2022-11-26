@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using mvc.Configurations.Extensions;
 using mvc.DataAccess.Data;
@@ -56,6 +57,9 @@ builder.Services.AddCors(options =>
             .WithExposedHeaders("X-Pagination");
     });
 });
+
+builder.Services.Configure<GlobalErrorHandlingOptions>(
+    builder.Configuration.GetSection("GlobalErrorHandlingOptions"));
 
 var app = builder.Build();
 
