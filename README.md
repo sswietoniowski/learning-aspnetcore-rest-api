@@ -50,7 +50,6 @@ Based on these (free) courses:
 - [Intro to Refit REST API Client for C#](https://youtu.be/HH8drNbai8w) :arrow_forward:,
 - **[Resources about error handling](./docs/error_handling.md)** :+1:,
 - [.NET 6 - Web API Logging](https://youtu.be/LO-QKMHK5ps) :arrow_forward:.
-- [.NET 6 - Web API Logging](https://youtu.be/LO-QKMHK5ps),
 - [.NET 6 - AutoMapper & Data Transfer Objects (DTOs)](https://youtu.be/Wm7hN0S-AdU),
 - [.NET 6 - Web API Correlation Id](https://youtu.be/y0CQmwRllvQ),
 - [.NET 6 - Web API Caching with Redis](https://youtu.be/6HZVu3kGOrg),
