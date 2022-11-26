@@ -20,16 +20,22 @@ public static class ApplicationBuilderUseGlobalErrorHandlerExtension
     {
         var options = app.ApplicationServices.GetService<IOptions<GlobalErrorHandlingOptions>>();
 
-        if (options?.Value.ExceptionHandlingType == ExceptionHandlingType.CustomMiddleware)
+        if (options?.Value?.ExceptionHandlingType is null)
         {
-            app.UseMiddleware<GlobalExceptionHandlingMiddleware>();
+            return;
         }
-        else // use ErrorController by default
+
+        switch (options.Value.ExceptionHandlingType)
         {
-            app.UseExceptionHandler(
-                app.ApplicationServices.GetService<IHostEnvironment>()?.IsDevelopment() == true
-                ? "/error-development"
-                : "/error");
+            case ExceptionHandlingType.CustomMiddleware:
+                app.UseMiddleware<GlobalExceptionHandlingMiddleware>();
+                break;
+            case ExceptionHandlingType.ErrorController:
+                app.UseExceptionHandler(
+                    app.ApplicationServices.GetService<IHostEnvironment>()?.IsDevelopment() == true
+                        ? "/error-development"
+                        : "/error");
+                break;
         }
     }
 }
