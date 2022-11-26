@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace mvc.Controllers
 {
@@ -27,14 +28,16 @@ namespace mvc.Controllers
                 return NotFound();
             }
 
-            var exceptionHandlerFeature =
-                HttpContext.Features.Get<IExceptionHandlerFeature>()!;
+            var exception = HttpContext.Features.Get<IExceptionHandlerFeature>()?.Error;
 
-            _logger.LogError($"An exception occurred: {exceptionHandlerFeature?.Error}");
+            if (exception is not null)
+            {
+                _logger.LogError($"An error occurred: {exception}");
+            }
 
             return Problem(
-                detail: exceptionHandlerFeature?.Error?.StackTrace,
-                title: exceptionHandlerFeature?.Error?.Message);
+                detail: exception?.StackTrace,
+                title: exception?.Message);
         }
 
         [Route("/error")]
@@ -42,10 +45,12 @@ namespace mvc.Controllers
         [AllowAnonymous]
         public IActionResult HandleError()
         {
-            var exceptionHandlerFeature =
-                HttpContext.Features.Get<IExceptionHandlerFeature>()!;
+            var exception = HttpContext.Features.Get<IExceptionHandlerFeature>()?.Error;
 
-            _logger.LogError($"An exception occurred: {exceptionHandlerFeature?.Error}");
+            if (exception is not null)
+            {
+                _logger.LogError($"An error occurred: {exception}");
+            }
 
             return Problem();
         }
