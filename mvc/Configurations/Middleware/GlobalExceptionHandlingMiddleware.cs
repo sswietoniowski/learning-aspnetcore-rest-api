@@ -2,6 +2,10 @@
 using System.Text.Json;
 using mvc.Exceptions;
 
+using NotImplementedException = mvc.Exceptions.NotImplementedException;
+using KeyNotFoundException = mvc.Exceptions.KeyNotFoundException;
+using UnauthorizedAccessException = mvc.Exceptions.UnauthorizedAccessException;
+
 namespace mvc.Configurations.Middleware
 {
     public class GlobalExceptionHandlingMiddleware
@@ -38,25 +42,26 @@ namespace mvc.Configurations.Middleware
             var message = "A problem happened while handling your request.";
             var stackTrace = string.Empty;
 
+            // here you can handle specific exceptions and return a specific status code
             switch (exception)
             {
                 case BadRequestException:
                     statusCode = HttpStatusCode.BadRequest;
-                    // just to show how to show the message and stack trace if needed
+                    // just to show how to provide information to the client if needed
                     message = exception.Message;
                     stackTrace = exception.StackTrace;
                     break;
-                case mvc.Exceptions.KeyNotFoundException or NotFoundException:
+                case KeyNotFoundException or NotFoundException:
                     statusCode = HttpStatusCode.NotFound;
                     message = exception.Message;
                     stackTrace = exception.StackTrace;
                     break;
-                case mvc.Exceptions.NotImplementedException:
+                case NotImplementedException:
                     statusCode = HttpStatusCode.NotImplemented;
                     message = exception.Message;
                     stackTrace = exception.StackTrace;
                     break;
-                case mvc.Exceptions.UnauthorizedAccessException:
+                case UnauthorizedAccessException:
                     statusCode = HttpStatusCode.Unauthorized;
                     message = exception.Message;
                     stackTrace = exception.StackTrace;
@@ -67,6 +72,7 @@ namespace mvc.Configurations.Middleware
 
             context.Response.ContentType = "application/json";
             context.Response.StatusCode = (int)statusCode;
+            
             await context.Response.WriteAsync(exceptionResult);
         }
     }
