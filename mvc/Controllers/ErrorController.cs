@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Diagnostics;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace mvc.Controllers
@@ -33,9 +34,8 @@ namespace mvc.Controllers
             {
                 _logger.LogError(exception, $"An error occurred: {exception.Message}");
             }
-
             return Problem(
-                statusCode: 500,
+                statusCode: StatusCodes.Status500InternalServerError,
                 type: "Server Error",
                 detail: exception?.StackTrace,
                 title: exception?.Message);

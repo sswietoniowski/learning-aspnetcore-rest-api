@@ -1,4 +1,5 @@
 using AutoMapper;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using mvc.DataAccess.Entities;
@@ -70,9 +71,8 @@ public class QuotesController : ControllerBase
         catch (Exception exception)
         {
             _logger.LogError(exception, $"An error occurred: {exception.Message}");
-
             return Problem(
-                statusCode: 500,
+                statusCode: StatusCodes.Status500InternalServerError,
                 type: "Server Error",
                 detail: exception.StackTrace,
                 title: exception.Message);
