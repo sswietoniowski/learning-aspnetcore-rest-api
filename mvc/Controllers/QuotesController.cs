@@ -41,11 +41,10 @@ public class QuotesController : ControllerBase
         // handling errors with try-catch is the oldest and the easiest way to do it,
         // I'm using it only for this endpoint to show how to do that, for the rest of the endpoints
         // I will use a middleware to handle exceptions globally, depending on the configuration
-        // setting it's a custom middleware or the one provided by the framework
+        // setting it would be a custom middleware or the one provided by the framework
 
         try
         {
-
             _logger.LogInformation($"Calling: {nameof(GetQuotes)}");
 
             if (pageNumber <= 0)
