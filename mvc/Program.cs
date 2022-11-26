@@ -59,10 +59,10 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
+app.UseGlobalErrorHandler();
+
 if (app.Environment.IsDevelopment())
 {
-    app.UseDeveloperExceptionPage();
-
     app.UseSwagger();
     app.UseSwaggerUI(options => options.SwaggerEndpoint("/swagger/v1/swagger.json", "mvc v1"));
 }
@@ -75,7 +75,5 @@ app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllers();
 });
-
-app.UseGlobalErrorHandler();
 
 app.Run();

@@ -72,7 +72,7 @@ public class GlobalExceptionHandlingMiddleware
 
         var exceptionResult = JsonSerializer.Serialize(new { Error = message, StackTrace = stackTrace });
 
-        //response.StatusCode = (int)statusCode;
+        response.StatusCode = (int)statusCode;
 
         await response.WriteAsync(exceptionResult);
     }
