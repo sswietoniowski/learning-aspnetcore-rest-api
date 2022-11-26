@@ -69,7 +69,7 @@ public class QuotesController : ControllerBase
         }
         catch (Exception exception)
         {
-            _logger.LogError(exception, $"An error occurred in: {nameof(GetQuotes)}");
+            _logger.LogError(exception, $"An error occurred: {exception.Message}");
 
             return Problem(
                 statusCode: 500,

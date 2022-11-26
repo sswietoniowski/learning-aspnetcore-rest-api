@@ -71,7 +71,7 @@ public class GlobalExceptionHandlingMiddleware : IMiddleware
             Detail = stackTrace,
         };
 
-        var result = JsonSerializer.Serialize(problemDetails);
+        var resultJson = JsonSerializer.Serialize(problemDetails);
 
         var response = context.Response;
 
@@ -79,6 +79,6 @@ public class GlobalExceptionHandlingMiddleware : IMiddleware
 
         response.ContentType = "application/json";
 
-        await response.WriteAsync(result);
+        await response.WriteAsync(resultJson);
     }
 }
