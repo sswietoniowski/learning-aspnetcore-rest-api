@@ -50,7 +50,11 @@ Based on these (free) courses:
 - [Intro to Refit REST API Client for C#](https://youtu.be/HH8drNbai8w) :arrow_forward:,
 - [.NET 6 - Web API Global Exceptions Handling](https://youtu.be/fBXOgrZ3ZC4) :arrow_forward:,
 - [Elegant Global Error Handling Using Middleware In ASP.NET Core](https://youtu.be/H3EbflpXVmo) :arrow_forward:,
-- [.NET 6 - Web API Caching with Redis](https://youtu.be/6HZVu3kGOrg).
+- [.NET 6 - Web API Logging](https://youtu.be/LO-QKMHK5ps),
+- [.NET 6 - AutoMapper & Data Transfer Objects (DTOs)](https://youtu.be/Wm7hN0S-AdU),
+- [.NET 6 - Web API Correlation Id](https://youtu.be/y0CQmwRllvQ),
+- [.NET 6 - Web API Caching with Redis](https://youtu.be/6HZVu3kGOrg),
+- [.NET 7 - Build CRUD with Web API / EF Core / Repository Pattern](https://youtu.be/nIOqO5N2_ss).
 
 Also used these (paid) courses & books:
 
