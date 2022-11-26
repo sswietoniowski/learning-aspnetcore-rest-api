@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using mvc.Configurations.Extensions;
+using mvc.Configurations.Middleware;
 using mvc.DataAccess.Data;
 using mvc.DataAccess.Repository;
 using mvc.DataAccess.Repository.Interfaces;
@@ -60,6 +60,7 @@ builder.Services.AddCors(options =>
 
 builder.Services.Configure<GlobalErrorHandlingOptions>(
     builder.Configuration.GetSection("GlobalErrorHandlingOptions"));
+builder.Services.AddTransient<GlobalExceptionHandlingMiddleware>();
 
 var app = builder.Build();
 
