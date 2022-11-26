@@ -1,4 +1,4 @@
-# Resources about error handling
+# Error handling
 
 Useful resources:
 
