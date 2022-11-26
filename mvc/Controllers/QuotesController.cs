@@ -38,37 +38,27 @@ public class QuotesController : ControllerBase
         [FromQuery] int pageNumber = DEFAULT_QUOTES_PAGE_NUMBER,
         [FromQuery] int pageSize = DEFAULT_QUOTES_PAGE_SIZE)
     {
-        try
+        _logger.LogInformation($"Calling: {nameof(GetQuotes)}");
+
+        if (pageNumber <= 0)
         {
-            _logger.LogInformation($"Calling: {nameof(GetQuotes)}");
-
-            if (pageNumber <= 0)
-            {
-                ModelState.AddModelError(nameof(pageNumber), "Page number should be positive number!");
-                return BadRequest(ModelState);
-            }
-
-            if (pageSize > MAX_QUOTES_PAGE_SIZE)
-            {
-                _logger.LogWarning($"Page size ({pageSize}) was adjusted beacause it was greater than the maximum page size {MAX_QUOTES_PAGE_SIZE}.");
-                pageSize = MAX_QUOTES_PAGE_SIZE;
-            }
-
-            var (quotes, paginationMetadata) = await _unitOfWork.QuoteRepository.GetQuotesAsync(
-                author, language, text, pageNumber, pageSize);
-            var quotesDto = _mapper.Map<IEnumerable<QuoteDto>>(quotes);
-
-            Response.Headers.Add("X-Pagination", JsonSerializer.Serialize(paginationMetadata));
-
-            return Ok(quotesDto);
+            ModelState.AddModelError(nameof(pageNumber), "Page number should be positive number!");
+            return BadRequest(ModelState);
         }
-        catch (Exception exception)
+
+        if (pageSize > MAX_QUOTES_PAGE_SIZE)
         {
-            _logger.LogCritical($"Exception while calling {nameof(GetQuotes)}.", exception);
-
-            return StatusCode(StatusCodes.Status500InternalServerError,
-                "A problem happened while handling your request.");
+            _logger.LogWarning($"Page size ({pageSize}) was adjusted beacause it was greater than the maximum page size {MAX_QUOTES_PAGE_SIZE}.");
+            pageSize = MAX_QUOTES_PAGE_SIZE;
         }
+
+        var (quotes, paginationMetadata) = await _unitOfWork.QuoteRepository.GetQuotesAsync(
+            author, language, text, pageNumber, pageSize);
+        var quotesDto = _mapper.Map<IEnumerable<QuoteDto>>(quotes);
+
+        Response.Headers.Add("X-Pagination", JsonSerializer.Serialize(paginationMetadata));
+
+        return Ok(quotesDto);
     }
 
     // GET: api/quotes/id
@@ -78,28 +68,18 @@ public class QuotesController : ControllerBase
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public async Task<ActionResult<QuoteDto>> GetQuote(int id)
     {
-        try
+        _logger.LogInformation($"Calling: {nameof(GetQuote)}");
+
+        var quote = await _unitOfWork.QuoteRepository.GetByIdAsync(id);
+
+        if (quote is null)
         {
-            _logger.LogInformation($"Calling: {nameof(GetQuote)}");
-
-            var quote = await _unitOfWork.QuoteRepository.GetByIdAsync(id);
-
-            if (quote is null)
-            {
-                return NotFound();
-            }
-
-            var quoteDto = _mapper.Map<QuoteDto>(quote);
-
-            return Ok(quoteDto);
+            return NotFound();
         }
-        catch (Exception exception)
-        {
-            _logger.LogCritical($"Exception while calling {nameof(GetQuote)}.", exception);
 
-            return StatusCode(StatusCodes.Status500InternalServerError,
-                "A problem happened while handling your request.");
-        }
+        var quoteDto = _mapper.Map<QuoteDto>(quote);
+
+        return Ok(quoteDto);
     }
 
     // POST: api/quotes
@@ -109,28 +89,18 @@ public class QuotesController : ControllerBase
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public async Task<ActionResult<QuoteDto>> CreateQuote([FromBody] QuoteForCreationDto quoteDto)
     {
-        try
-        {
-            _logger.LogInformation($"Calling: {nameof(CreateQuote)}");
+        _logger.LogInformation($"Calling: {nameof(CreateQuote)}");
 
-            var quote = _mapper.Map<Quote>(quoteDto);
+        var quote = _mapper.Map<Quote>(quoteDto);
 
-            await _unitOfWork.QuoteRepository.AddAsync(quote);
-            await _unitOfWork.SaveAsync();
+        await _unitOfWork.QuoteRepository.AddAsync(quote);
+        await _unitOfWork.SaveAsync();
 
-            var createdQuoteDto = _mapper.Map<QuoteDto>(quote);
+        var createdQuoteDto = _mapper.Map<QuoteDto>(quote);
 
-            // useful info about differences between CreatedAtAction vs CreatedAtRoute:
-            // https://ochzhen.com/blog/created-createdataction-createdatroute-methods-explained-aspnet-core
-            return CreatedAtRoute(nameof(GetQuote), new { Id = quote.Id }, createdQuoteDto);
-        }
-        catch (Exception exception)
-        {
-            _logger.LogCritical($"Exception while calling {nameof(CreateQuote)}.", exception);
-
-            return StatusCode(StatusCodes.Status500InternalServerError,
-                "A problem happened while handling your request.");
-        }
+        // useful info about differences between CreatedAtAction vs CreatedAtRoute:
+        // https://ochzhen.com/blog/created-createdataction-createdatroute-methods-explained-aspnet-core
+        return CreatedAtRoute(nameof(GetQuote), new { quote.Id }, createdQuoteDto);
     }
 
     // PUT: api/quotes/id
@@ -140,31 +110,21 @@ public class QuotesController : ControllerBase
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public async Task<IActionResult> UpdateQuote(int id, [FromBody] QuoteForUpdateDto quoteDto)
     {
-        try
+        _logger.LogInformation($"Calling: {nameof(UpdateQuote)}");
+
+        var quoteToUpdate = await _unitOfWork.QuoteRepository.GetByIdAsync(id);
+
+        if (quoteToUpdate is null)
         {
-            _logger.LogInformation($"Calling: {nameof(UpdateQuote)}");
-
-            var quoteToUpdate = await _unitOfWork.QuoteRepository.GetByIdAsync(id);
-
-            if (quoteToUpdate is null)
-            {
-                return NotFound();
-            }
-
-            _mapper.Map(quoteDto, quoteToUpdate);
-
-            _unitOfWork.QuoteRepository.Modify(quoteToUpdate);
-            await _unitOfWork.SaveAsync();
-
-            return NoContent();
+            return NotFound();
         }
-        catch (Exception exception)
-        {
-            _logger.LogCritical($"Exception while calling {nameof(UpdateQuote)}.", exception);
 
-            return StatusCode(StatusCodes.Status500InternalServerError,
-                "A problem happened while handling your request.");
-        }
+        _mapper.Map(quoteDto, quoteToUpdate);
+
+        _unitOfWork.QuoteRepository.Modify(quoteToUpdate);
+        await _unitOfWork.SaveAsync();
+
+        return NoContent();
     }
 
     // PATCH: api/quotes/id
@@ -175,47 +135,37 @@ public class QuotesController : ControllerBase
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public async Task<IActionResult> PartiallyUpdateQuote(int id, JsonPatchDocument<QuoteForUpdateDto> patchDocument)
     {
-        try
+        _logger.LogInformation($"Calling: {nameof(PartiallyUpdateQuote)}");
+
+        // Here you'll find more info about JSON Patch:
+        // https://jsonpatch.com/
+
+        var quoteToUpdate = await _unitOfWork.QuoteRepository.GetByIdAsync(id);
+
+        if (quoteToUpdate is null)
         {
-            _logger.LogInformation($"Calling: {nameof(PartiallyUpdateQuote)}");
-
-            // Here you'll find more info about JSON Patch:
-            // https://jsonpatch.com/
-
-            var quoteToUpdate = await _unitOfWork.QuoteRepository.GetByIdAsync(id);
-
-            if (quoteToUpdate is null)
-            {
-                return NotFound();
-            }
-
-            var quoteDtoToPatch = _mapper.Map<QuoteForUpdateDto>(quoteToUpdate);
-            patchDocument.ApplyTo(quoteDtoToPatch, ModelState);
-
-            if (!ModelState.IsValid)
-            {
-                return ValidationProblem(ModelState);
-            }
-
-            if (!TryValidateModel(quoteDtoToPatch))
-            {
-                return ValidationProblem(ModelState);
-            }
-
-            _mapper.Map(quoteDtoToPatch, quoteToUpdate);
-
-            _unitOfWork.QuoteRepository.Modify(quoteToUpdate);
-            await _unitOfWork.SaveAsync();
-
-            return NoContent();
+            return NotFound();
         }
-        catch (Exception exception)
+
+        var quoteDtoToPatch = _mapper.Map<QuoteForUpdateDto>(quoteToUpdate);
+        patchDocument.ApplyTo(quoteDtoToPatch, ModelState);
+
+        if (!ModelState.IsValid)
         {
-            _logger.LogCritical($"Exception while calling {nameof(PartiallyUpdateQuote)}.", exception);
-
-            return StatusCode(StatusCodes.Status500InternalServerError,
-                "A problem happened while handling your request.");
+            return ValidationProblem(ModelState);
         }
+
+        if (!TryValidateModel(quoteDtoToPatch))
+        {
+            return ValidationProblem(ModelState);
+        }
+
+        _mapper.Map(quoteDtoToPatch, quoteToUpdate);
+
+        _unitOfWork.QuoteRepository.Modify(quoteToUpdate);
+        await _unitOfWork.SaveAsync();
+
+        return NoContent();
     }
 
     // DELETE: api/quotes/id
@@ -225,28 +175,18 @@ public class QuotesController : ControllerBase
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public async Task<IActionResult> DeleteQuote(int id)
     {
-        try
+        _logger.LogInformation($"Calling: {nameof(DeleteQuote)}");
+
+        var quoteToDelete = await _unitOfWork.QuoteRepository.GetByIdAsync(id);
+
+        if (quoteToDelete is null)
         {
-            _logger.LogInformation($"Calling: {nameof(DeleteQuote)}");
-
-            var quoteToDelete = await _unitOfWork.QuoteRepository.GetByIdAsync(id);
-
-            if (quoteToDelete is null)
-            {
-                return NotFound();
-            }
-
-            _unitOfWork.QuoteRepository.Remove(quoteToDelete);
-            await _unitOfWork.SaveAsync();
-
-            return NoContent();
+            return NotFound();
         }
-        catch (Exception exception)
-        {
-            _logger.LogCritical($"Exception while calling {nameof(DeleteQuote)}.", exception);
 
-            return StatusCode(StatusCodes.Status500InternalServerError,
-                "A problem happened while handling your request.");
-        }
+        _unitOfWork.QuoteRepository.Remove(quoteToDelete);
+        await _unitOfWork.SaveAsync();
+
+        return NoContent();
     }
 }
