@@ -27,10 +27,6 @@ Based on these (free) courses/materials:
 - [Intro to Web API in .NET 6 - Including Minimal APIs, Swagger, and more](https://youtu.be/87oOF9Ve-KA),
 - [Cleaning Up The Program.cs File In .NET 6 Now That Startup.cs is Gone](https://youtu.be/rhydGmLxfjQ),
 - [Secure a .NET Core API with Bearer Authentication](https://youtu.be/3PyUjOmuFic) [:file_folder:](https://github.com/binarythistle/S03E01-Secure-.NET-Core-API),
-- [Intro to Docker - A Tool Every Developer Should Know](https://youtu.be/WcQ3-M4-jik),
-- [Deploy a .NET Core API with Docker (Step-by-Step)](https://youtu.be/f0lMGPB10bM),
-- [Step by step - Run and Connect to SQL Server in Docker](https://youtu.be/SJAl3vOX05M),
-- [Docker Compose with .NET Core & SQL Server (Step by Step)](https://youtu.be/4V7CwC_4oss),
 - [Make Money from your API Tutorial](https://youtu.be/MbqSMgMAzxU),
 - [Configuring and Using Swagger UI in ASP.NET Core Web API](https://code-maze.com/swagger-ui-asp-net-core-web-api/),
 - [.NET 6 - Web API Logging](https://youtu.be/LO-QKMHK5ps) :arrow_forward:.
@@ -39,6 +35,7 @@ Based on these (free) courses/materials:
 - [GraphQL APIs](./docs/graphql_apis.md),
 - [data access](./docs/data_access.md),
 - **[error handling](./docs/error_handling.md)** :+1:,
+- [deployment](./docs/deployment.md),
 - [API clients](./docs/api_clients.md),
 - [consume APIs](./docs/consume_apis.md),
 - [clean architecture](./docs/clean_architecture.md).
