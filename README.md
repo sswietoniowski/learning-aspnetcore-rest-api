@@ -33,18 +33,15 @@ Based on these (free) courses/materials:
 - [Docker Compose with .NET Core & SQL Server (Step by Step)](https://youtu.be/4V7CwC_4oss),
 - [ASP.NET 6 REST API Following CLEAN ARCHITECTURE & DDD Tutorial](https://youtube.com/playlist?list=PLzYkqgWkHPKBcDIP5gzLfASkQyTdy0t4k),
 - [Asp.Net Core API from scratch w/ clean architecture and CQRS](https://youtube.com/playlist?list=PL2E-vlKoo_v0VjwlmPFljWJI42kpAdXel),
- [Make Money from your API Tutorial](https://youtu.be/MbqSMgMAzxU),
-- [Simple C# Data Access with Dapper and SQL - Minimal API Project Part 1](https://youtu.be/dwMFg6uxQ0I),
-- [Minimal API in .NET 6 Using Dapper and SQL - Minimal API Project Part 2](https://youtu.be/5tYSO5mAjXs),
+- [Make Money from your API Tutorial](https://youtu.be/MbqSMgMAzxU),
 - [Configuring and Using Swagger UI in ASP.NET Core Web API](https://code-maze.com/swagger-ui-asp-net-core-web-api/),
 - [.NET 6 - Web API Logging](https://youtu.be/LO-QKMHK5ps) :arrow_forward:.
-- [.NET 6 - AutoMapper & Data Transfer Objects (DTOs)](https://youtu.be/Wm7hN0S-AdU),
 - [.NET 6 - Web API Correlation Id](https://youtu.be/y0CQmwRllvQ),
 - [.NET 6 - Web API Caching with Redis](https://youtu.be/6HZVu3kGOrg),
-- [.NET 7 - Build CRUD with Web API / EF Core / Repository Pattern](https://youtu.be/nIOqO5N2_ss),
+- [GraphQL APIs](./docs/graphq_apis.md),
+- [data access](./docs/data_access.md),
 - **[error handling](./docs/error_handling.md)** :+1:,
 - [API clients](./docs/api_clients.md),
-- [GraphQL APIs](./docs/graphq_apis.md),
 - [consume APIs](./docs/consume_apis.md).
 
 Also used these (paid) courses & books:
