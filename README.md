@@ -24,7 +24,7 @@ Based on these (free) courses/materials:
 - [caching](./docs/caching.md),
 - [logging](./docs/logging.md),
 - [error handling](./docs/error_handling.md),
-- [security](./docs/security.md),
+- [security](./docs/api_security.md),
 - [deployment](./docs/deployment.md),
 - [documenting](./docs/documenting.md),
 - [clients](./docs/clients.md),
