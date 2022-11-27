@@ -5,10 +5,6 @@ using Microsoft.AspNetCore.Mvc;
 
 using minimal.Configurations.Exceptions;
 
-using KeyNotFoundException = minimal.Configurations.Exceptions.KeyNotFoundException;
-using NotImplementedException = minimal.Configurations.Exceptions.NotImplementedException;
-using UnauthorizedAccessException = minimal.Configurations.Exceptions.UnauthorizedAccessException;
-
 namespace minimal.Configurations.Middleware;
 
 public class GlobalExceptionHandlingMiddleware : IMiddleware
@@ -41,23 +37,23 @@ public class GlobalExceptionHandlingMiddleware : IMiddleware
         // here you can handle specific exceptions and return a specific status code
         switch (exception)
         {
-            case BadRequestException:
+            case BadRequestApiException:
                 statusCode = HttpStatusCode.BadRequest;
                 // just to show how to provide information to the client if needed
                 message = exception.Message;
                 stackTrace = exception.StackTrace;
                 break;
-            case KeyNotFoundException or NotFoundException:
+            case KeyNotFoundApiException or NotFoundApiException:
                 statusCode = HttpStatusCode.NotFound;
                 message = exception.Message;
                 stackTrace = exception.StackTrace;
                 break;
-            case NotImplementedException:
+            case NotImplementedApiException:
                 statusCode = HttpStatusCode.NotImplemented;
                 message = exception.Message;
                 stackTrace = exception.StackTrace;
                 break;
-            case UnauthorizedAccessException:
+            case UnauthorizedAccessApiException:
                 statusCode = HttpStatusCode.Unauthorized;
                 message = exception.Message;
                 stackTrace = exception.StackTrace;

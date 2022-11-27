@@ -5,6 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.AddPersistence();
 builder.AddMapper();
+builder.AddServices();
 builder.AddSwagger();
 builder.AddCors();
 builder.AddGlobalErrorHandler();
