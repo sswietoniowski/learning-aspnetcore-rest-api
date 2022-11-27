@@ -6,9 +6,9 @@ using minimal.DTOs;
 
 namespace minimal;
 
-public static class WebApplicationQuoteExtensions
+public static class WebApplicationUseMinimalApiEndpointsExtensions
 {
-    public static void MapQuoteEndpoints(this WebApplication app)
+    public static void UseMinimalApiEndpoints(this WebApplication app)
     {
         app.MapGet("api/quotes", async (IUnitOfWork unitOfWork, IMapper mapper) =>
         {

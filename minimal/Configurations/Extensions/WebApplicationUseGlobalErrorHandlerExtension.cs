@@ -2,7 +2,7 @@
 
 namespace minimal.Configurations.Extensions;
 
-public static class ApplicationBuilderUseGlobalErrorHandlerExtension
+public static class WebApplicationUseGlobalErrorHandlerExtension
 {
     public static void UseGlobalErrorHandler(this IApplicationBuilder app)
     {
