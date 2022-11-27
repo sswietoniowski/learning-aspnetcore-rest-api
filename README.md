@@ -38,7 +38,7 @@ Based on these (free) courses/materials:
 - [.NET 6 - Web API Logging](https://youtu.be/LO-QKMHK5ps) :arrow_forward:.
 - [.NET 6 - Web API Correlation Id](https://youtu.be/y0CQmwRllvQ),
 - [.NET 6 - Web API Caching with Redis](https://youtu.be/6HZVu3kGOrg),
-- [GraphQL APIs](./docs/graphq_apis.md),
+- [GraphQL APIs](./docs/graphql_apis.md),
 - [data access](./docs/data_access.md),
 - **[error handling](./docs/error_handling.md)** :+1:,
 - [API clients](./docs/api_clients.md),
