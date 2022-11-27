@@ -18,8 +18,8 @@ This repository contains the following sub-directories (with different API imple
 Based on these (free) courses/materials:
 
 - APIs:
-  - [REST APIs](./docs/rest_apis.md),
-  - [GraphQL APIs](./docs/graphql_apis.md),
+  - [REST](./docs/rest_apis.md),
+  - [GraphQL](./docs/graphql_apis.md),
 - [data access](./docs/data_access.md),
 - [caching](./docs/caching.md),
 - [logging](./docs/logging.md),
@@ -27,8 +27,8 @@ Based on these (free) courses/materials:
 - [security](./docs/security.md),
 - [deployment](./docs/deployment.md),
 - [documenting](./docs/documenting.md),
-- [API clients](./docs/api_clients.md),
-- [consume APIs](./docs/consume_apis.md),
+- [clients](./docs/clients.md),
+- [consume](./docs/consume.md),
 - [clean architecture](./docs/clean_architecture.md),
 - [other](./docs/other.md).
 
