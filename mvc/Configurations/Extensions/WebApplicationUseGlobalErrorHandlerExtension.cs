@@ -19,20 +19,20 @@ public static class WebApplicationUseGlobalErrorHandlerExtension
     public static WebApplication UseGlobalErrorHandler(this WebApplication app)
     {
         var options = app.Services.GetService<IOptions<GlobalErrorHandlingOptions>>();
+        ExceptionHandlingType? exceptionHandlingType = options?.Value?.ExceptionHandlingType;
 
-        if (options?.Value?.ExceptionHandlingType is null)
+        if (exceptionHandlingType is null)
         {
             return app;
         }
 
-        switch (options.Value.ExceptionHandlingType)
+        switch (exceptionHandlingType)
         {
             case ExceptionHandlingType.CustomMiddleware:
                 app.UseMiddleware<GlobalExceptionHandlingMiddleware>();
                 break;
             case ExceptionHandlingType.ErrorController:
-                var isDevelopment = app.Environment.IsDevelopment();
-                app.UseExceptionHandler(isDevelopment ? "/error-development" : "/error");
+                app.UseExceptionHandler("/Error");
                 break;
         }
 

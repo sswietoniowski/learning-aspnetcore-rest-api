@@ -2,9 +2,9 @@
 
 namespace mvc.Configurations.Extensions;
 
-public static class WebApplicationBuilderConfigureControllersExtension
+public static class WebApplicationBuilderAddControllersExtension
 {
-    public static WebApplicationBuilder ConfigureControllers(this WebApplicationBuilder builder)
+    public static WebApplicationBuilder AddControllers(this WebApplicationBuilder builder)
     {
         builder.Services.AddControllers(options =>
             {

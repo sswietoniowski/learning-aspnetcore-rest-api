@@ -1,8 +1,8 @@
 ﻿namespace mvc.Configurations.Extensions;
 
-public static class WebApplicationBuilderConfigureCorsExtension
+public static class WebApplicationBuilderAddCorsExtension
 {
-    public static WebApplicationBuilder ConfigureCors(this WebApplicationBuilder builder)
+    public static WebApplicationBuilder AddCors(this WebApplicationBuilder builder)
     {
         var allowedOrigins = builder.Configuration.GetValue<string>("Cors:AllowedOrigins")?.Split(",") ?? Array.Empty<string>();
 

@@ -5,9 +5,9 @@ using mvc.DataAccess.Repository.Interfaces;
 
 namespace mvc.Configurations.Extensions;
 
-public static class WebApplicationBuilderConfigurePersistenceExtension
+public static class WebApplicationBuilderAddPersistenceExtension
 {
-    public static WebApplicationBuilder ConfigurePersistence(this WebApplicationBuilder builder)
+    public static WebApplicationBuilder AddPersistence(this WebApplicationBuilder builder)
     {
         builder.Services.AddDbContext<QuotesDbContext>(options =>
         {

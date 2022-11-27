@@ -1,13 +1,14 @@
 using mvc.Configurations.Extensions;
 
-var builder = WebApplication.CreateBuilder(args)
-    .ConfigureLogging()
-    .ConfigurePersistence()
-    .ConfigureAutoMapper()
-    .ConfigureControllers()
-    .ConfigureSwagger()
-    .ConfigureCors()
-    .ConfigureGlobalErrorHandler();
+var builder = WebApplication.CreateBuilder(args);
+
+builder.AddLogging();
+builder.AddPersistence();
+builder.AddMapper();
+builder.AddControllers();
+builder.AddSwagger();
+builder.AddCors();
+builder.AddGlobalErrorHandler();
 
 var app = builder.Build();
 

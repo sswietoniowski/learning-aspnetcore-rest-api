@@ -2,9 +2,9 @@
 
 namespace mvc.Configurations.Extensions;
 
-public static class WebApplicationBuilderConfigureLoggingExtension
+public static class WebApplicationBuilderAddLoggingExtension
 {
-    public static WebApplicationBuilder ConfigureLogging(this WebApplicationBuilder builder)
+    public static WebApplicationBuilder AddLogging(this WebApplicationBuilder builder)
     {
         Log.Logger = new LoggerConfiguration()
             .MinimumLevel.Debug()

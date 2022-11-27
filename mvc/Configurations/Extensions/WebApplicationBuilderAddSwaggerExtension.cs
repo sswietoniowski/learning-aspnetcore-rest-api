@@ -2,9 +2,9 @@
 
 namespace mvc.Configurations.Extensions;
 
-public static class WebApplicationBuilderConfigureSwaggerExtension
+public static class WebApplicationBuilderAddSwaggerExtension
 {
-    public static WebApplicationBuilder ConfigureSwagger(this WebApplicationBuilder builder)
+    public static WebApplicationBuilder AddSwagger(this WebApplicationBuilder builder)
     {
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen(options =>

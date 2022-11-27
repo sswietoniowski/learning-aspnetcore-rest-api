@@ -1,8 +1,8 @@
 ﻿namespace mvc.Configurations.Extensions;
 
-public static class WebApplicationBuilderConfigureAutoMapperExtension
+public static class WebApplicationBuilderAddMapperExtension
 {
-    public static WebApplicationBuilder ConfigureAutoMapper(this WebApplicationBuilder builder)
+    public static WebApplicationBuilder AddMapper(this WebApplicationBuilder builder)
     {
         builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
