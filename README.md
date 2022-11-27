@@ -37,19 +37,20 @@ Based on these (free) courses/materials:
 - [GraphQL API with .NET 5 and Hot Chocolate](https://youtu.be/HuN94qNwQmM) [:file_folder:](https://github.com/binarythistle/S04E01---.NET-5-GraphQL-API) :arrow_forward:,
 - [Building GraphQL APIs in C# - Brandon Minnick - NDC Oslo 2021](https://youtu.be/9Nn0OkLQ9lM) :arrow_forward:,
 - [Getting started with GraphQL in .NET - Michael Staib - NDC Copenhagen 2022](https://youtu.be/qrh97hToWpM),
-- [API clients](./docs/api_clients.md),
 - [Make Money from your API Tutorial](https://youtu.be/MbqSMgMAzxU),
 - [Simple C# Data Access with Dapper and SQL - Minimal API Project Part 1](https://youtu.be/dwMFg6uxQ0I),
 - [Minimal API in .NET 6 Using Dapper and SQL - Minimal API Project Part 2](https://youtu.be/5tYSO5mAjXs),
 - [Configuring and Using Swagger UI in ASP.NET Core Web API](https://code-maze.com/swagger-ui-asp-net-core-web-api/),
 - [Using HttpClient in .NET Core to Connect to APIs in C#](https://youtu.be/cwgck1k0YKU) :arrow_forward:,
 - [Intro to Refit REST API Client for C#](https://youtu.be/HH8drNbai8w) :arrow_forward:,
-- **[error handling](./docs/error_handling.md)** :+1:,
 - [.NET 6 - Web API Logging](https://youtu.be/LO-QKMHK5ps) :arrow_forward:.
 - [.NET 6 - AutoMapper & Data Transfer Objects (DTOs)](https://youtu.be/Wm7hN0S-AdU),
 - [.NET 6 - Web API Correlation Id](https://youtu.be/y0CQmwRllvQ),
 - [.NET 6 - Web API Caching with Redis](https://youtu.be/6HZVu3kGOrg),
-- [.NET 7 - Build CRUD with Web API / EF Core / Repository Pattern](https://youtu.be/nIOqO5N2_ss).
+- [.NET 7 - Build CRUD with Web API / EF Core / Repository Pattern](https://youtu.be/nIOqO5N2_ss),
+- **[error handling](./docs/error_handling.md)** :+1:,
+- [API clients](./docs/api_clients.md),
+- [consume APIs](./docs/consume_apis.md).
 
 Also used these (paid) courses & books:
 
