@@ -31,8 +31,6 @@ Based on these (free) courses/materials:
 - [Deploy a .NET Core API with Docker (Step-by-Step)](https://youtu.be/f0lMGPB10bM),
 - [Step by step - Run and Connect to SQL Server in Docker](https://youtu.be/SJAl3vOX05M),
 - [Docker Compose with .NET Core & SQL Server (Step by Step)](https://youtu.be/4V7CwC_4oss),
-- [ASP.NET 6 REST API Following CLEAN ARCHITECTURE & DDD Tutorial](https://youtube.com/playlist?list=PLzYkqgWkHPKBcDIP5gzLfASkQyTdy0t4k),
-- [Asp.Net Core API from scratch w/ clean architecture and CQRS](https://youtube.com/playlist?list=PL2E-vlKoo_v0VjwlmPFljWJI42kpAdXel),
 - [Make Money from your API Tutorial](https://youtu.be/MbqSMgMAzxU),
 - [Configuring and Using Swagger UI in ASP.NET Core Web API](https://code-maze.com/swagger-ui-asp-net-core-web-api/),
 - [.NET 6 - Web API Logging](https://youtu.be/LO-QKMHK5ps) :arrow_forward:.
@@ -42,7 +40,8 @@ Based on these (free) courses/materials:
 - [data access](./docs/data_access.md),
 - **[error handling](./docs/error_handling.md)** :+1:,
 - [API clients](./docs/api_clients.md),
-- [consume APIs](./docs/consume_apis.md).
+- [consume APIs](./docs/consume_apis.md),
+- [clean architecture](./docs/clean_architecture.md).
 
 Also used these (paid) courses & books:
 
