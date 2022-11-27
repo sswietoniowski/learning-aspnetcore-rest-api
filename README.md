@@ -17,21 +17,20 @@ This repository contains the following sub-directories (with different API imple
 
 Based on these (free) courses/materials:
 
-- [REST APIs](./docs/rest_apis.md),
-- [Cleaning Up The Program.cs File In .NET 6 Now That Startup.cs is Gone](https://youtu.be/rhydGmLxfjQ),
-- [Secure a .NET Core API with Bearer Authentication](https://youtu.be/3PyUjOmuFic) [:file_folder:](https://github.com/binarythistle/S03E01-Secure-.NET-Core-API),
-- [Make Money from your API Tutorial](https://youtu.be/MbqSMgMAzxU),
-- [Configuring and Using Swagger UI in ASP.NET Core Web API](https://code-maze.com/swagger-ui-asp-net-core-web-api/),
-- [.NET 6 - Web API Logging](https://youtu.be/LO-QKMHK5ps) :arrow_forward:.
-- [.NET 6 - Web API Correlation Id](https://youtu.be/y0CQmwRllvQ),
-- [.NET 6 - Web API Caching with Redis](https://youtu.be/6HZVu3kGOrg),
-- [GraphQL APIs](./docs/graphql_apis.md),
+- APIs:
+  - [REST APIs](./docs/rest_apis.md),
+  - [GraphQL APIs](./docs/graphql_apis.md),
 - [data access](./docs/data_access.md),
-- **[error handling](./docs/error_handling.md)** :+1:,
+- [caching](./docs/caching.md),
+- [logging](./docs/logging.md),
+- [error handling](./docs/error_handling.md),
+- [security](./docs/security.md),
 - [deployment](./docs/deployment.md),
+- [documenting](./docs/documenting.md),
 - [API clients](./docs/api_clients.md),
 - [consume APIs](./docs/consume_apis.md),
-- [clean architecture](./docs/clean_architecture.md).
+- [clean architecture](./docs/clean_architecture.md),
+- [other](./docs/other.md).
 
 Also used these (paid) courses & books:
 
