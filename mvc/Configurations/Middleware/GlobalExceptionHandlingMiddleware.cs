@@ -2,9 +2,6 @@
 using mvc.Configurations.Exceptions;
 using System.Net;
 using System.Text.Json;
-using KeyNotFoundException = mvc.Configurations.Exceptions.KeyNotFoundException;
-using NotImplementedException = mvc.Configurations.Exceptions.NotImplementedException;
-using UnauthorizedAccessException = mvc.Configurations.Exceptions.UnauthorizedAccessException;
 
 namespace mvc.Configurations.Middleware;
 
@@ -38,23 +35,23 @@ public class GlobalExceptionHandlingMiddleware : IMiddleware
         // here you can handle specific exceptions and return a specific status code
         switch (exception)
         {
-            case BadRequestException:
+            case BadRequestApiException:
                 statusCode = HttpStatusCode.BadRequest;
                 // just to show how to provide information to the client if needed
                 message = exception.Message;
                 stackTrace = exception.StackTrace;
                 break;
-            case KeyNotFoundException or NotFoundException:
+            case KeyNotFoundApiException or NotFoundApiException:
                 statusCode = HttpStatusCode.NotFound;
                 message = exception.Message;
                 stackTrace = exception.StackTrace;
                 break;
-            case NotImplementedException:
+            case NotImplementedApiException:
                 statusCode = HttpStatusCode.NotImplemented;
                 message = exception.Message;
                 stackTrace = exception.StackTrace;
                 break;
-            case UnauthorizedAccessException:
+            case UnauthorizedAccessApiException:
                 statusCode = HttpStatusCode.Unauthorized;
                 message = exception.Message;
                 stackTrace = exception.StackTrace;

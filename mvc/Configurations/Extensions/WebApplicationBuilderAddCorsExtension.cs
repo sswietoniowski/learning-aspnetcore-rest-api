@@ -2,9 +2,11 @@
 
 public static class WebApplicationBuilderAddCorsExtension
 {
-    private static string AllowedOrigins =>    
-        builder.Configuration.GetValue<string>("Cors:AllowedOrigins")
+    private static string[] GetAllowedOrigins(this WebApplicationBuilder builder)
+    {
+        return builder.Configuration.GetValue<string>("Cors:AllowedOrigins")
             ?.Split(",") ?? Array.Empty<string>();
+    }
 
     public static WebApplicationBuilder AddCors(this WebApplicationBuilder builder)
     {
@@ -13,7 +15,7 @@ public static class WebApplicationBuilderAddCorsExtension
             options.AddDefaultPolicy(policyBuilder =>
             {
                 policyBuilder
-                    .WithOrigins(AllowedOrigins)
+                    .WithOrigins(builder.GetAllowedOrigins())
                     .AllowAnyMethod()
                     .AllowAnyHeader()
                     .AllowCredentials()

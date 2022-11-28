@@ -12,9 +12,19 @@ public class ErrorController : ControllerBase
 
     private readonly ILogger<ErrorController> _logger;
 
+    private Exception? Exception => HttpContext.Features.Get<IExceptionHandlerFeature>()?.Error;
+
     public ErrorController(ILogger<ErrorController> logger)
     {
         _logger = logger;
+    }
+
+    private void LogException()
+    {
+        if (Exception is not null)
+        {
+            _logger.LogError(Exception, Exception.Message);
+        }
     }
 
     [Route("/error-development")]
@@ -27,17 +37,13 @@ public class ErrorController : ControllerBase
             return NotFound();
         }
 
-        var exception = HttpContext.Features.Get<IExceptionHandlerFeature>()?.Error;
+        LogException();
 
-        if (exception is not null)
-        {
-            _logger.LogError(exception, $"An error occurred: {exception.Message}");
-        }
         return Problem(
             statusCode: StatusCodes.Status500InternalServerError,
             type: "Server Error",
-            detail: exception?.StackTrace,
-            title: exception?.Message);
+            detail: Exception?.StackTrace,
+            title: Exception?.Message);
     }
 
     [Route("/error")]
@@ -47,10 +53,7 @@ public class ErrorController : ControllerBase
     {
         var exception = HttpContext.Features.Get<IExceptionHandlerFeature>()?.Error;
 
-        if (exception is not null)
-        {
-            _logger.LogError(exception, $"An error occurred: {exception.Message}");
-        }
+        LogException();
 
         return Problem();
     }

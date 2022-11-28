@@ -16,15 +16,15 @@ public class GlobalErrorHandlingOptions
 
 public static class WebApplicationUseGlobalErrorHandlerExtension
 {
-    private static ExceptionHandlingType? ExceptionHandlingType =>
+    private static ExceptionHandlingType? GetExceptionHandlingType(this WebApplication webApplication)
     {
-        var options = app.Services.GetService<IOptions<GlobalErrorHandlingOptions>>();
-        return options?.Value?.ExceptionHandlingType;
+        return webApplication.Services.GetService<IOptions<GlobalErrorHandlingOptions>>()
+            ?.Value.ExceptionHandlingType;
     }
 
     public static WebApplication UseGlobalErrorHandler(this WebApplication app)
     {
-        switch (ExceptionHandlingType)
+        switch (app.GetExceptionHandlingType())
         {
             case ExceptionHandlingType.CustomMiddleware:
                 app.UseMiddleware<GlobalExceptionHandlingMiddleware>();

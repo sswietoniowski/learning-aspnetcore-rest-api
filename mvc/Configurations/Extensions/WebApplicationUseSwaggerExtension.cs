@@ -2,11 +2,12 @@
 
 public static class WebApplicationUseSwaggerExtension
 {
+    private static bool IsDevelopment(this WebApplication app) =>
+        app.Environment.IsDevelopment();
+
     public static WebApplication UseSwagger(this WebApplication app)
     {
-        var isDevelopment = app.Environment.IsDevelopment();
-
-        if (isDevelopment)
+        if (app.IsDevelopment())
         {
             SwaggerBuilderExtensions.UseSwagger(app);
             app.UseSwaggerUI(options => options.SwaggerEndpoint("/swagger/v1/swagger.json", "mvc v1"));
