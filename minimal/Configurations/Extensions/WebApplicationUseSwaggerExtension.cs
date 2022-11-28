@@ -6,12 +6,14 @@ public static class WebApplicationUseSwaggerExtension
     {
         var isDevelopment = app.Environment.IsDevelopment();
 
-        if (isDevelopment)
+        if (!isDevelopment)
         {
-            SwaggerBuilderExtensions.UseSwagger(app);
-            app.MapSwagger();
-            app.UseSwaggerUI();
+            return app;
         }
+
+        SwaggerBuilderExtensions.UseSwagger(app);
+        app.MapSwagger();
+        app.UseSwaggerUI();
 
         return app;
     }

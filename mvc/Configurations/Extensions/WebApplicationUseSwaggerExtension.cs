@@ -2,16 +2,17 @@
 
 public static class WebApplicationUseSwaggerExtension
 {
-    private static bool IsDevelopment(this WebApplication app) =>
-        app.Environment.IsDevelopment();
-
     public static WebApplication UseSwagger(this WebApplication app)
     {
-        if (app.IsDevelopment())
+        var isDevelopment = app.Environment.IsDevelopment();
+
+        if (!isDevelopment)
         {
-            SwaggerBuilderExtensions.UseSwagger(app);
-            app.UseSwaggerUI(options => options.SwaggerEndpoint("/swagger/v1/swagger.json", "mvc v1"));
+            return app;
         }
+
+        SwaggerBuilderExtensions.UseSwagger(app);
+        app.UseSwaggerUI(options => options.SwaggerEndpoint("/swagger/v1/swagger.json", "mvc v1"));
 
         return app;
     }

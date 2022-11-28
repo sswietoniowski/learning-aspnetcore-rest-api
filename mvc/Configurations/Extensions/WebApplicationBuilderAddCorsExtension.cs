@@ -10,12 +10,14 @@ public static class WebApplicationBuilderAddCorsExtension
 
     public static WebApplicationBuilder AddCors(this WebApplicationBuilder builder)
     {
+        var allowedOrigins = builder.GetAllowedOrigins();
+
         builder.Services.AddCors(options =>
         {
             options.AddDefaultPolicy(policyBuilder =>
             {
                 policyBuilder
-                    .WithOrigins(builder.GetAllowedOrigins())
+                    .WithOrigins(allowedOrigins)
                     .AllowAnyMethod()
                     .AllowAnyHeader()
                     .AllowCredentials()

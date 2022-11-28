@@ -21,10 +21,12 @@ public class ErrorController : ControllerBase
 
     private void LogException()
     {
-        if (Exception is not null)
+        if (Exception is null)
         {
-            _logger.LogError(Exception, Exception.Message);
+            return;
         }
+
+        _logger.LogError(Exception, Exception.Message);
     }
 
     [Route("/error-development")]
