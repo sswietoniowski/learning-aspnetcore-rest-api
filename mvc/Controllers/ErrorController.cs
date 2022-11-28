@@ -43,7 +43,7 @@ public class ErrorController : ControllerBase
 
         return Problem(
             statusCode: StatusCodes.Status500InternalServerError,
-            type: "Server Error",
+            type: "[ErrorController] Error",
             detail: Exception?.StackTrace,
             title: Exception?.Message);
     }

@@ -72,7 +72,7 @@ public class QuotesController : ControllerBase
             _logger.LogError(exception, $"An error occurred: {exception.Message}");
             return Problem(
                 statusCode: StatusCodes.Status500InternalServerError,
-                type: "Server Error",
+                type: "[try-catch] Error",
                 detail: exception.StackTrace,
                 title: exception.Message);
         }
