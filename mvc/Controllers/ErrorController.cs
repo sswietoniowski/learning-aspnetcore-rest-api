@@ -34,12 +34,12 @@ public class ErrorController : ControllerBase
     [AllowAnonymous]
     public IActionResult HandleErrorInDevelopment([FromServices] IHostEnvironment hostEnvironment)
     {
+        LogException();
+        
         if (!hostEnvironment.IsDevelopment())
         {
             return NotFound();
         }
-
-        LogException();
 
         return Problem(
             statusCode: StatusCodes.Status500InternalServerError,
@@ -53,8 +53,6 @@ public class ErrorController : ControllerBase
     [AllowAnonymous]
     public IActionResult HandleErrorInProduction()
     {
-        var exception = HttpContext.Features.Get<IExceptionHandlerFeature>()?.Error;
-
         LogException();
 
         return Problem();
