@@ -109,9 +109,6 @@ namespace mvc.Migrations
                     b.Property<int?>("AuthorId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("AuthorId1")
-                        .HasColumnType("int");
-
                     b.Property<int?>("LanguageId")
                         .HasColumnType("int");
 
@@ -124,7 +121,7 @@ namespace mvc.Migrations
 
                     b.HasIndex("AuthorId");
 
-                    b.HasIndex("AuthorId1");
+                    b.HasIndex("LanguageId");
 
                     b.ToTable("Quotes");
 
@@ -160,13 +157,13 @@ namespace mvc.Migrations
 
             modelBuilder.Entity("mvc.DataAccess.Entities.Quote", b =>
                 {
-                    b.HasOne("mvc.DataAccess.Entities.Language", "Language")
+                    b.HasOne("mvc.DataAccess.Entities.Author", "Author")
                         .WithMany("Quotes")
                         .HasForeignKey("AuthorId");
 
-                    b.HasOne("mvc.DataAccess.Entities.Author", "Author")
+                    b.HasOne("mvc.DataAccess.Entities.Language", "Language")
                         .WithMany("Quotes")
-                        .HasForeignKey("AuthorId1");
+                        .HasForeignKey("LanguageId");
 
                     b.Navigation("Author");
 

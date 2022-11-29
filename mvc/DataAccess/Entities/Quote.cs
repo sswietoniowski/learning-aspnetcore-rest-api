@@ -12,9 +12,9 @@ public class Quote
     public string Text { get; set; } = string.Empty;
     [MaxLength(64)]
     public Author? Author { get; set; }
+    [ForeignKey(nameof(Author))]
     public int? AuthorId { get; set; }
-    [ForeignKey(nameof(AuthorId))]
     public Language? Language { get; set; }
-    [ForeignKey(nameof(LanguageId))]
+    [ForeignKey(nameof(Language))]
     public int? LanguageId { get; set; }
 }

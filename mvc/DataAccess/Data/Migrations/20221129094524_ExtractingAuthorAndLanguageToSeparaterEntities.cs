@@ -23,12 +23,6 @@ namespace mvc.Migrations
                 nullable: true);
 
             migrationBuilder.AddColumn<int>(
-                name: "AuthorId1",
-                table: "Quotes",
-                type: "int",
-                nullable: true);
-
-            migrationBuilder.AddColumn<int>(
                 name: "LanguageId",
                 table: "Quotes",
                 type: "int",
@@ -115,21 +109,21 @@ namespace mvc.Migrations
                 column: "AuthorId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Quotes_AuthorId1",
+                name: "IX_Quotes_LanguageId",
                 table: "Quotes",
-                column: "AuthorId1");
+                column: "LanguageId");
 
             migrationBuilder.AddForeignKey(
-                name: "FK_Quotes_Authors_AuthorId1",
+                name: "FK_Quotes_Authors_AuthorId",
                 table: "Quotes",
-                column: "AuthorId1",
+                column: "AuthorId",
                 principalTable: "Authors",
                 principalColumn: "Id");
 
             migrationBuilder.AddForeignKey(
-                name: "FK_Quotes_Languages_AuthorId",
+                name: "FK_Quotes_Languages_LanguageId",
                 table: "Quotes",
-                column: "AuthorId",
+                column: "LanguageId",
                 principalTable: "Languages",
                 principalColumn: "Id");
         }
@@ -137,11 +131,11 @@ namespace mvc.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropForeignKey(
-                name: "FK_Quotes_Authors_AuthorId1",
+                name: "FK_Quotes_Authors_AuthorId",
                 table: "Quotes");
 
             migrationBuilder.DropForeignKey(
-                name: "FK_Quotes_Languages_AuthorId",
+                name: "FK_Quotes_Languages_LanguageId",
                 table: "Quotes");
 
             migrationBuilder.DropTable(
@@ -155,15 +149,11 @@ namespace mvc.Migrations
                 table: "Quotes");
 
             migrationBuilder.DropIndex(
-                name: "IX_Quotes_AuthorId1",
+                name: "IX_Quotes_LanguageId",
                 table: "Quotes");
 
             migrationBuilder.DropColumn(
                 name: "AuthorId",
-                table: "Quotes");
-
-            migrationBuilder.DropColumn(
-                name: "AuthorId1",
                 table: "Quotes");
 
             migrationBuilder.DropColumn(
