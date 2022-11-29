@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace mvc.DataAccess.Entities;
 
@@ -10,8 +11,10 @@ public class Quote
     [MaxLength(128)]
     public string Text { get; set; } = string.Empty;
     [MaxLength(64)]
-    public string Author { get; set; } = string.Empty;
-    [Required]
-    [MaxLength(32)]
-    public string Language { get; set; } = string.Empty;
+    public Author? Author { get; set; }
+    public int? AuthorId { get; set; }
+    [ForeignKey(nameof(AuthorId))]
+    public Language? Language { get; set; }
+    [ForeignKey(nameof(LanguageId))]
+    public int? LanguageId { get; set; }
 }

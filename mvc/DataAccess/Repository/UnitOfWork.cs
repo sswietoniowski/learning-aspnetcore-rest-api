@@ -7,11 +7,15 @@ public class UnitOfWork : IUnitOfWork
 {
     private readonly QuotesDbContext _context;
 
+    public IAuthorRepository AuthorRepository { get; }
+    public ILanguageRepository LanguageRepository { get; }
     public IQuoteRepository QuoteRepository { get; }
 
     public UnitOfWork(QuotesDbContext context)
     {
         _context = context;
+        AuthorRepository = new AuthorRepository(_context);
+        LanguageRepository = new LanguageRepository(_context);
         QuoteRepository = new QuoteRepository(_context);
     }
 
