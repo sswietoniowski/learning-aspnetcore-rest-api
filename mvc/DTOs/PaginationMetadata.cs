@@ -1,4 +1,4 @@
-﻿namespace mvc.DataAccess.Repository;
+﻿namespace mvc.DTOs;
 
 public class PaginationMetadata
 {

@@ -1,4 +1,5 @@
 ﻿using mvc.DataAccess.Entities;
+using mvc.DTOs;
 
 namespace mvc.DataAccess.Repository.Interfaces;
 
