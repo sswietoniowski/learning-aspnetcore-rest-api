@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace mvc.DTOs;
+namespace mvc.Versions.v1.DTOs;
 
 public class QuoteForCreationDto
 {

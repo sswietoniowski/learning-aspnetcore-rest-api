@@ -3,10 +3,10 @@ using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using mvc.DataAccess.Entities;
 using mvc.DataAccess.Repository.Interfaces;
-using mvc.DTOs;
+using mvc.Versions.v1.DTOs;
 using System.Text.Json;
 
-namespace mvc.Controllers;
+namespace mvc.Versions.v1.Controllers;
 
 [ApiController]
 [Route("api/quotes")]

@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using mvc.DataAccess.Entities;
-using mvc.DTOs;
+using mvc.Versions.v1.DTOs;
 
 namespace mvc.Configurations.Mapper;
 
