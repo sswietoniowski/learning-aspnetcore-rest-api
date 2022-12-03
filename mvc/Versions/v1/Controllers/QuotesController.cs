@@ -9,7 +9,9 @@ using System.Text.Json;
 namespace mvc.Versions.v1.Controllers;
 
 [ApiController]
+[ApiVersion("1.0")]
 [Route("api/quotes")]
+[Route("api/v{version:apiVersion}/quotes")]
 public class QuotesController : ControllerBase
 {
     private const int DEFAULT_QUOTES_PAGE_NUMBER = 1;
