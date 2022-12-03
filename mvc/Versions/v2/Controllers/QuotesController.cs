@@ -7,8 +7,9 @@ using System.Text.Json;
 namespace mvc.Versions.v2.Controllers;
 
 [ApiController]
-[ApiVersion("2.0")]
 [Route("api/quotes")]
+[Route("api/v{version:apiVersion}/quotes")]
+[ApiVersion("2.0")]
 public class QuotesController : ControllerBase
 {
     private const int DEFAULT_QUOTES_PAGE_NUMBER = 1;
@@ -57,7 +58,7 @@ public class QuotesController : ControllerBase
     }
 
     // GET: api/quotes/id
-    [HttpGet("{id:int}", Name = nameof(GetQuote))]
+    [HttpGet("{id:int}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -81,7 +82,10 @@ public class QuotesController : ControllerBase
 
         var createdQuoteDto = await _quoteService.CreateAsync(quoteDto);
 
-        return CreatedAtRoute(nameof(GetQuote), new { createdQuoteDto.Id }, createdQuoteDto);
+        // I'm using Created instead of CreatedAtAction or CreatedAtRoute because I'm using
+        // multiple versioning strategies
+
+        return Created(new Uri($"{Request.Path}/{createdQuoteDto.Id}", UriKind.Relative), createdQuoteDto);
     }
 
     // PUT: api/quotes/id

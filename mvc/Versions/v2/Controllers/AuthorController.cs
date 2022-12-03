@@ -5,8 +5,9 @@ using mvc.Versions.v2.Services;
 namespace mvc.Versions.v2.Controllers;
 
 [ApiController]
-[ApiVersion("2.0")]
 [Route("api/authors")]
+[Route("api/v{version:apiVersion}/authors")]
+[ApiVersion("2.0")]
 public class AuthorController : ControllerBase
 {
     private readonly ILogger<AuthorController> _logger;
@@ -32,7 +33,7 @@ public class AuthorController : ControllerBase
     }
 
     // GET: api/authors/id
-    [HttpGet("{id:int}", Name = nameof(GetAuthor))]
+    [HttpGet("{id:int}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -56,7 +57,10 @@ public class AuthorController : ControllerBase
 
         var createdAuthorDto = await _authorService.CreateAsync(authorDto);
 
-        return CreatedAtRoute(nameof(GetAuthor), new { createdAuthorDto.Id }, createdAuthorDto);
+        // I'm using Created instead of CreatedAtAction or CreatedAtRoute because I'm using
+        // multiple versioning strategies
+
+        return Created(new Uri($"{Request.Path}/{createdAuthorDto.Id}", UriKind.Relative), createdAuthorDto);
     }
 
     // PUT: api/authors/id

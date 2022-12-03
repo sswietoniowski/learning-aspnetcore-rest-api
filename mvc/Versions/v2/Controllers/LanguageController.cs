@@ -5,8 +5,9 @@ using mvc.Versions.v2.Services;
 namespace mvc.Versions.v2.Controllers;
 
 [ApiController]
-[ApiVersion("2.0")]
 [Route("api/languages")]
+[Route("api/v{version:apiVersion}/languages")]
+[ApiVersion("2.0")]
 public class LanguageController : ControllerBase
 {
     private readonly ILogger<LanguageController> _logger;
@@ -32,7 +33,7 @@ public class LanguageController : ControllerBase
     }
 
     // GET: api/languages/id
-    [HttpGet("{id:int}", Name = nameof(GetLanguage))]
+    [HttpGet("{id:int}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -56,7 +57,7 @@ public class LanguageController : ControllerBase
 
         var createdLanguageDto = await _languageService.CreateAsync(languageDto);
 
-        return CreatedAtRoute(nameof(GetLanguage), new { createdLanguageDto.Id }, createdLanguageDto);
+        return Created(new Uri($"{Request.Path}/{createdLanguageDto.Id}", UriKind.Relative), createdLanguageDto);
     }
 
     // PUT: api/languages/id

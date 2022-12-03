@@ -9,9 +9,9 @@ using System.Text.Json;
 namespace mvc.Versions.v1.Controllers;
 
 [ApiController]
-[ApiVersion("1.0")]
 [Route("api/quotes")]
-//[Route("api/v{version:apiVersion}/quotes")]
+[Route("api/v{version:apiVersion}/quotes")]
+[ApiVersion("1.0")]
 public class QuotesController : ControllerBase
 {
     private const int DEFAULT_QUOTES_PAGE_NUMBER = 1;
@@ -81,7 +81,7 @@ public class QuotesController : ControllerBase
     }
 
     // GET: api/quotes/id
-    [HttpGet("{id:int}", Name = nameof(GetQuote))]
+    [HttpGet("{id:int}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -150,7 +150,11 @@ public class QuotesController : ControllerBase
 
         // useful info about differences between CreatedAtAction vs CreatedAtRoute:
         // https://ochzhen.com/blog/created-createdataction-createdatroute-methods-explained-aspnet-core
-        return CreatedAtRoute(nameof(GetQuote), new { quote.Id }, createdQuoteDto);
+
+        // I'm using Created instead of CreatedAtAction or CreatedAtRoute because I'm using
+        // multiple versioning strategies
+
+        return Created(new Uri($"{Request.Path}/{createdQuoteDto.Id}", UriKind.Relative), createdQuoteDto);
     }
 
     // PUT: api/quotes/id
