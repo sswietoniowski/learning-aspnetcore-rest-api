@@ -8,6 +8,7 @@ builder.AddMapper();
 builder.AddControllers();
 builder.AddSwagger();
 builder.AddCors();
+builder.AddApiVersioning();
 builder.AddGlobalErrorHandler();
 
 var app = builder.Build();
@@ -17,5 +18,6 @@ app.UseSwagger();
 app.UseRouting();
 app.UseCors();
 app.UseEndpoints();
+app.UseApiVersioning();
 
 app.Run();
