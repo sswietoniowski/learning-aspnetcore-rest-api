@@ -14,5 +14,8 @@ public interface IQuoteRepository : IRepository<Quote>
         string? text = null,
         int pageNumber = DefaultQuotesPageNumber,
         int pageSize = DefaultQuotesPageSize);
+
+    Task<Quote?> GetQuoteAsync(int id);
+
     Task<bool> QuoteExists(int id);
 }

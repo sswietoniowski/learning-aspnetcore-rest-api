@@ -54,5 +54,8 @@ public class QuoteRepository : Repository<Quote>, IQuoteRepository
             pageSize: pageSize);
     }
 
+    public async Task<Quote?> GetQuoteAsync(int id) => await GetFirstOrDefaultAsync(
+        filter: q => q.Id == id, includeProperties: "Author,Language");
+
     public async Task<bool> QuoteExists(int id) => await GetByIdAsync(id) is not null;
 }
