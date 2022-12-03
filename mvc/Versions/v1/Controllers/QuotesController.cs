@@ -9,7 +9,9 @@ using System.Text.Json;
 namespace mvc.Versions.v1.Controllers;
 
 [ApiController]
+[ApiVersion("1.0")]
 [Route("api/quotes")]
+//[Route("api/v{version:apiVersion}/quotes")]
 public class QuotesController : ControllerBase
 {
     private const int DEFAULT_QUOTES_PAGE_NUMBER = 1;
@@ -87,7 +89,7 @@ public class QuotesController : ControllerBase
     {
         _logger.LogInformation($"Calling: {nameof(GetQuote)}");
 
-        var quote = await _unitOfWork.QuoteRepository.GetByIdAsync(id);
+        var quote = await _unitOfWork.QuoteRepository.GetQuoteAsync(id);
 
         if (quote is null)
         {
@@ -97,6 +99,34 @@ public class QuotesController : ControllerBase
         var quoteDto = _mapper.Map<QuoteDto>(quote);
 
         return Ok(quoteDto);
+    }
+
+    private async Task UpsertAuthor(string authorName, Quote quote)
+    {
+        var author = await _unitOfWork.AuthorRepository.GetFirstOrDefaultAsync(q => q.Name == authorName);
+
+        if (author is null)
+        {
+            author = new Author { Name = authorName };
+            await _unitOfWork.AuthorRepository.AddAsync(author);
+            await _unitOfWork.SaveAsync();
+        }
+
+        quote.AuthorId = author.Id;
+    }
+
+    private async Task UpsertLanguage(string languageName, Quote quote)
+    {
+        var language = await _unitOfWork.LanguageRepository.GetFirstOrDefaultAsync(q => q.Name == languageName);
+
+        if (language is null)
+        {
+            language = new Language { Name = languageName };
+            await _unitOfWork.LanguageRepository.AddAsync(language);
+            await _unitOfWork.SaveAsync();
+        }
+
+        quote.LanguageId = language.Id;
     }
 
     // POST: api/quotes
@@ -109,6 +139,9 @@ public class QuotesController : ControllerBase
         _logger.LogInformation($"Calling: {nameof(CreateQuote)}");
 
         var quote = _mapper.Map<Quote>(quoteDto);
+
+        await UpsertAuthor(quoteDto.Author, quote);
+        await UpsertLanguage(quoteDto.Language, quote);
 
         await _unitOfWork.QuoteRepository.AddAsync(quote);
         await _unitOfWork.SaveAsync();
@@ -138,6 +171,9 @@ public class QuotesController : ControllerBase
 
         _mapper.Map(quoteDto, quoteToUpdate);
 
+        await UpsertAuthor(quoteDto.Author, quoteToUpdate);
+        await UpsertLanguage(quoteDto.Language, quoteToUpdate);
+
         _unitOfWork.QuoteRepository.Modify(quoteToUpdate);
         await _unitOfWork.SaveAsync();
 
@@ -157,7 +193,7 @@ public class QuotesController : ControllerBase
         // Here you'll find more info about JSON Patch:
         // https://jsonpatch.com/
 
-        var quoteToUpdate = await _unitOfWork.QuoteRepository.GetByIdAsync(id);
+        var quoteToUpdate = await _unitOfWork.QuoteRepository.GetQuoteAsync(id);
 
         if (quoteToUpdate is null)
         {
@@ -178,6 +214,9 @@ public class QuotesController : ControllerBase
         }
 
         _mapper.Map(quoteDtoToPatch, quoteToUpdate);
+
+        await UpsertAuthor(quoteDtoToPatch.Author, quoteToUpdate);
+        await UpsertLanguage(quoteDtoToPatch.Language, quoteToUpdate);
 
         _unitOfWork.QuoteRepository.Modify(quoteToUpdate);
         await _unitOfWork.SaveAsync();
