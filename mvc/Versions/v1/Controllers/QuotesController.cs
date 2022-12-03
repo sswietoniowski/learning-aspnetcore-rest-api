@@ -11,7 +11,7 @@ namespace mvc.Versions.v1.Controllers;
 [ApiController]
 [Route("api/quotes")]
 [Route("api/v{version:apiVersion}/quotes")]
-[ApiVersion("1.0")]
+[ApiVersion("1.0", Deprecated = true)]
 public class QuotesController : ControllerBase
 {
     private const int DEFAULT_QUOTES_PAGE_NUMBER = 1;
