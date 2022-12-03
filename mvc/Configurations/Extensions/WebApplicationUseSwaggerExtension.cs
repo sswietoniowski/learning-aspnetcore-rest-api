@@ -1,4 +1,6 @@
-﻿namespace mvc.Configurations.Extensions;
+﻿using Microsoft.AspNetCore.Mvc.ApiExplorer;
+
+namespace mvc.Configurations.Extensions;
 
 public static class WebApplicationUseSwaggerExtension
 {
@@ -11,8 +13,20 @@ public static class WebApplicationUseSwaggerExtension
             return app;
         }
 
+        var provider = app.Services.GetRequiredService<IApiVersionDescriptionProvider>();
+
         SwaggerBuilderExtensions.UseSwagger(app);
-        app.UseSwaggerUI(options => options.SwaggerEndpoint("/swagger/v1/swagger.json", "mvc v1"));
+        app.UseSwaggerUI(options =>
+        {
+            string swaggerJsonBasePath = string.IsNullOrWhiteSpace(options.RoutePrefix) ? "." : "..";
+
+            foreach (var description in provider.ApiVersionDescriptions)
+            {
+                options.SwaggerEndpoint(
+                    $"{swaggerJsonBasePath}/swagger/{description.GroupName}/swagger.json",
+                    description.GroupName.ToUpperInvariant());
+            }
+        });
 
         return app;
     }

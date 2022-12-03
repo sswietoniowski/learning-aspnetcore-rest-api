@@ -1,0 +1,77 @@
+# More examples at: https://plawgo.pl/2021/04/13/visual-studio-code-rest-client/
+
+### Get authors (API version in query string)
+GET {{baseUrl}}/api/authors?version=2.0 HTTP/1.1
+
+### Get authors (API version in header)
+GET {{baseUrl}}/api/authors HTTP/1.1
+X-Version: 2.0
+
+### Get languages
+GET {{baseUrl}}/api/languages HTTP/1.1
+X-Version: 2.0
+
+### Get quotes (limited by default page number and page size)
+GET {{baseUrl}}/api/quotes HTTP/1.1
+X-Version: 2.0
+
+### Get quotes filtered
+GET {{baseUrl}}/api/quotes?filter_author=Unknown&filter_language=Latin HTTP/1.1
+X-Version: 2.0
+
+### Get quotes searched
+GET {{baseUrl}}/api/quotes?search_text=first HTTP/1.1
+X-Version: 2.0
+
+### Get quotes filtered & searched
+GET {{baseUrl}}/api/quotes?filter_author=Unknown&filter_language=Latin&search_text=astra HTTP/1.1
+X-Version: 2.0
+
+### Get quotes paged
+GET {{baseUrl}}/api/quotes?pageNumber=2&pageSize=2 HTTP/1.1
+X-Version: 2.0
+
+### Get quotes in the XML format
+GET {{baseUrl}}/api/quotes HTTP/1.1
+X-Version: 2.0
+Accept: application/xml
+
+### Get a single quote
+GET {{baseUrl}}/api/quotes/{{getQuoteId}} HTTP/1.1
+X-Version: 2.0
+
+### Create a new author
+POST {{baseUrl}}/api/authors HTTP/1.1
+X-Version: 2.0
+Content-Type: application/json
+
+{
+    "Name": "Horace",
+    "Biography": "Quintus Horatius Flaccus (8 December 65 BC – 27 November 8 BC), known in the English-speaking world as Horace, was the leading Roman lyric poet during the time of Augustus (also known as Octavian)."
+}
+
+### Create a new quote
+POST {{baseUrl}}/api/quotes HTTP/1.1
+X-Version: 2.0
+Content-Type: application/json
+
+{
+    "Text": "Carpe diem.",
+    "AuthorId": 4,
+    "LanguageId": 1
+}
+
+### Replace an existing quote
+PUT {{baseUrl}}/api/quotes/{{putQuoteId}} HTTP/1.1
+X-Version: 2.0
+Content-Type: application/json
+
+{
+    "Text": "Seize the day.",
+    "AuthorId": 4,
+    "LanguageId": 3
+}
+
+### Delete an existing quote
+DELETE {{baseUrl}}/api/quotes/{{deleteQuoteId}} HTTP/1.1
+X-Version: 2.0

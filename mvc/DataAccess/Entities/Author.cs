@@ -9,6 +9,7 @@ public class Author
     [Required]
     [MaxLength(64)]
     public string Name { get; set; } = string.Empty;
-    public string Biography { get; set; } = string.Empty;
+    [MaxLength(1024)]
+    public string? Biography { get; set; }
     public List<Quote> Quotes { get; set; } = new();
 }

@@ -2,6 +2,7 @@
 using mvc.DataAccess.Data;
 using mvc.DataAccess.Repository;
 using mvc.DataAccess.Repository.Interfaces;
+using mvc.Versions.v2.Services;
 
 namespace mvc.Configurations.Extensions;
 
@@ -15,6 +16,9 @@ public static class WebApplicationBuilderAddPersistenceExtension
         });
 
         builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+        builder.Services.AddScoped<IAuthorService, AuthorService>();
+        builder.Services.AddScoped<ILanguageService, LanguageService>();
+        builder.Services.AddScoped<IQuoteService, QuoteService>();
 
         return builder;
     }
