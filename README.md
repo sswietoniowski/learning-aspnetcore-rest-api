@@ -26,6 +26,7 @@ Based on these (free) courses/materials:
 - [error handling](./docs/error_handling.md),
 - [security](./docs/api_security.md),
 - [deployment](./docs/deployment.md),
+- [versioning](./docs/versioning.md),
 - [documenting](./docs/documenting.md),
 - [clients](./docs/clients.md),
 - [consume](./docs/consume.md),
