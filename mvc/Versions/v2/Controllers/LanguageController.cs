@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http.Extensions;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using mvc.Versions.v2.DTOs;
 using mvc.Versions.v2.Services;
 

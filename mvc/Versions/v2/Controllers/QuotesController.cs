@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using mvc.Versions.v2.DTOs;
 using mvc.Versions.v2.Services;
 using System.Text.Json;
-using Microsoft.AspNetCore.Http.Extensions;
 
 namespace mvc.Versions.v2.Controllers;
 
