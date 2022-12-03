@@ -15,12 +15,20 @@ public static class WebApplicationBuilderAddApiVersioningExtension
             //options.ApiVersionReader = new QueryStringApiVersionReader("v", "ver", "version", "api-version");
             //options.ApiVersionReader = new HeaderApiVersionReader("X-Version");
             //options.ApiVersionReader = new UrlSegmentApiVersionReader();
+            //options.ApiVersionReader = new MediaTypeApiVersionReader();
             // not recommended to use all at the same time, just for demonstration purposes
             options.ApiVersionReader = ApiVersionReader.Combine(
                 new UrlSegmentApiVersionReader(),
                 new HeaderApiVersionReader("X-Version"),
                 new QueryStringApiVersionReader("v", "ver", "version", "api-version"));
         });
+
+        builder.Services.AddVersionedApiExplorer(
+            options =>
+            {
+                options.GroupNameFormat = "'v'VVV";
+                options.SubstituteApiVersionInUrl = true;
+            });
 
         return builder;
     }

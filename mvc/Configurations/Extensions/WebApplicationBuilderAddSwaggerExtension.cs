@@ -53,11 +53,6 @@ public static class WebApplicationBuilderAddSwaggerExtension
 
     public static WebApplicationBuilder AddSwagger(this WebApplicationBuilder builder)
     {
-        builder.Services.AddVersionedApiExplorer(setup =>
-        {
-            setup.GroupNameFormat = "'v'VVV";
-            setup.SubstituteApiVersionInUrl = true;
-        });
         builder.Services.AddSwaggerGen();
         builder.Services.ConfigureOptions<ConfigureSwaggerOptions>();
 

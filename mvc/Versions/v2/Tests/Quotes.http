@@ -7,6 +7,9 @@ GET {{baseUrl}}/api/authors?version=2.0 HTTP/1.1
 GET {{baseUrl}}/api/authors HTTP/1.1
 X-Version: 2.0
 
+### Get authors (API version in URI)
+GET {{baseUrl}}/api/v2/authors HTTP/1.1
+
 ### Get languages
 GET {{baseUrl}}/api/languages HTTP/1.1
 X-Version: 2.0
@@ -59,6 +62,15 @@ Content-Type: application/json
     "Text": "Carpe diem.",
     "AuthorId": 4,
     "LanguageId": 1
+}
+
+### Create a new quote (using URI versioning)
+POST {{baseUrl}}/api/v2/quotes HTTP/1.1
+Content-Type: application/json
+
+{
+    "Text": "Chcieć to móc",
+    "LanguageId": 2
 }
 
 ### Replace an existing quote
