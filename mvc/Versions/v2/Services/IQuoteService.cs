@@ -4,7 +4,7 @@ using mvc.Versions.v2.DTOs;
 
 namespace mvc.Versions.v2.Services;
 
-public interface IQuotesService
+public interface IQuoteService
 {
     Task<IEnumerable<QuoteDto>> GetAllAsync();
     Task<QuoteDto> GetByIdAsync(int id);

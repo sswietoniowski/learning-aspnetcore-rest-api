@@ -47,13 +47,19 @@ public abstract class Repository<T> : IRepository<T> where T : class
             query = orderBy(query);
         }
 
+        if (IsValidPagingRequest(pageNumber, pageSize))
+        {
+            query = query.Skip((pageNumber - 1) * pageSize).Take(pageSize);
+        }
+
         var result = await query
-            .Skip(pageSize * (pageNumber - 1))
-            .Take(pageSize)
             .ToListAsync();
-            
+
         return (result.AsReadOnly(), paginationMetadata);
     }
+
+    private static bool IsValidPagingRequest(int pageNumber, int pageSize) =>
+        pageNumber > 0 && pageSize > 0;
 
     public async Task<T?> GetByIdAsync(int id)
     {

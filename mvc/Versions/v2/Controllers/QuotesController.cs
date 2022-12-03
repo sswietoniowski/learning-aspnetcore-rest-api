@@ -16,12 +16,12 @@ public class QuotesController : ControllerBase
     private const int MAX_QUOTES_PAGE_SIZE = 100;
 
     private readonly ILogger<QuotesController> _logger;
-    private readonly IQuotesService _quotesService;
+    private readonly IQuoteService _quoteService;
 
-    public QuotesController(ILogger<QuotesController> logger, IQuotesService quotesService)
+    public QuotesController(ILogger<QuotesController> logger, IQuoteService quoteService)
     {
         _logger = logger ?? throw new ArgumentNullException(nameof(logger));
-        _quotesService = quotesService ?? throw new ArgumentNullException(nameof(quotesService));
+        _quoteService = quoteService ?? throw new ArgumentNullException(nameof(quoteService));
     }
 
     // GET: api/quotes
@@ -49,7 +49,7 @@ public class QuotesController : ControllerBase
             pageSize = MAX_QUOTES_PAGE_SIZE;
         }
 
-        var (quotesDto, paginationMetadata) = await _quotesService.GetAsync(author, language, text, pageNumber, pageSize);
+        var (quotesDto, paginationMetadata) = await _quoteService.GetAsync(author, language, text, pageNumber, pageSize);
 
         Response.Headers.Add("X-Pagination", JsonSerializer.Serialize(paginationMetadata));
 
@@ -65,7 +65,7 @@ public class QuotesController : ControllerBase
     {
         _logger.LogInformation($"Calling: {nameof(GetQuote)}");
 
-        var quoteDto = await _quotesService.GetByIdAsync(id);
+        var quoteDto = await _quoteService.GetByIdAsync(id);
 
         return Ok(quoteDto);
     }
@@ -79,7 +79,7 @@ public class QuotesController : ControllerBase
     {
         _logger.LogInformation($"Calling: {nameof(CreateQuote)}");
 
-        var createdQuoteDto = await _quotesService.CreateAsync(quoteDto);
+        var createdQuoteDto = await _quoteService.CreateAsync(quoteDto);
 
         return CreatedAtRoute(nameof(GetQuote), new { createdQuoteDto.Id }, createdQuoteDto);
     }
@@ -93,7 +93,7 @@ public class QuotesController : ControllerBase
     {
         _logger.LogInformation($"Calling: {nameof(UpdateQuote)}");
 
-        await _quotesService.UpdateAsync(id, quoteDto);
+        await _quoteService.UpdateAsync(id, quoteDto);
 
         return NoContent();
     }
@@ -108,7 +108,7 @@ public class QuotesController : ControllerBase
     {
         _logger.LogInformation($"Calling: {nameof(PartiallyUpdateQuote)}");
 
-        var quoteDtoToPatch = await _quotesService.GetForUpdateAsync(id);
+        var quoteDtoToPatch = await _quoteService.GetForUpdateAsync(id);
         patchDocument.ApplyTo(quoteDtoToPatch, ModelState);
 
         if (!ModelState.IsValid)
@@ -121,7 +121,7 @@ public class QuotesController : ControllerBase
             return ValidationProblem(ModelState);
         }
 
-        await _quotesService.UpdatePartiallyAsync(id, quoteDtoToPatch);
+        await _quoteService.UpdatePartiallyAsync(id, quoteDtoToPatch);
 
         return NoContent();
     }
@@ -135,7 +135,7 @@ public class QuotesController : ControllerBase
     {
         _logger.LogInformation($"Calling: {nameof(DeleteQuote)}");
 
-        await _quotesService.DeleteAsync(id);
+        await _quoteService.DeleteAsync(id);
 
         return NoContent();
     }

@@ -9,5 +9,7 @@ public class AuthorProfile : Profile
     public AuthorProfile()
     {
         CreateMap<Author, AuthorDto>().ReverseMap();
+        CreateMap<AuthorForCreationDto, Author>();
+        CreateMap<AuthorForUpdateDto, Author>().ReverseMap();
     }
 }

@@ -8,12 +8,12 @@ using mvc.Versions.v2.DTOs;
 
 namespace mvc.Versions.v2.Services;
 
-public class QuotesService : IQuotesService
+public class QuoteService : IQuoteService
 {
     private readonly IUnitOfWork _unitOfWork;
     private readonly IMapper _mapper;
 
-    public QuotesService(IUnitOfWork unitOfWork, IMapper mapper)
+    public QuoteService(IUnitOfWork unitOfWork, IMapper mapper)
     {
         _unitOfWork = unitOfWork;
         _mapper = mapper;
