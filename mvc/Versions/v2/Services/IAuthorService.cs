@@ -1,12 +1,8 @@
-﻿using mvc.Versions.v2.DTOs;
+﻿using mvc.DataAccess.Entities;
+using mvc.Versions.v2.DTOs;
 
 namespace mvc.Versions.v2.Services;
 
-public interface IAuthorService
+public interface IAuthorService : IService<Author, AuthorDto, AuthorForCreationDto, AuthorForUpdateDto>
 {
-    Task<IEnumerable<AuthorDto>> GetAllAsync();
-    Task<AuthorDto> GetByIdAsync(int id);
-    Task<AuthorDto> CreateAsync(AuthorForCreationDto authorDto);
-    Task UpdateAsync(int id, AuthorForUpdateDto authorDto);
-    Task DeleteAsync(int id);
 }
