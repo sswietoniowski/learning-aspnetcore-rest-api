@@ -109,6 +109,7 @@ public class QuotesController : ControllerBase
         {
             author = new Author { Name = authorName };
             await _unitOfWork.AuthorRepository.AddAsync(author);
+            await _unitOfWork.SaveAsync();
         }
 
         quote.AuthorId = author.Id;
@@ -122,6 +123,7 @@ public class QuotesController : ControllerBase
         {
             language = new Language { Name = languageName };
             await _unitOfWork.LanguageRepository.AddAsync(language);
+            await _unitOfWork.SaveAsync();
         }
 
         quote.LanguageId = language.Id;
@@ -191,7 +193,7 @@ public class QuotesController : ControllerBase
         // Here you'll find more info about JSON Patch:
         // https://jsonpatch.com/
 
-        var quoteToUpdate = await _unitOfWork.QuoteRepository.GetByIdAsync(id);
+        var quoteToUpdate = await _unitOfWork.QuoteRepository.GetQuoteAsync(id);
 
         if (quoteToUpdate is null)
         {
