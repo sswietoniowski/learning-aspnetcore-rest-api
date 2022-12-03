@@ -14,7 +14,7 @@ public class Quote
     public Author? Author { get; set; }
     [ForeignKey(nameof(Author))]
     public int? AuthorId { get; set; }
-    public Language? Language { get; set; }
+    public Language Language { get; set; } = default!;
     [ForeignKey(nameof(Language))]
-    public int? LanguageId { get; set; }
+    public int LanguageId { get; set; }
 }

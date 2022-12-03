@@ -7,8 +7,7 @@ public class Language
     [Key]
     public int Id { get; set; }
     [Required]
-    public string Name { get; set; } = string.Empty;
-    [Required]
     [MaxLength(32)]
+    public string Name { get; set; } = string.Empty;
     public List<Quote> Quotes { get; set; } = new();
 }
