@@ -12,7 +12,7 @@ public abstract class Repository<T> : IRepository<T> where T : class
 
     public Repository(DbContext context)
     {
-        _context = context;
+        _context = context ?? throw new ArgumentNullException(nameof(context)); ;
         _dbSet = _context.Set<T>();
     }
 

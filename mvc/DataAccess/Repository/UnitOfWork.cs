@@ -13,7 +13,7 @@ public class UnitOfWork : IUnitOfWork
 
     public UnitOfWork(QuotesDbContext context)
     {
-        _context = context;
+        _context = context ?? throw new ArgumentNullException(nameof(context)) ;
         AuthorRepository = new AuthorRepository(_context);
         LanguageRepository = new LanguageRepository(_context);
         QuoteRepository = new QuoteRepository(_context);
