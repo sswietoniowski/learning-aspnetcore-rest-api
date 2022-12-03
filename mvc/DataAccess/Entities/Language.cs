@@ -2,7 +2,7 @@
 
 namespace mvc.DataAccess.Entities;
 
-public class Language
+public class Language : IEntity
 {
     [Key]
     public int Id { get; set; }
