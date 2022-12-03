@@ -3,7 +3,7 @@ using mvc.Versions.v2.DTOs;
 
 namespace mvc.Versions.v2.Services;
 
-public interface IService<TEntity, TDto, TForCreationDto, TForUpdateDto>
+public interface IService<TEntity, TDto, in TForCreationDto, in TForUpdateDto>
     where TEntity: class, IEntity
     where TDto : class, IDto
     where TForCreationDto : class, IDto

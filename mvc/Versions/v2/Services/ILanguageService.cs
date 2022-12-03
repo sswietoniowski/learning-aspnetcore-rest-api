@@ -1,12 +1,8 @@
-﻿using mvc.Versions.v2.DTOs;
+﻿using mvc.DataAccess.Entities;
+using mvc.Versions.v2.DTOs;
 
 namespace mvc.Versions.v2.Services;
 
-public interface ILanguageService
+public interface ILanguageService : IService<Language, LanguageDto, LanguageForCreationDto, LanguageForUpdateDto>
 {
-    Task<IEnumerable<LanguageDto>> GetAllAsync();
-    Task<LanguageDto> GetByIdAsync(int id);
-    Task<LanguageDto> CreateAsync(LanguageForCreationDto languageDto);
-    Task UpdateAsync(int id, LanguageForUpdateDto languageDto);
-    Task DeleteAsync(int id);
 }
