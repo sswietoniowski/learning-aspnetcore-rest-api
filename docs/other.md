@@ -8,4 +8,5 @@ Useful resources (assorted :-)):
 - [Write cleaner APIs in .NET 7 with MediatR](https://youtu.be/euUg_IHo7-s),
 - [APIs for Beginners - How to use an API (Full Course / Tutorial)](https://youtu.be/GZvSYJDk-us),
 - [Real-Time Revolution: SignalR in Action - Kevin Griffin - NDC London 2022](https://youtu.be/wOq9meKcdlw),
+- [How To Add Retrying To Outbox Pattern With Polly](https://youtu.be/xajVttkZntU),
 - [Make Money from your API Tutorial](https://youtu.be/MbqSMgMAzxU).
