@@ -84,6 +84,24 @@ Content-Type: application/json
     "LanguageId": 3
 }
 
+### Update an existing quote
+PATCH {{baseUrl}}/api/quotes/{{patchQuoteId}} HTTP/1.1
+X-Version: 2.0
+Content-Type: application/json
+
+[
+    {
+        "op": "replace",
+        "path": "/Text",
+        "value": "Chwytaj dzień."
+    },
+    {
+        "op": "replace",
+        "path": "/LanguageId",
+        "value": 2
+    }
+]
+
 ### Delete an existing quote
 DELETE {{baseUrl}}/api/quotes/{{deleteQuoteId}} HTTP/1.1
 X-Version: 2.0
