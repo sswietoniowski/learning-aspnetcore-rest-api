@@ -9,4 +9,5 @@ Useful resources (assorted :-)):
 - [APIs for Beginners - How to use an API (Full Course / Tutorial)](https://youtu.be/GZvSYJDk-us),
 - [Real-Time Revolution: SignalR in Action - Kevin Griffin - NDC London 2022](https://youtu.be/wOq9meKcdlw),
 - [How To Add Retrying To Outbox Pattern With Polly](https://youtu.be/xajVttkZntU),
+- [ASP.NET Core Developer Roadmap](https://github.com/MoienTajik/AspNetCore-Developer-Roadmap),
 - [Make Money from your API Tutorial](https://youtu.be/MbqSMgMAzxU).
