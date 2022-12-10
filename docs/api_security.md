@@ -8,4 +8,5 @@ Useful resources:
 - [Asp Net Core - Rest API Authorization with JWT (Roles Vs Claims Vs Policy) - Step by Step](https://youtu.be/eVxzuOxWEiY),
 - [What Authentication System Should I Use For My App?](https://youtu.be/4BItolSqIyU),
 - [ASP.NET Core Authentication and Authorization Tutorials](https://youtube.com/playlist?list=PLOeFnOV9YBa4yaz-uIi5T4ZW3QQGHJQXi),
-- [Token Authentication In ASP.NET Core 7 With JWT](https://youtu.be/4cFhYUK8wnc).
+- [Token Authentication In ASP.NET Core 7 With JWT](https://youtu.be/4cFhYUK8wnc),
+- [Coding Shorts: Simplified Configuration for JWT Bearer Auth in .NET 7](https://youtu.be/osZvEAJrz1Y).
