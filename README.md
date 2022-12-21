@@ -64,4 +64,3 @@ Some useful tools & libraries:
 - [HttpClient](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient?view=net-6.0),
 - [Refit](https://github.com/reactiveui/refit),
 - [BenchmarkDotNet](https://github.com/dotnet/BenchmarkDotNet).
-
