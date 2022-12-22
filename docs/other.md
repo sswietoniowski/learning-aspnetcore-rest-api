@@ -9,6 +9,7 @@ Useful resources (assorted :-)):
 - [APIs for Beginners - How to use an API (Full Course / Tutorial)](https://youtu.be/GZvSYJDk-us),
 - [Real-Time Revolution: SignalR in Action - Kevin Griffin - NDC London 2022](https://youtu.be/wOq9meKcdlw),
 - [How To Add Retrying To Outbox Pattern With Polly](https://youtu.be/xajVttkZntU),
+- [Webhooks vs Websockets vs HTTP Streaming - Which Event-Driven API to use?](https://youtu.be/6RvlKYgRFYQ),
 - [Benchmarking .NET 6 Applications Using BenchmarkDotNet: A Deep Dive](https://www.codemag.com/Article/2209061/Benchmarking-.NET-6-Applications-Using-BenchmarkDotNet-A-Deep-Dive),
 - [.Net Developer Roadmap](https://github.com/phongnguyend/Practical.NET),
 - [ASP.NET Core Developer Roadmap](https://github.com/MoienTajik/AspNetCore-Developer-Roadmap),
