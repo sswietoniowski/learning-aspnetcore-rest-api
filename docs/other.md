@@ -2,9 +2,9 @@
 
 Useful resources (assorted :-)):
 
-- [Cleaning Up The Program.cs File In .NET 6 Now That Startup.cs is Gone](https://youtu.be/rhydGmLxfjQ),
+- _[Cleaning Up The Program.cs File In .NET 6 Now That Startup.cs is Gone](https://youtu.be/rhydGmLxfjQ)_,
 - [Coding Shorts: ASP.NET Core Middleware Explained](https://youtu.be/TqCshF0o0nE),
-- [Managing .NET App Configuration With The Options Pattern In ASP.NET Core](https://youtu.be/wxYt0motww0),
+- _[Managing .NET App Configuration With The Options Pattern In ASP.NET Core](https://youtu.be/wxYt0motww0)_,
 - [Intro to MediatR - Implementing CQRS and Mediator Patterns](https://youtu.be/yozD5Tnd8nw),
 - [Write cleaner APIs in .NET 7 with MediatR](https://youtu.be/euUg_IHo7-s),
 - [APIs for Beginners - How to use an API (Full Course / Tutorial)](https://youtu.be/GZvSYJDk-us),
