@@ -4,6 +4,7 @@ Useful resources (assorted :-)):
 
 - _[Cleaning Up The Program.cs File In .NET 6 Now That Startup.cs is Gone](https://youtu.be/rhydGmLxfjQ)_,
 - [Coding Shorts: ASP.NET Core Middleware Explained](https://youtu.be/TqCshF0o0nE),
+- [TypedResults and IResult introduced with C# 11 and .NET 7](https://youtu.be/2TUdeuismGY),
 - _[Managing .NET App Configuration With The Options Pattern In ASP.NET Core](https://youtu.be/wxYt0motww0)_,
 - [Intro to MediatR - Implementing CQRS and Mediator Patterns](https://youtu.be/yozD5Tnd8nw),
 - [Write cleaner APIs in .NET 7 with MediatR](https://youtu.be/euUg_IHo7-s),
