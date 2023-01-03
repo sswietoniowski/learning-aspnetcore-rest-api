@@ -6,4 +6,5 @@ Useful resources:
 - [Asp.Net Core API from scratch w/ clean architecture and CQRS](https://youtube.com/playlist?list=PL2E-vlKoo_v0VjwlmPFljWJI42kpAdXel),
 - [Clean Architecture & DDD Series](https://youtube.com/playlist?list=PLYpjLpq5ZDGstQ5afRz-34o_0dexr1RGa),
 - [Structuring Dependency Injection In ASP.NET Core The Right Way](https://youtu.be/tKEF6xaeoig),
+- [How To Organize Minimal API Endpoints Inside Of Clean Architecture](https://youtu.be/GCuVC_qDOV4),
 - [Uncle Bob Martin - The Clean Coder](https://youtu.be/NeXQEJNWO5w).
