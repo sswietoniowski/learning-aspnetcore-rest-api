@@ -10,4 +10,5 @@ Useful resources:
 - [Web API Security | Basic Auth, OAuth, OpenID Connect, Scopes & Refresh Tokens](https://youtu.be/x6jUDfpESmA),
 - [ASP.NET Core Authentication and Authorization Tutorials](https://youtube.com/playlist?list=PLOeFnOV9YBa4yaz-uIi5T4ZW3QQGHJQXi),
 - [Token Authentication In ASP.NET Core 7 With JWT](https://youtu.be/4cFhYUK8wnc),
-- [Coding Shorts: Simplified Configuration for JWT Bearer Auth in .NET 7](https://youtu.be/osZvEAJrz1Y).
+- [Coding Shorts: Simplified Configuration for JWT Bearer Auth in .NET 7](https://youtu.be/osZvEAJrz1Y),
+- [ASP.NET Core JWT Authentication Tutorial (.NET 7 Minimal Apis C#)](https://youtu.be/8FvN5bhVYxY).
