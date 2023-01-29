@@ -11,4 +11,6 @@ My other examples:
 - [Learning - React - Summary and Core Feature Walkthrough](https://github.com/sswietoniowski/learning-react-summary-and-core-feature-walkthrough),
 - [Learning ASP.NET Core and React - Frontend](https://github.com/sswietoniowski/learning-aspnetcore-react-frontend-react-app),
 - [Learning ASP.NET Core and React - Backend](https://github.com/sswietoniowski/learning-aspnetcore-react-backend-web-api),
-- [Learning ASP.NET Core - Security - CORS](https://github.com/sswietoniowski/learning-aspnetcore-security-cors).
+- [Learning ASP.NET Core - Security - CORS](https://github.com/sswietoniowski/learning-aspnetcore-security-cors),
+- [Learning C# - Asynchronous Programming](https://github.com/sswietoniowski/learning-csharp-asynchronous-programming),
+- [Learning ASP.NET Core - WebAPI (.NET 6) Asynchronous Code](https://github.com/sswietoniowski/learning-aspnetcore-webapi-6-asynchronous-code).
