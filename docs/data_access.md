@@ -10,4 +10,5 @@ Useful resources:
 - [Repository Pattern With Entity Framework Core](https://youtu.be/h4KIngWVpfU),
 - [Why I Use The Unit of Work Pattern With EF Core ](https://youtu.be/vN_j1Bs0ALU),
 - [How To Use The Specification Design Pattern With EF Core 6](https://youtu.be/rdY5ElleWKY),
-- [.NET 7 - With MongoDB](https://youtu.be/7NN6xR_Pfx4).
+- [.NET 7 - With MongoDB](https://youtu.be/7NN6xR_Pfx4),
+- [.NET 7 - How to containerise Web API with Docker & use PostgreSQL](https://youtu.be/9ZEbJT36-Uk).
