@@ -4,6 +4,7 @@ Useful resources:
 
 - [Simple C# Data Access with Dapper and SQL - Minimal API Project Part 1](https://youtu.be/dwMFg6uxQ0I),
 - [Minimal API in .NET 6 Using Dapper and SQL - Minimal API Project Part 2](https://youtu.be/5tYSO5mAjXs),
+- [What Are Your Thoughts on Entity Framework Core vs. Dapper?](https://youtu.be/7ZcbHFmgVAI),
 - [.NET 6 - AutoMapper & Data Transfer Objects (DTOs)](https://youtu.be/Wm7hN0S-AdU),
 - [.NET 7 - Build CRUD with Web API / EF Core / Repository Pattern](https://youtu.be/nIOqO5N2_ss),
 - [Entity Framework Core](https://youtube.com/playlist?list=PLYpjLpq5ZDGtE9kCEhIiK2C9tMZaTdNcN),
