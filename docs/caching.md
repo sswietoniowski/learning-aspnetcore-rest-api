@@ -9,4 +9,5 @@ Useful resources:
 - _[Coding Shorts: Output Caching in ASP.NET Core 7](https://youtu.be/kReNMzHj6ro)_,
 - [.NET 6 - Web API Caching with Redis](https://youtu.be/6HZVu3kGOrg),
 - [Distributed Caching In ASP.NET Core With Redis](https://youtu.be/Tt5zIKVMMbs),
+- [The NEW caching you should be using in .NET 7](https://youtu.be/0WvGwOoK-CI),
 - [Extremely FAST Caching Repository With Decorator Pattern in ASP.NET Core](https://youtu.be/i_3I6XLAOt0).
