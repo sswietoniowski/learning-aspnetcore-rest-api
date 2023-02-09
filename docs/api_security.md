@@ -14,4 +14,6 @@ Useful resources:
 - [ASP.NET Core JWT Authentication Tutorial (.NET 7 Minimal Apis C#)](https://youtu.be/8FvN5bhVYxY),
 - [ASP.NET Core OAuth Authorization (.NET 7 Minimal Apis C#)](https://youtu.be/0uSwPdYOm9k),
 - [ASP.NET Core Custom OAuth Server (.NET 7 Minimal Apis C#)](https://youtu.be/EBVKlm0wyTE),
-- [ASP.NET Core External Authentication (OAuth, .NET 7 Minimal Apis C#)](https://youtu.be/PUXpfr1LzPE).
+- [ASP.NET Core External Authentication (OAuth, .NET 7 Minimal Apis C#)](https://youtu.be/PUXpfr1LzPE),
+- [Implementing API Key Authentication in ASP.NET Core](https://youtu.be/GrJJXixjR8M),
+- [How To Implement API Key Authentication In ASP.NET Core](https://youtu.be/CV6VdBR86co).
