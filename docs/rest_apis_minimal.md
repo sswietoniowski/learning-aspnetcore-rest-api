@@ -9,4 +9,5 @@ Useful resources:
 - [Extending .NET Minimal APIs with Swagger, Authentication & Validation](https://youtu.be/XKN0084p7WQ),
 - [.NET 7 - Minimal APIs - New Features](https://youtu.be/k14RUrby-cE),
 - [.NET 7 💥 - Minimal APIs & SQLITE](https://youtu.be/OpS_0KdA3Yk),
+- _[Coding Shorts: Structuring Minimal APIs - A First Draft](https://youtu.be/Q_zXFeP-QNI)_,
 - [ASP.NET Community Standup - Taking a look at the TodoApi Sample App](https://youtu.be/moJjFXVO9Mw).
