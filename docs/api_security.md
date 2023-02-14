@@ -16,4 +16,5 @@ Useful resources:
 - [ASP.NET Core Custom OAuth Server (.NET 7 Minimal Apis C#)](https://youtu.be/EBVKlm0wyTE),
 - [ASP.NET Core External Authentication (OAuth, .NET 7 Minimal Apis C#)](https://youtu.be/PUXpfr1LzPE),
 - [Implementing API Key Authentication in ASP.NET Core](https://youtu.be/GrJJXixjR8M),
-- [How To Implement API Key Authentication In ASP.NET Core](https://youtu.be/CV6VdBR86co).
+- [How To Implement API Key Authentication In ASP.NET Core](https://youtu.be/CV6VdBR86co),
+- _[Authentication & Authorization](https://youtube.com/playlist?list=PLYpjLpq5ZDGtJOHUbv7KHuxtYLk1nJPw5) :+1:.
