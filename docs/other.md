@@ -3,7 +3,7 @@
 Useful resources (assorted :-)):
 
 - _[Cleaning Up The Program.cs File In .NET 6 Now That Startup.cs is Gone](https://youtu.be/rhydGmLxfjQ)_,
-- [Coding Shorts: ASP.NET Core Middleware Explained](https://youtu.be/TqCshF0o0nE),
+- _[Coding Shorts: ASP.NET Core Middleware Explained](https://youtu.be/TqCshF0o0nE)_,
 - [TypedResults and IResult introduced with C# 11 and .NET 7](https://youtu.be/2TUdeuismGY),
 - [GUIDs and UUIDs are cool, but this is cooler](https://youtu.be/tSuwe7FowzE),
 - _[Managing .NET App Configuration With The Options Pattern In ASP.NET Core](https://youtu.be/wxYt0motww0)_,
