@@ -4,6 +4,7 @@ Useful resources:
 
 - _[Intro to In-Memory Caching in C#](https://youtu.be/2jj2wH60QuE)_,
 - _[Why .NET's memory cache is kinda flawed](https://youtu.be/Q3KzZeUudsg)_,
+- [.NET 7 - Web API In-Memory Caching](https://youtu.be/GkLdufOVXjI),
 - _[Coding Shorts: Response Caching in ASP.NET Core](https://youtu.be/46knd1DFtB4)_,
 - _[Response Caching in ASP.NET Core](https://code-maze.com/aspnetcore-response-caching/)_,
 - _[Coding Shorts: Output Caching in ASP.NET Core 7](https://youtu.be/kReNMzHj6ro)_,
