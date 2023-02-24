@@ -63,4 +63,6 @@ Some useful tools & libraries:
 - [Microsoft PowerToys](https://docs.microsoft.com/en-us/windows/powertoys/) [:file_folder:](https://docs.microsoft.com/en-us/windows/powertoys/install),
 - [HttpClient](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient?view=net-6.0),
 - [Refit](https://github.com/reactiveui/refit),
-- [BenchmarkDotNet](https://github.com/dotnet/BenchmarkDotNet).
+- [BenchmarkDotNet](https://github.com/dotnet/BenchmarkDotNet),
+- [OneOf](https://github.com/mcintyre321/OneOf).
+
