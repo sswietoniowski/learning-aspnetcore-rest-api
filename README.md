@@ -64,5 +64,6 @@ Some useful tools & libraries:
 - [HttpClient](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient?view=net-6.0),
 - [Refit](https://github.com/reactiveui/refit),
 - [BenchmarkDotNet](https://github.com/dotnet/BenchmarkDotNet),
-- [OneOf](https://github.com/mcintyre321/OneOf).
+- [OneOf](https://github.com/mcintyre321/OneOf),
+- [TestableIO](https://github.com/TestableIO).
 
