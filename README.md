@@ -20,6 +20,7 @@ Based on these (free) courses/materials:
 - APIs:
   - [REST](./docs/rest_apis.md) ([minimal](./docs/rest_apis_minimal.md)),
   - [GraphQL](./docs/graphql_apis.md),
+  - [gRPC](./docs/grpc_apis.md),
 - [data access](./docs/data_access.md),
 - [caching](./docs/caching.md),
 - [logging](./docs/logging.md),
