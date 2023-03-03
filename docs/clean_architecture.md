@@ -8,4 +8,5 @@ Useful resources:
 - [Structuring Dependency Injection In ASP.NET Core The Right Way](https://youtu.be/tKEF6xaeoig),
 - [How To Organize Minimal API Endpoints Inside Of Clean Architecture](https://youtu.be/GCuVC_qDOV4),
 - [Clean Architecture Project Setup From Scratch With .NET 7](https://youtu.be/fe4iuaoxGbA),
+- [Make Your ASP.NET Core API Controllers Incredibly Simple](https://youtu.be/AVA2mKG4WOc),
 - [Uncle Bob Martin - The Clean Coder](https://youtu.be/NeXQEJNWO5w).
