@@ -55,6 +55,7 @@ Some useful tools & libraries:
 - [MediatR](https://github.com/jbogard/MediatR),
 - [FluentValidation](https://docs.fluentvalidation.net/en/latest/) [:file_folder:](https://github.com/FluentValidation/FluentValidation),
 - [XUnit](https://xunit.net/) [:file_folder:](https://github.com/xunit/xunit),
+- [Fluent Assertions](https://github.com/fluentassertions/fluentassertions),
 - [Moq](https://github.com/moq/moq),
 - [NSubstitute](https://nsubstitute.github.io/) [:file_folder:](https://github.com/nsubstitute/NSubstitute),
 - [AutoFixture](https://github.com/AutoFixture/AutoFixture),
