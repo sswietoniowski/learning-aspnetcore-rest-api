@@ -8,6 +8,7 @@ Useful resources (assorted :-)):
 - [GUIDs and UUIDs are cool, but this is cooler](https://youtu.be/tSuwe7FowzE),
 - _[Managing .NET App Configuration With The Options Pattern In ASP.NET Core](https://youtu.be/wxYt0motww0)_,
 - _[The Best Way to Validate Your Settings in .NET](https://youtu.be/jblRYDMTtvg)_,
+- [.NET 7 - ASP.NET Core Web API Rate Limiting](https://youtu.be/bOfOo3Zsfx0),
 - [Intro to MediatR - Implementing CQRS and Mediator Patterns](https://youtu.be/yozD5Tnd8nw),
 - [Write cleaner APIs in .NET 7 with MediatR](https://youtu.be/euUg_IHo7-s),
 - [APIs for Beginners - How to use an API (Full Course / Tutorial)](https://youtu.be/GZvSYJDk-us),
