@@ -52,7 +52,7 @@ Some useful tools & libraries:
 - [West Wind WebSurge](https://websurge.west-wind.com/download),
 - [JSON Editor Online](https://jsoneditoronline.org/),
 - [AutoMapper](https://automapper.org/) [:file_folder:](https://github.com/AutoMapper/AutoMapper),
-- [Mapperly](https://github.com/riok/mapperly),
+- [Mapperly](https://mapperly.riok.app/docs/intro) [:file_folder:](https://github.com/riok/mapperly),
 - [MediatR](https://github.com/jbogard/MediatR),
 - [FluentValidation](https://docs.fluentvalidation.net/en/latest/) [:file_folder:](https://github.com/FluentValidation/FluentValidation),
 - [XUnit](https://xunit.net/) [:file_folder:](https://github.com/xunit/xunit),
