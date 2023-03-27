@@ -23,5 +23,6 @@ Useful resources (assorted :-)):
 - [Nick's .NET Backend Developer Roadmap for 2022](https://github.com/Elfocrash/.NET-Backend-Developer-Roadmap),
 - [Equinox Project](https://github.com/EduardoPires/EquinoxProject),
 - [Awesome collection of .NET Core realtime, sample, architecture reference application projects](https://github.com/bharatdwarkani/awesome-dotnet-core-applications),
-- [How to use Discriminated Unions Today in C#](https://youtu.be/7z-xjijYfcI),
+- _[How to use Discriminated Unions Today in C#](https://youtu.be/7z-xjijYfcI)_,
+- _[The Best .NET Mapper to Use in 2023](https://youtu.be/U8gSdQN2jWI)_,
 - [Make Money from your API Tutorial](https://youtu.be/MbqSMgMAzxU).
