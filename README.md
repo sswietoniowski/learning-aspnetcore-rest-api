@@ -57,7 +57,7 @@ Some useful tools & libraries:
 - [FluentValidation](https://docs.fluentvalidation.net/en/latest/) [:file_folder:](https://github.com/FluentValidation/FluentValidation),
 - [XUnit](https://xunit.net/) [:file_folder:](https://github.com/xunit/xunit),
 - [Fluent Assertions](https://github.com/fluentassertions/fluentassertions),
-- [Moq](https://github.com/moq/moq),
+- ~~[Moq](https://github.com/moq/moq)~~ - don't use it, it was a great library, but starting from version [4.20](https://github.com/moq/moq/issues/1372) it is sort of a malware that is violating GDPR regulations gathering developers data without prior consent,
 - [NSubstitute](https://nsubstitute.github.io/) [:file_folder:](https://github.com/nsubstitute/NSubstitute),
 - [AutoFixture](https://github.com/AutoFixture/AutoFixture),
 - [Faker](https://github.com/Kuree/Faker.Net),
