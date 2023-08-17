@@ -12,4 +12,5 @@ Useful resources:
 - _[Coding Shorts: Structuring Minimal APIs - A First Draft](https://youtu.be/Q_zXFeP-QNI)_,
 - _[Coding Shorts: Another Attempt to Scale Up Minimal APIs](https://youtu.be/i0sSXHQvRhU)_ [:file_folder:](https://github.com/shawnwildermuth/codingshorts/tree/main/minapidiscovery),
 - [Coding Shorts: Minimal API Endpoint Filters for Model Validation](https://youtu.be/_S-r6SxLGn4),
-- [ASP.NET Community Standup - Taking a look at the TodoApi Sample App](https://youtu.be/moJjFXVO9Mw).
+- [ASP.NET Community Standup - Taking a look at the TodoApi Sample App](https://youtu.be/moJjFXVO9Mw),
+- [Should I Create A Minimal API Or Full API?](https://youtu.be/8D9gG5jmrI0).
