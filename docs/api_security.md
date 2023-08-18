@@ -17,4 +17,6 @@ Useful resources:
 - [ASP.NET Core External Authentication (OAuth, .NET 7 Minimal Apis C#)](https://youtu.be/PUXpfr1LzPE),
 - [Implementing API Key Authentication in ASP.NET Core](https://youtu.be/GrJJXixjR8M),
 - [How To Implement API Key Authentication In ASP.NET Core](https://youtu.be/CV6VdBR86co),
-- _[Authentication & Authorization](https://youtube.com/playlist?list=PLYpjLpq5ZDGtJOHUbv7KHuxtYLk1nJPw5)_ :+1:.
+- _[Authentication & Authorization](https://youtube.com/playlist?list=PLYpjLpq5ZDGtJOHUbv7KHuxtYLk1nJPw5)_ :+1:,
+- [How to Use Multiple Authentication Schemes in .NET](https://code-maze.com/dotnet-multiple-authentication-schemes/),
+- [Multiple authorization scheme in Swagger UI in .NET core](https://medium.com/@niteshsinghal85/assign-specific-authorization-scheme-to-endpoint-in-swagger-ui-in-net-core-cd84d2a2ebd7).
