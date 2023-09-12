@@ -28,4 +28,5 @@ Useful resources (assorted :-)):
 - [Awesome collection of .NET Core realtime, sample, architecture reference application projects](https://github.com/bharatdwarkani/awesome-dotnet-core-applications),
 - _[How to use Discriminated Unions Today in C#](https://youtu.be/7z-xjijYfcI)_,
 - _[The Best .NET Mapper to Use in 2023](https://youtu.be/U8gSdQN2jWI)_,
+- _[Feature Flags In .NET + How I Use Them For A/B Testing](https://youtu.be/QVEUgIC7Wpo?si=9J4s0HWLsyJkRYvS)_,
 - [Make Money from your API Tutorial](https://youtu.be/MbqSMgMAzxU).
