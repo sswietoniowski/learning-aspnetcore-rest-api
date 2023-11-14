@@ -7,4 +7,5 @@ Useful resources:
 - _[.NET 6 - Web API Global Exceptions Handling](https://youtu.be/fBXOgrZ3ZC4)_ :+1:,
 - _[Elegant Global Error Handling Using Middleware In ASP.NET Core](https://youtu.be/H3EbflpXVmo)_ :+1:,
 - [Global Error Handling | ASP.NET 6 REST API Following CLEAN ARCHITECTURE & DDD Tutorial](https://youtu.be/gMwAhKddHYQ) :arrow_forward:,
+- [Coding Shorts: ASP.NET 8 - New Exception handling](https://youtu.be/0hh9v6Y_cOg?si=OTcoqjHtpZie9P2A) :+1:,
 - [.NET 7 - Health Checks](https://youtu.be/MMk3V58pNIw).
