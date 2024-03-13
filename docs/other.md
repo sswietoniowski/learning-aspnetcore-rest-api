@@ -24,6 +24,7 @@ Useful resources (assorted :-)):
 - ~~[Nick's .NET Backend Developer Roadmap for 2022](https://github.com/Elfocrash/.NET-Backend-Developer-Roadmap)~~,
 - _[Co powinien wiedzieć .NET Junior Developer? Roadmap dla programisty ASP.NET Core.](https://youtu.be/8tA--k8ExxI) [:file_folder:](https://github.com/devmentors/aspnetcore-developer-roadmap)_,
 - _[My .NET Developer Roadmap for 2023](https://youtu.be/KCBH1fEIrxc) [:file_folder:](https://github.com/Elfocrash/.NET-Backend-Developer-Roadmap)_,
+- [.NET Developer Roadmap by Nick Chapsas](https://roadmap.sh/r?id=65d8624e66cd6d03d2d7efc9),
 - [Equinox Project](https://github.com/EduardoPires/EquinoxProject),
 - [Awesome collection of .NET Core realtime, sample, architecture reference application projects](https://github.com/bharatdwarkani/awesome-dotnet-core-applications),
 - _[How to use Discriminated Unions Today in C#](https://youtu.be/7z-xjijYfcI)_,
