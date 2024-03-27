@@ -31,4 +31,6 @@ Useful resources (assorted :-)):
 - _[The Best .NET Mapper to Use in 2023](https://youtu.be/U8gSdQN2jWI)_,
 - _[Feature Flags In .NET + How I Use Them For A/B Testing](https://youtu.be/QVEUgIC7Wpo?si=9J4s0HWLsyJkRYvS)_,
 - [Что такое Rest API (http)? Soap? GraphQL? Websockets? RPC (gRPC, tRPC). Клиент - сервер. Вся теория](https://youtu.be/XaTwnKLQi4A?si=bAku3_9DjAJzh-3t),
-- [Make Money from your API Tutorial](https://youtu.be/MbqSMgMAzxU).
+- [Make Money from your API Tutorial](https://youtu.be/MbqSMgMAzxU),
+- [REPR and Clean Architecture](https://youtu.be/-AJcEJPwagQ?si=7yFhUtp1puI8n2gY),
+- [Should I use MVC Controllers, Minimal API, or FastEndpoints!?](https://youtu.be/70jllnMbGTY?si=RCW_N2YAoy86oX2l).
