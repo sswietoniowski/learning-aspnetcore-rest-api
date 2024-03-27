@@ -51,6 +51,7 @@ Some useful tools & libraries:
 - [Visual Studio Code - Rapid API](https://rapidapi.com/guides/replace-api-clients-with-vscode-using-the-rapidapi-extension),
 - [West Wind WebSurge](https://websurge.west-wind.com/download),
 - [JSON Editor Online](https://jsoneditoronline.org/),
+- [FastEndpoints](https://fast-endpoints.com/) [📁](https://github.com/FastEndpoints/FastEndpoints).
 - [AutoMapper](https://automapper.org/) [:file_folder:](https://github.com/AutoMapper/AutoMapper),
 - [Mapperly](https://mapperly.riok.app/docs/intro) [:file_folder:](https://github.com/riok/mapperly),
 - [MediatR](https://github.com/jbogard/MediatR),
