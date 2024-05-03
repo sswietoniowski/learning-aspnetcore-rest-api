@@ -33,4 +33,5 @@ Useful resources (assorted :-)):
 - [Что такое Rest API (http)? Soap? GraphQL? Websockets? RPC (gRPC, tRPC). Клиент - сервер. Вся теория](https://youtu.be/XaTwnKLQi4A?si=bAku3_9DjAJzh-3t),
 - [Make Money from your API Tutorial](https://youtu.be/MbqSMgMAzxU),
 - [REPR and Clean Architecture](https://youtu.be/-AJcEJPwagQ?si=7yFhUtp1puI8n2gY),
-- [Should I use MVC Controllers, Minimal API, or FastEndpoints!?](https://youtu.be/70jllnMbGTY?si=RCW_N2YAoy86oX2l).
+- [Should I use MVC Controllers, Minimal API, or FastEndpoints!?](https://youtu.be/70jllnMbGTY?si=RCW_N2YAoy86oX2l),
+- [CAP](https://github.com/dotnetcore/CAP).
