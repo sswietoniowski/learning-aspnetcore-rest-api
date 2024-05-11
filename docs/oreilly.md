@@ -9,7 +9,7 @@ Useful resources:
 - [Designing APIs with Swagger and OpenAPI](https://learning.oreilly.com/library/view/designing-apis-with/9781617296284/) [📁](https://designapis.com/),
 - [ASP.NET Core Security](https://learning.oreilly.com/library/view/asp-net-core-security/9781633439986/) [:file_folder:](https://www.manning.com/downloads/2371) ▶️,
 - [CORS in Action: Creating and consuming cross-origin APIs](https://learning.oreilly.com/library/view/cors-in-action/9781617291821/) [📁](https://github.com/monsur/CORSinAction),
-- ✅ :white_check_mark: [ASP.NET Core 5 and React - Second Edition](https://learning.oreilly.com/library/view/asp-net-core-5/9781800206168/) [:file_folder:](https://github.com/PacktPublishing/ASP.NET-Core-5-and-React-Second-Edition) :+1:,
+- ✅ [ASP.NET Core 5 and React - Second Edition](https://learning.oreilly.com/library/view/asp-net-core-5/9781800206168/) [:file_folder:](https://github.com/PacktPublishing/ASP.NET-Core-5-and-React-Second-Edition) :+1:,
 - ✅ [Mastering API Architecture](https://learning.oreilly.com/library/view/mastering-api-architecture/9781492090625/) [📁](https://github.com/masteringapi),
 - [Continuous API Management, 2nd Edition](https://learning.oreilly.com/library/view/continuous-api-management/9781098103514/),
 - [RESTful Web API Patterns and Practices Cookbook](https://learning.oreilly.com/library/view/restful-web-api/9781098106737/) [📁](http://www.webapicookbook.com/),
