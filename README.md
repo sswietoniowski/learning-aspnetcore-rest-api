@@ -68,5 +68,8 @@ Some useful tools & libraries:
 - [Refit](https://github.com/reactiveui/refit),
 - [BenchmarkDotNet](https://github.com/dotnet/BenchmarkDotNet),
 - [OneOf](https://github.com/mcintyre321/OneOf),
-- [TestableIO](https://github.com/TestableIO).
+- [TestableIO](https://github.com/TestableIO),
+- [WireMock.Net](https://github.com/WireMock-Net/WireMock.Net),
+- [CefSharp](https://github.com/cefsharp/CefSharp/).
+
 
