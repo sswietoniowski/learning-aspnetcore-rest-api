@@ -1,8 +1,14 @@
 # Sample MVC REST API (~~.NET 5~~.NET 6)
 
-Sample REST API for a MVC Web Application.
+Sample REST API for an MVC Web Application.
 
 This project was originally created using .NET 5 and later upgraded to .NET 6.
+
+To see a newer and more complete example, please visit:
+
+- [Learning ASP.NET Core - WebAPI (.NET 7) Fundamentals](https://github.com/sswietoniowski/learning-aspnetcore-webapi-7-fundamentals),
+- [Learning ASP.NET Core - WebAPI (.NET 7) Documenting Using Swagger](https://github.com/sswietoniowski/learning-aspnetcore-webapi-7-documenting-using-swagger),
+- [Learning ASP.NET Core - WebAPI (.NET 7) Unit Testing](https://github.com/sswietoniowski/learning-aspnetcore-webapi-7-unit-testing).
 
 ## Setup (.NET 5)
 
@@ -48,13 +54,13 @@ dotnet user-secrets init
 
 ## Helper Commands
 
-Some helper commands used while developing this project.
+Some helper commands were used while developing this project.
 
-They were meant to create .NET 5 project and I kept them intact here as a reference guide. If you need to learn syntax for .NET 6 please look into "minimal" project.
+They were meant to create a .NET 5 project, and I kept them intact here as a reference guide. If you need to learn the syntax for .NET 6, please look into the "minimal" project.
 
 ### Entity Framework
 
-To support Entity Framework project file ("mvc.csproj") was modified, to include the following:
+To support Entity Framework project file ("mvc.csproj") was modified to include the following:
 
 ```xml
 <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.*" Condition="'$(TargetFramework)' == 'net5.0'" />
@@ -82,7 +88,7 @@ or from the Package Manager Console use:
 Add-Migration <migrationname> -OutputDir "DataAccess/Data/Migrations"
 ```
 
-To apply the migrations to the database use:
+To apply the migrations to the database, use:
 
 ```cmd
 dotnet ef database update
@@ -94,7 +100,7 @@ or from the Package Manager Console use:
 Update-Database
 ```
 
-To remove the last migration use:
+To remove the last migration, use:
 
 ```cmd
 dotnet ef migrations remove
