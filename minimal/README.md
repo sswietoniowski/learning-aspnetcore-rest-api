@@ -2,6 +2,10 @@
 
 Sample REST API for a Minimal Web Application.
 
+To see a newer and more complete example, please visit:
+
+- [Learning ASP.NET Core - WebAPI (.NET 7) Building Minimal APIs](https://github.com/sswietoniowski/learning-aspnetcore-webapi-7-building-minimal-apis).
+
 ## Setup
 
 This solution was created using these commands:
