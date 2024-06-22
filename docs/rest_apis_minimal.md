@@ -2,6 +2,7 @@
 
 Useful resources:
 
+- [.NET 6 Minimal API Full Build](https://youtu.be/5YB49OEmbbE) [:file_folder:](https://github.com/binarythistle/S05E03---Minimal-APIs) :+1:,
 - [Real World Minimal APIs](https://youtu.be/UosTUODhSFw),
 - [The .NET Docs Show - .NET 6: Getting started with Minimal APIs](https://youtu.be/HDinmuGYaIA),
 - [Nick Chapsas - Goodbye controllers, hello Minimal APIs - NDC London 2022](https://youtu.be/hPpvlKLeYYA),
@@ -9,9 +10,9 @@ Useful resources:
 - [Extending .NET Minimal APIs with Swagger, Authentication & Validation](https://youtu.be/XKN0084p7WQ),
 - [.NET 7 - Minimal APIs - New Features](https://youtu.be/k14RUrby-cE),
 - [.NET 7 - Minimal APIs & SQLITE](https://youtu.be/OpS_0KdA3Yk),
-- _[Coding Shorts: Structuring Minimal APIs - A First Draft](https://youtu.be/Q_zXFeP-QNI)_,
-- _[Coding Shorts: Another Attempt to Scale Up Minimal APIs](https://youtu.be/i0sSXHQvRhU)_ [:file_folder:](https://github.com/shawnwildermuth/codingshorts/tree/main/minapidiscovery),
-- [Coding Shorts: Minimal API Endpoint Filters for Model Validation](https://youtu.be/_S-r6SxLGn4),
+- ✅ 🎥 [Coding Shorts: Structuring Minimal APIs - A First Draft](https://youtu.be/Q_zXFeP-QNI),
+- ✅ 🎥 [Coding Shorts: Another Attempt to Scale Up Minimal APIs](https://youtu.be/i0sSXHQvRhU) [:file_folder:](https://github.com/shawnwildermuth/codingshorts/tree/main/minapidiscovery),
+- ✅ 🎥 [Coding Shorts: Minimal API Endpoint Filters for Model Validation](https://youtu.be/_S-r6SxLGn4),
 - [ASP.NET Community Standup - Taking a look at the TodoApi Sample App](https://youtu.be/moJjFXVO9Mw),
 - [Should I Create A Minimal API Or Full API?](https://youtu.be/8D9gG5jmrI0),
-- _[Fix Your Controllers By Refactoring To Minimal APIs](https://youtu.be/gsAuFIhXz3g?si=-XOf5jw4A29WeXcC)_.
+- ✅ 🎥 [Fix Your Controllers By Refactoring To Minimal APIs](https://youtu.be/gsAuFIhXz3g?si=-XOf5jw4A29WeXcC).
