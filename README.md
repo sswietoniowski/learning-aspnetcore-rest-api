@@ -66,4 +66,10 @@ Some useful tools & libraries:
 - [OneOf](https://github.com/mcintyre321/OneOf),
 - [TestableIO](https://github.com/TestableIO),
 - [WireMock.Net](https://github.com/WireMock-Net/WireMock.Net),
-- [CefSharp](https://github.com/cefsharp/CefSharp/).
+- [CefSharp](https://github.com/cefsharp/CefSharp/),
+- [NetArchTest](https://github.com/BenMorris/NetArchTest),
+- [coverlet](https://github.com/coverlet-coverage/coverlet),
+- [Verify](https://github.com/VerifyTests/Verify/),
+- [Verify.Http](https://github.com/VerifyTests/Verify.Http),
+- [AspNetCore.Diagnostics.HealthChecks](https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks),
+- [FeatureManagement-Dotnet](https://github.com/microsoft/FeatureManagement-Dotnet).
