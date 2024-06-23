@@ -7,11 +7,7 @@ This is a sample API implementation using .NET.
 This repository contains the following sub-directories (with different API implementations):
 
 - **[mvc](mvc)** the REST API created using MVC controllers,
-- **[minimal](minimal)** the REST API created using minimal API endpoints,
-- ~~[clean](clean) the REST API created using clean architecture approach and CQRS design pattern,~~
-- ~~[graphql](graphql) the API created using GraphQL,~~
-- ~~[grpc](grpc) the API created using GRPC,~~
-- [clients](clients) clients to consume the APIs.
+- **[minimal](minimal)** the REST API created using minimal API endpoints.
 
 ## Learning Resources
 
@@ -39,7 +35,7 @@ Also used these (paid) courses & books:
 - [Pluralsight](./docs/pluralsight.md),
 - [O'Reilly](./docs/oreilly.md).
 
-This is (sort of) continuation of [these projects](./docs/other_examples.md).
+This is (sort of) a continuation of [these](./docs/other_examples.md) projects](./docs/other_examples.md).
 
 ## Useful Tools & Libraries
 
@@ -71,5 +67,3 @@ Some useful tools & libraries:
 - [TestableIO](https://github.com/TestableIO),
 - [WireMock.Net](https://github.com/WireMock-Net/WireMock.Net),
 - [CefSharp](https://github.com/cefsharp/CefSharp/).
-
-
