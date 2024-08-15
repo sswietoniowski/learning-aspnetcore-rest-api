@@ -35,7 +35,7 @@ Also used these (paid) courses & books:
 - [Pluralsight](./docs/pluralsight.md),
 - [O'Reilly](./docs/oreilly.md).
 
-This is (sort of) a continuation of [these](./docs/other_examples.md) projects](./docs/other_examples.md).
+This is a continuation of [these](./docs/other_examples.md) projects](./docs/other_examples.md).
 
 ## Useful Tools & Libraries
 
@@ -45,6 +45,7 @@ Some useful tools & libraries:
 - [Insomnia](https://insomnia.rest/),
 - [Visual Studio Code - REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client),
 - [Visual Studio Code - Rapid API](https://rapidapi.com/guides/replace-api-clients-with-vscode-using-the-rapidapi-extension),
+- [Bruno](https://www.usebruno.com/),
 - [West Wind WebSurge](https://websurge.west-wind.com/download),
 - [JSON Editor Online](https://jsoneditoronline.org/),
 - [FastEndpoints](https://fast-endpoints.com/) [📁](https://github.com/FastEndpoints/FastEndpoints).
