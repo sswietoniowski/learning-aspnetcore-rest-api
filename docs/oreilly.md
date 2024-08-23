@@ -19,4 +19,5 @@ Useful resources:
 - [Design and Build Great Web APIs](https://learning.oreilly.com/library/view/design-and-build/9781680508123/),
 - [Hands-On RESTful API Design Patterns and Best Practices](https://learning.oreilly.com/library/view/hands-on-restful-api/9781788992664/),
 - ✅ [Enterprise API Management](https://learning.oreilly.com/library/view/enterprise-api-management/9781787284432/),
-- [API Styles Fundamentals](https://learning.oreilly.com/live-events/api-styles-fundamentals/0636920078591/).
+- [API Styles Fundamentals](https://learning.oreilly.com/live-events/api-styles-fundamentals/0636920078591/),
+- [Tools and Skills for .NET 8](https://learning.oreilly.com/library/view/tools-and-skills/9781837635207/).
