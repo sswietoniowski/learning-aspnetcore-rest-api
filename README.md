@@ -56,6 +56,7 @@ Some useful tools & libraries:
 - [XUnit](https://xunit.net/) [:file_folder:](https://github.com/xunit/xunit),
 - [Fluent Assertions](https://github.com/fluentassertions/fluentassertions),
 - [NSubstitute](https://nsubstitute.github.io/) [:file_folder:](https://github.com/nsubstitute/NSubstitute),
+- [FakeItEasy](https://fakeiteasy.github.io/),
 - [AutoFixture](https://github.com/AutoFixture/AutoFixture),
 - [Faker](https://github.com/Kuree/Faker.Net),
 - [Bogus](https://github.com/bchavez/Bogus),
