@@ -60,6 +60,8 @@ Some useful tools & libraries:
 - [AutoFixture](https://github.com/AutoFixture/AutoFixture),
 - [Faker](https://github.com/Kuree/Faker.Net),
 - [Bogus](https://github.com/bchavez/Bogus),
+- [dev-tunnels](https://github.com/microsoft/dev-tunnels),
+- [Ngrok](https://ngrok.com/),
 - [SQLite and SQL Server Compact Toolbox](https://marketplace.visualstudio.com/items?itemName=ErikEJ.SQLServerCompactSQLiteToolbox),
 - [Microsoft PowerToys](https://docs.microsoft.com/en-us/windows/powertoys/) [:file_folder:](https://docs.microsoft.com/en-us/windows/powertoys/install),
 - [HttpClient](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient?view=net-6.0),
